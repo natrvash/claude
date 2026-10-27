@@ -513,6 +513,8 @@ Rose appears in one tile per row, max. No puzzle grids — each post stands alon
 | Instagram setup + first 9 posts (Chapter 3) | `nxa/instagram/instagram-setup.md` · `nxa/instagram/launch-9.md` |
 | NxA web page for natrvash.com/nxa | `nxa/website/natrvash-nxa.html` |
 | Content plan, month 1 (Chapter 4) | `nxa/content/content-plan-month-1.md` |
+| Every month-1 post in detail | `nxa/content/posts-month-1.md` |
+| Growth playbook (Chapter 5) | `nxa/growth/growth-playbook.md` |
 | Shared content calendar (live) | https://claude.ai/artifact/DPA6TU5URFP1vdZbswi471 |
 | Brand profile (for AI skills) | `nxa/brand-profile.md` |
 | Draft logo (original) | `nxa/assets/logo-draft.svg` |
@@ -540,4 +542,4 @@ Rose appears in one tile per row, max. No puzzle grids — each post stands alon
 - [ ] Test the A (reads as Δ) with 3 strangers
 - [ ] Real portraits of Navid and Ava for the story page
 
-**Done:** Chapter 2 — Strategy (`strategy/social-strategy.md`). **Done:** Chapter 4 — Content. **Next:** Chapter 5 — Growth.
+**Done:** Chapter 2 — Strategy (`strategy/social-strategy.md`). **Done:** All five chapters — Brand, Strategy, Instagram, Content, Growth.

@@ -1,4 +1,6 @@
 # NxA — The First 9 Posts (soft launch)
+
+> **Superseded:** the full, more detailed scripts for all 16 posts of month 1 are in `../content/posts-month-1.md`. Use that file for production.
 <!-- version 1.0 · 2026-10-27 · reads: ../NxA-Brand-Identity.md, ../strategy/social-strategy.md, instagram-setup.md -->
 
 We post these 9 before telling anyone. At 4 posts a week they take about 2.5 weeks. Then we announce on @natrvash, @avaizadpanah and @persianculinary.
