@@ -1,0 +1,349 @@
+<title>NxA Content Calendar</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Instrument+Serif:ital@1&family=Manrope:wght@400;600;700&display=swap">
+<style>
+/* Layout: a production board — week rows of four post slots (Mon/Wed/Fri/Sun), with Production and Ideas tabs. NxA brand tokens. */
+:root {
+  --bg: #F4F4F2;        /* Porcelain */
+  --surface: #FFFFFF;
+  --fg: #111111;        /* Ink */
+  --muted: #5E636B;
+  --line: #C9CDD4;      /* Titanium */
+  --rose: #D62271;      /* Damask Rose */
+  --rose-fg: #FFFFFF;
+  --p-ava: #F4D6E2;     /* Blush */
+  --p-scene: #D62271;
+  --p-scene-fg: #FFFFFF;
+  --p-behind: #C9CDD4;
+  --p-trend: #7D838D;   /* Slate */
+  --p-trend-fg: #FFFFFF;
+  --ok: #2E7D4F;
+  --warn: #B5701B;
+  --display: "Syne", "Arial Black", system-ui, sans-serif;
+  --serif: "Instrument Serif", Georgia, serif;
+  --body: "Manrope", system-ui, -apple-system, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #111111; --surface: #1B1C1F; --fg: #F4F4F2; --muted: #A3A8B0; --line: #34373D;
+    --rose: #E2397F; --p-ava: #5A2C3E; --p-behind: #3A3E46; --p-trend: #5E636B;
+    --ok: #5CC28A; --warn: #E3A33B; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #111111; --surface: #1B1C1F; --fg: #F4F4F2; --muted: #A3A8B0; --line: #34373D;
+  --rose: #E2397F; --p-ava: #5A2C3E; --p-behind: #3A3E46; --p-trend: #5E636B;
+  --ok: #5CC28A; --warn: #E3A33B; color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { background: var(--bg); color: var(--fg); font: 400 15px/1.5 var(--body); }
+.wrap { max-width: 1240px; margin: 0 auto; padding-block: 28px 64px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+header.top { display: flex; flex-wrap: wrap; align-items: end; justify-content: space-between; gap: 16px 32px; }
+.brand { display: flex; align-items: center; gap: 14px; }
+.brand svg { width: 86px; height: auto; flex: none; }
+.brand svg .l { fill: var(--fg); } .brand svg .x { fill: var(--rose); }
+h1 { font: 800 clamp(28px, 4vw, 44px)/1 var(--display); letter-spacing: -0.02em; margin: 0; text-wrap: balance; }
+.sub { font: italic 22px/1.2 var(--serif); color: var(--muted); margin: 6px 0 0; }
+.stats { display: flex; flex-wrap: wrap; gap: 8px; }
+.stat { border: 1px solid var(--line); border-radius: 999px; padding: 6px 12px; font-size: 13px; background: var(--surface); font-variant-numeric: tabular-nums; }
+.stat b { font-weight: 700; }
+.next { margin-top: 18px; padding: 14px 16px; border-left: 3px solid var(--rose); background: var(--surface); font-size: 14px; }
+.next b { font-weight: 700; }
+
+nav.tabs { display: flex; gap: 4px; margin: 28px 0 18px; border-bottom: 1px solid var(--line); overflow-x: auto; }
+nav.tabs a { padding: 10px 14px; text-decoration: none; color: var(--muted); font: 700 13px var(--body); letter-spacing: .12em; text-transform: uppercase; border-bottom: 2px solid transparent; white-space: nowrap; }
+nav.tabs a[aria-current="page"] { color: var(--fg); border-color: var(--rose); }
+nav.tabs a:focus-visible, button:focus-visible, select:focus-visible, input:focus-visible, textarea:focus-visible { outline: 2px solid var(--rose); outline-offset: 2px; }
+
+.legend { display: flex; flex-wrap: wrap; gap: 8px 16px; font-size: 13px; color: var(--muted); margin-bottom: 18px; }
+.legend span { display: inline-flex; align-items: center; gap: 6px; }
+.sw { width: 12px; height: 12px; border-radius: 3px; display: inline-block; }
+
+.week { margin-bottom: 26px; }
+.week h2 { font: 700 13px var(--body); letter-spacing: .14em; text-transform: uppercase; color: var(--muted); margin: 0 0 10px; }
+.slots { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }
+@media (max-width: 900px) { .slots { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 520px) { .slots { grid-template-columns: minmax(0, 1fr); } }
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: 14px; display: flex; flex-direction: column; gap: 10px; min-width: 0; }
+.card.posted { opacity: .62; }
+.card .meta { display: flex; justify-content: space-between; align-items: center; gap: 8px; font-size: 12px; color: var(--muted); font-variant-numeric: tabular-nums; }
+.pill { font: 700 11px var(--body); letter-spacing: .08em; text-transform: uppercase; padding: 3px 8px; border-radius: 999px; white-space: nowrap; }
+.p-ava { background: var(--p-ava); color: var(--fg); }
+.p-scene { background: var(--p-scene); color: var(--p-scene-fg); }
+.p-behind { background: var(--p-behind); color: var(--fg); }
+.p-trend { background: var(--p-trend); color: var(--p-trend-fg); }
+.card h3 { font: 600 15px/1.35 var(--body); margin: 0; overflow-wrap: anywhere; }
+.card .fmt { font-size: 12px; color: var(--muted); }
+.row { display: flex; gap: 8px; align-items: center; }
+select, input[type="text"], textarea { font: inherit; color: var(--fg); background: var(--bg); border: 1px solid var(--line); border-radius: 6px; padding: 6px 8px; min-width: 0; }
+select { flex: 1; }
+button { font: 700 12px var(--body); letter-spacing: .08em; text-transform: uppercase; color: var(--fg); background: transparent; border: 1px solid var(--line); border-radius: 999px; padding: 7px 12px; cursor: pointer; }
+button.primary { background: var(--fg); color: var(--bg); border-color: var(--fg); }
+button:disabled, select:disabled { opacity: .5; cursor: not-allowed; }
+.status-dot { width: 10px; height: 10px; border-radius: 50%; flex: none; background: var(--line); }
+.st-Scripted { background: var(--p-behind); } .st-Filmed { background: var(--warn); } .st-Edited { background: var(--p-trend); }
+.st-Scheduled { background: var(--rose); } .st-Posted { background: var(--ok); }
+.notes { font-size: 13px; color: var(--muted); white-space: pre-wrap; overflow-wrap: anywhere; }
+
+.list { display: grid; gap: 8px; }
+.task { display: grid; grid-template-columns: auto 92px minmax(0, 1fr); gap: 12px; align-items: start; background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: 12px 14px; }
+.task.done .what { text-decoration: line-through; color: var(--muted); }
+.task .when { font-size: 13px; color: var(--muted); font-variant-numeric: tabular-nums; }
+.task input { width: 18px; height: 18px; accent-color: var(--rose); margin-top: 2px; }
+
+.ideas { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 16px; }
+.ideas section { background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: 16px; min-width: 0; }
+.ideas h3 { margin: 0 0 10px; }
+.idea { display: flex; gap: 10px; align-items: start; padding: 7px 0; border-top: 1px solid var(--line); font-size: 14px; }
+.idea:first-of-type { border-top: 0; }
+.idea.used span { text-decoration: line-through; color: var(--muted); }
+.idea input { accent-color: var(--rose); margin-top: 4px; }
+form.add { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 18px; }
+form.add input { flex: 1 1 260px; }
+
+.empty { padding: 40px 20px; text-align: center; border: 1px dashed var(--line); border-radius: 6px; color: var(--muted); }
+.empty strong { display: block; font: 800 22px var(--display); color: var(--fg); margin-bottom: 6px; }
+.banner { font-size: 13px; color: var(--muted); margin: -6px 0 16px; }
+
+dialog { border: 1px solid var(--line); border-radius: 8px; background: var(--surface); color: var(--fg); padding: 0; width: min(560px, calc(100vw - 32px)); }
+dialog::backdrop { background: rgba(17,17,17,.45); }
+dialog form { padding: 20px; display: grid; gap: 12px; }
+dialog label { display: grid; gap: 4px; font: 700 12px var(--body); letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+dialog textarea { min-height: 90px; resize: vertical; text-transform: none; letter-spacing: 0; font-weight: 400; }
+dialog .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+dialog .actions { display: flex; justify-content: flex-end; gap: 8px; }
+@media (max-width: 480px) { dialog .grid2 { grid-template-columns: 1fr; } }
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+
+<div class="wrap">
+  <header class="top">
+    <div>
+      <div class="brand">
+        <svg viewBox="0 0 133.6 30.3" aria-label="NxA"><path class="l" d="M0 0L0 30.215L3.422 30.215L3.422 4.135L40.88 30.215L44.302 30.215L44.302 0L40.88 0L40.88 26.079L3.422 0Z"/><path class="x" d="M63.649 11.851L60.679 13.919L51.102 7.252L57.043 7.252ZM51.102 22.963L73.668 7.252L79.609 7.252L57.043 22.963ZM67.062 18.364L70.033 16.296L79.609 22.963L73.668 22.963Z"/><path class="l" d="M89.831 4.134L127.289 30.215L133.23 30.215L89.831 0L86.409 0L86.409 26.793L86.409 30.215L89.831 30.215L116.485 30.215L111.621 26.793L89.831 26.793Z"/></svg>
+        <h1>Content calendar</h1>
+      </div>
+      <p class="sub">@nxa.uae · month 1 · 2–29 November 2026</p>
+    </div>
+    <div class="stats" id="stats" aria-live="polite"></div>
+  </header>
+  <div class="next" id="next">Loading the plan…</div>
+
+  <nav class="tabs" aria-label="Views">
+    <a href="#calendar" data-view="calendar">Calendar</a>
+    <a href="#production" data-view="production">Production</a>
+    <a href="#ideas" data-view="ideas">Idea bank</a>
+  </nav>
+  <p class="banner" id="banner" hidden></p>
+
+  <main id="view-calendar">
+    <div class="legend">
+      <span><i class="sw p-ava"></i>Ava's story</span>
+      <span><i class="sw p-scene"></i>Mise-en-scène</span>
+      <span><i class="sw p-behind"></i>Behind the frame</span>
+      <span><i class="sw p-trend"></i>Trend</span>
+      <span>Status: Idea → Scripted → Filmed → Edited → Scheduled → Posted</span>
+    </div>
+    <div id="weeks"><div class="empty"><strong>The calendar fills in here</strong>Posts appear once the shared plan loads. Each card shows its date, pillar and status.</div></div>
+  </main>
+
+  <main id="view-production" hidden>
+    <div id="tasks" class="list"><div class="empty"><strong>Production steps</strong>Shoot days, outreach and reviews appear here, with a checkbox for each.</div></div>
+  </main>
+
+  <main id="view-ideas" hidden>
+    <form class="add" id="addIdea">
+      <input type="text" id="ideaText" placeholder="New idea, e.g. “Morning light at a Jumeirah café”" maxlength="160" required>
+      <select id="ideaPillar" aria-label="Pillar">
+        <option value="ava">Ava's story</option>
+        <option value="behind">Behind the frame</option>
+        <option value="scene">Mise-en-scène</option>
+        <option value="trend">Trend</option>
+      </select>
+      <button class="primary" type="submit" id="ideaAdd">Add idea</button>
+    </form>
+    <div id="ideas" class="ideas"><div class="empty"><strong>Idea bank</strong>Ideas for each pillar appear here. Tick one when you've used it.</div></div>
+  </main>
+</div>
+
+<dialog id="edit">
+  <form method="dialog" id="editForm">
+    <h3 id="editHead" style="margin:0;font:800 22px var(--display)">Edit post</h3>
+    <label for="fTitle">Title<input type="text" id="fTitle" maxlength="140"></label>
+    <div class="grid2">
+      <label for="fDate">Date<input type="text" id="fDate" placeholder="2026-11-02" pattern="\d{4}-\d{2}-\d{2}"></label>
+      <label for="fFormat">Format<select id="fFormat"><option>Reel</option><option>Carousel</option><option>Photo</option><option>Stories</option></select></label>
+    </div>
+    <div class="grid2">
+      <label for="fPillar">Pillar<select id="fPillar"><option value="ava">Ava's story</option><option value="scene">Mise-en-scène</option><option value="behind">Behind the frame</option><option value="trend">Trend</option></select></label>
+      <label for="fWho">Lead<select id="fWho"><option>Ava</option><option>Navid</option><option>Both</option></select></label>
+    </div>
+    <label for="fNotes">Notes, caption or shot list<textarea id="fNotes"></textarea></label>
+    <div class="actions">
+      <button type="button" id="cancel">Cancel</button>
+      <button type="submit" class="primary" id="save">Save</button>
+    </div>
+  </form>
+</dialog>
+
+<script>
+const PILLARS = { ava: "Ava's story", scene: "Mise-en-scène", behind: "Behind the frame", trend: "Trend" };
+const STATUSES = ["Idea", "Scripted", "Filmed", "Edited", "Scheduled", "Posted"];
+const DAYS = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+const MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+const state = { posts: [], tasks: [], ideas: [], db: null, canWrite: true, editing: null };
+const $ = (id) => document.getElementById(id);
+
+function parseDate(s) { const [y, m, d] = String(s || "").split("-").map(Number); return new Date(Date.UTC(y || 2026, (m || 1) - 1, d || 1)); }
+function fmtDate(s) { const d = parseDate(s); return `${DAYS[d.getUTCDay()]} ${d.getUTCDate()} ${MONTHS[d.getUTCMonth()]}`; }
+function weekStart(s) { const d = parseDate(s); const off = (d.getUTCDay() + 6) % 7; d.setUTCDate(d.getUTCDate() - off); return d.toISOString().slice(0, 10); }
+function el(tag, attrs = {}, ...kids) {
+  const n = document.createElement(tag);
+  for (const [k, v] of Object.entries(attrs)) {
+    if (k === "class") n.className = v; else if (k === "text") n.textContent = v;
+    else if (k.startsWith("on")) n.addEventListener(k.slice(2), v); else if (v !== false && v != null) n.setAttribute(k, v === true ? "" : v);
+  }
+  for (const k of kids) if (k != null) n.append(k);
+  return n;
+}
+function todayISO() { return new Date().toISOString().slice(0, 10); }
+
+function renderStats() {
+  const p = state.posts, by = (s) => p.filter((x) => x.status === s).length;
+  const ahead = p.filter((x) => ["Filmed", "Edited", "Scheduled"].includes(x.status)).length;
+  const s = $("stats"); s.replaceChildren();
+  if (!p.length) return;
+  s.append(el("span", { class: "stat" }, el("b", { text: `${by("Posted")}/${p.length}` }), " posted"),
+           el("span", { class: "stat" }, el("b", { text: String(ahead) }), " filmed or ready"),
+           el("span", { class: "stat" }, el("b", { text: String(by("Idea") + by("Scripted")) }), " still to film"));
+  const upcoming = p.filter((x) => x.status !== "Posted").sort((a, b) => a.date.localeCompare(b.date))[0];
+  const nx = $("next");
+  if (upcoming) {
+    nx.replaceChildren(el("b", { text: "Next up: " }), `${fmtDate(upcoming.date)} — ${upcoming.title} `, el("span", { class: "fmt", text: `(${upcoming.status})` }));
+    const late = upcoming.date < todayISO() ? " This date has passed — update its status or move it." : "";
+    if (late) nx.append(el("span", { text: late }));
+  } else nx.textContent = "Every post this month is marked Posted. Time for the monthly review.";
+}
+
+function postCard(p) {
+  const sel = el("select", { "aria-label": `Status of ${p.title}`, disabled: !state.canWrite || !state.db, onchange: (e) => setStatus(p.id, e.target.value) });
+  for (const s of STATUSES) sel.append(el("option", { value: s, text: s, selected: s === p.status }));
+  return el("article", { class: "card" + (p.status === "Posted" ? " posted" : "") },
+    el("div", { class: "meta" }, el("span", { text: fmtDate(p.date) }), el("span", { class: "pill p-" + p.pillar, text: PILLARS[p.pillar] || p.pillar })),
+    el("h3", { text: p.title }),
+    el("div", { class: "fmt", text: `${p.format || "Reel"} · lead: ${p.who || "Both"}` }),
+    p.notes ? el("div", { class: "notes", text: p.notes }) : null,
+    el("div", { class: "row" }, el("i", { class: "status-dot st-" + p.status, "aria-hidden": "true" }), sel,
+      el("button", { type: "button", onclick: () => openEdit(p.id), disabled: !state.canWrite || !state.db, text: "Edit" })));
+}
+
+function renderCalendar() {
+  const box = $("weeks");
+  if (!state.posts.length) {
+    box.replaceChildren(el("div", { class: "empty" }, el("strong", { text: state.db ? "No posts yet" : "The calendar fills in here" }),
+      state.db ? "Ask Claude to load the month-1 plan, or add posts from the idea bank." : "Posts appear once the shared plan loads. Each card shows its date, pillar and status."));
+    return;
+  }
+  const weeks = new Map();
+  for (const p of [...state.posts].sort((a, b) => a.date.localeCompare(b.date))) {
+    const w = weekStart(p.date); if (!weeks.has(w)) weeks.set(w, []); weeks.get(w).push(p);
+  }
+  box.replaceChildren(...[...weeks.entries()].map(([w, list], i) => {
+    const end = parseDate(w); end.setUTCDate(end.getUTCDate() + 6);
+    const label = `Week ${i + 1} · ${parseDate(w).getUTCDate()}–${end.getUTCDate()} ${MONTHS[end.getUTCMonth()]}`;
+    return el("section", { class: "week" }, el("h2", { text: label }), el("div", { class: "slots" }, ...list.map(postCard)));
+  }));
+}
+
+function renderTasks() {
+  const box = $("tasks");
+  if (!state.tasks.length) { box.replaceChildren(el("div", { class: "empty" }, el("strong", { text: "Production steps" }), "Shoot days, outreach and reviews appear here, with a checkbox for each.")); return; }
+  box.replaceChildren(...[...state.tasks].sort((a, b) => a.date.localeCompare(b.date)).map((t) =>
+    el("div", { class: "task" + (t.done ? " done" : "") },
+      el("input", { type: "checkbox", id: "t-" + t.id, checked: !!t.done, disabled: !state.canWrite || !state.db, onchange: (e) => setDone(t.id, e.target.checked) }),
+      el("label", { class: "when", for: "t-" + t.id, text: fmtDate(t.date) }),
+      el("label", { class: "what", for: "t-" + t.id, text: t.text }))));
+}
+
+function renderIdeas() {
+  const box = $("ideas");
+  if (!state.ideas.length) { box.replaceChildren(el("div", { class: "empty" }, el("strong", { text: "Idea bank" }), "Ideas for each pillar appear here. Tick one when you've used it.")); return; }
+  const groups = ["ava", "behind", "scene", "trend"].map((k) => {
+    const list = state.ideas.filter((i) => i.pillar === k).sort((a, b) => (a.order ?? 999) - (b.order ?? 999) || String(a.text).localeCompare(b.text));
+    if (!list.length) return null;
+    return el("section", {}, el("h3", {}, el("span", { class: "pill p-" + k, text: PILLARS[k] })),
+      ...list.map((i) => el("label", { class: "idea" + (i.used ? " used" : "") },
+        el("input", { type: "checkbox", checked: !!i.used, disabled: !state.canWrite || !state.db, onchange: (e) => setUsed(i.id, e.target.checked) }),
+        el("span", { text: i.text }))));
+  }).filter(Boolean);
+  box.replaceChildren(...groups);
+}
+
+function renderAll() { renderStats(); renderCalendar(); renderTasks(); renderIdeas(); }
+
+function showBanner(msg) { const b = $("banner"); b.textContent = msg; b.hidden = !msg; }
+async function write(fn) {
+  try { await fn(); }
+  catch (e) {
+    if (e && e.code === "invalid_argument") { state.canWrite = false; showBanner("You can view this calendar but not change it. Ask Navid for Contributor access."); renderAll(); }
+    else if (e && e.code === "quota_exceeded") showBanner("The calendar is full. Remove old ideas before adding more.");
+    else showBanner("That change didn't save. Check your connection and try again.");
+  }
+}
+const setStatus = (id, status) => write(() => state.db.doc("posts/" + id).update({ status }));
+const setDone = (id, done) => write(() => state.db.doc("tasks/" + id).update({ done }));
+const setUsed = (id, used) => write(() => state.db.doc("ideas/" + id).update({ used }));
+
+function openEdit(id) {
+  const p = state.posts.find((x) => x.id === id); if (!p) return;
+  state.editing = id;
+  $("fTitle").value = p.title || ""; $("fDate").value = p.date || ""; $("fFormat").value = p.format || "Reel";
+  $("fPillar").value = p.pillar || "ava"; $("fWho").value = p.who || "Both"; $("fNotes").value = p.notes || "";
+  $("edit").showModal();
+}
+$("cancel").addEventListener("click", () => $("edit").close());
+$("editForm").addEventListener("submit", (e) => {
+  e.preventDefault();
+  const id = state.editing; const date = $("fDate").value.trim();
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(date)) { $("fDate").focus(); return; }
+  const patch = { title: $("fTitle").value.trim() || "Untitled post", date, format: $("fFormat").value, pillar: $("fPillar").value, who: $("fWho").value, notes: $("fNotes").value.trim() };
+  $("edit").close();
+  write(() => state.db.doc("posts/" + id).update(patch));
+});
+$("addIdea").addEventListener("submit", (e) => {
+  e.preventDefault();
+  const text = $("ideaText").value.trim(); if (!text || !state.db) return;
+  const pillar = $("ideaPillar").value; $("ideaText").value = "";
+  write(() => state.db.collection("ideas").add({ text, pillar, used: false, order: 1000 + Date.now() % 100000 }));
+});
+
+function route() {
+  const v = ["calendar", "production", "ideas"].includes(location.hash.slice(1)) ? location.hash.slice(1) : "calendar";
+  for (const n of ["calendar", "production", "ideas"]) $("view-" + n).hidden = n !== v;
+  for (const a of document.querySelectorAll("nav.tabs a")) a.toggleAttribute("aria-current", a.dataset.view === v), a.dataset.view === v ? a.setAttribute("aria-current", "page") : a.removeAttribute("aria-current");
+}
+window.addEventListener("hashchange", route); route();
+
+function subscribe(name) {
+  state.db.collection(name).onSnapshot(
+    (snap) => { state[name] = snap.docs.map((d) => ({ id: d.id, ...d.data() })); renderAll(); },
+    () => showBanner("Live updates stopped. Reload the page to reconnect."));
+}
+
+(async () => {
+  renderAll();
+  const db = window.claude ? await window.claude.use("db") : null;
+  if (!db) {
+    $("next").textContent = "Sign in to claude.ai to see and edit the shared calendar.";
+    for (const b of document.querySelectorAll("#addIdea input, #addIdea select, #addIdea button")) b.disabled = true;
+    return;
+  }
+  state.db = db;
+  const user = await window.claude.use("user");
+  if (user) { const can = await user.can("data.write"); if (can === false) { state.canWrite = false; showBanner("You can view this calendar but not change it."); } }
+  if (!state.canWrite) for (const b of document.querySelectorAll("#addIdea input, #addIdea select, #addIdea button")) b.disabled = true;
+  $("next").textContent = "Loading the plan…";
+  ["posts", "tasks", "ideas"].forEach(subscribe);
+})();
+</script>

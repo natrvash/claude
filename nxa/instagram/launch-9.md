@@ -16,7 +16,7 @@ We post these 9 before telling anyone. At 4 posts a week they take about 2.5 wee
 |---|---|---|---|---|
 | 1 | **#1** Ava intro (Reel) | **#2** Mise-en-scène No.01 (Reel) | **#3** Behind the frame (Reel) | **#4** Ava's story (Reel) |
 | 2 | **#5** No.01 before/after (carousel) | **#6** Behind the frame — the edit (Reel) | **#7** Ava's opinion (Reel) | **#8** Mise-en-scène No.02 (Reel) |
-| 3 | **#9** Trend in our style (Reel) | — announce on personal pages — | | |
+| 3 | **#9** Trend in our style (Reel) | | | |
 
 Posting time: test **7:30–9 pm Dubai time** first. Confirm against Insights after 2 weeks.
 
@@ -200,7 +200,7 @@ Then he turned off my favourite lamp. ×
 | Post day | Share the new post with a 35° line sticker and "New ×" |
 | Quiet day | One frame from the past with a single line · "Today's light in Dubai" |
 
-## Announcement (after #9)
+## Announcement (start of month 2, early December)
 
 - **Collab post** on @nxa.uae with @natrvash and @avaizadpanah as collaborators: repost #1 or a new 15-second "We started something" Reel.
 - **Stories on personal pages:** "We've been building something quietly. Meet NxA → @nxa.uae"
