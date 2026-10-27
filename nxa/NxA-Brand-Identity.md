@@ -251,6 +251,20 @@ A: M89.831 4.134L127.289 30.215L133.230 30.215L89.831 0.000L86.409 0.000L86.409 
 
 **Rule:** Rose is a spark, never a flood. *Damask Rose* is a nod to the Persian rose; Sand and Stone keep black + pink from reading as nightlife or beauty.
 
+### Open decision: replace Bone + Dubai Sand?
+
+Bone and Dubai Sand read close to Claude's own cream colours. These options swap only the light pair (and the matching grey); Ink, Damask Rose and Blush stay. Visual comparison: `brand-book/exports/NxA-neutral-options.jpg`.
+
+| Option | Light (replaces Bone) | Mid (replaces Dubai Sand) | Grey (replaces Stone) | Feel |
+|---|---|---|---|---|
+| Current | Bone `#F6F2EC` | Dubai Sand `#E6DCCD` | Stone `#8A8279` | Warm cream — close to Claude |
+| **A · Porcelain** | Porcelain `#F4F4F2` | Concrete `#D6D6D1` | Steel `#85857F` | Neutral gallery white. Most futuristic; Rose pops hardest. |
+| **B · Pearl** | Pearl `#F5EFF1` | Mauve Stone `#DCCBD1` | Mauve Grey `#8A7F84` | White with a breath of rose. Own-able, ties to the ×. |
+| **C · Pistachio Cream** | Mist `#F0F2EC` | Sage `#CDD3C3` | Olive Grey `#858A7C` | Green is magenta's opposite: fresh, Persian, food-friendly. |
+| **D · Chrome** | Cloud `#EEF0F3` | Titanium `#C9CDD4` | Slate `#7D838D` | Cool silver-blue. Tech, night, architecture. |
+
+**Recommendation:** **A · Porcelain** for the NxA page itself, since it's the most futuristic and lets the Rose × do the talking. Keep **C · Sage** as a secondary for food and Persian content.
+
 ---
 
 ## 12. Alternative palettes
