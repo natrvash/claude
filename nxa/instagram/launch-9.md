@@ -32,8 +32,8 @@ Posting time: test **7:30–9 pm Dubai time** first. Confirm against Insights af
 | 0–3 s | Ava to camera, medium close-up. Navid's lens visible at the frame edge. | We're Navid & Ava. | "We're Navid and Ava. He's behind the camera, I'm in front of it." |
 | 3–8 s | Navid's hands adjusting a light, over-the-shoulder | He sees light, lines and space. | "He's a photographer and art director — he sees light, lines and space." |
 | 8–13 s | Ava styling a table, hands and food | I see people, flavour and feeling. | "I'm a filmmaker, storyteller, cook and stylist — I see people, flavour and feeling." |
-| 13–22 s | Frames from the Dubai interior project | Most places look amazing in real life… | "Together we noticed something. Most places in Dubai look amazing in real life — and wear a t-shirt online." |
-| 22–30 s | 35° × wipe to the best "after" frame | …so we make them a suit. | "So we started NxA. We make them a suit." |
+| 13–22 s | Frames from the Dubai interior project | Most places look amazing in real life… | "Together we noticed something. Most places in Dubai look amazing in real life — and look ordinary online." |
+| 22–30 s | 35° × wipe to the best "after" frame | His frame. Her story. | "So we started NxA. He builds the frame, I tell the story." |
 | 30–35 s | Back to Ava, a small smile; Navid lowers the camera, half in frame | Follow along. × | "This is the beginning. Follow along — we're dressing Dubai, one place at a time." |
 | 35–36 s | End card | × | — |
 
@@ -61,11 +61,11 @@ This is the beginning. ×
 |---|---|---|---|
 | 0–2 s | Best final hero frame, slow push-in | Mise-en-scène No.01 | — (ambient sound) |
 | 2–6 s | Hard cut to the "before" frames | Before. | "This is [project name], here in Dubai. When we arrived, it looked like this." |
-| 6–12 s | More "before" frames, flat and handheld | Beautiful room. Wrong suit. | "The space was beautiful — the pictures just weren't seeing it." |
+| 6–12 s | More "before" frames, flat and handheld | Beautiful room. No story. | "The space was beautiful — the pictures just weren't seeing it." |
 | 12–20 s | Navid setting up: tripod, waiting for light, moving one object | Wait for the light. Move one thing. | "Navid waited for the [4 pm] light. We moved [two chairs] and opened [one curtain]." |
 | 20–24 s | 2–3 raw → edited flashes | The edit. | "Then the edit — quiet, true colour, nothing fake." |
 | 24–26 s | **35° × wipe** | — | (music lifts) |
-| 26–40 s | After sequence: 5–6 frames, each held 2 s | After. | "Same place. New suit." |
+| 26–40 s | After sequence: 5–6 frames, each held 2 s | After. | "Same place. New scene." |
 | 40–41 s | End card | Mise-en-scène No.01 × | — |
 
 **Cover:** a split frame on the 35° line, before on the left and after on the right. Text: *Mise-en-scène No.01*.
@@ -75,7 +75,7 @@ This is the beginning. ×
 Mise-en-scène No.01 — [project name], Dubai.
 The room was always beautiful. The camera just wasn't seeing it.
 We waited for the light, moved [two chairs], and let the space speak.
-Same place. New suit. ×
+Same place. New scene. ×
 
 Dubai interior photography by Navid & Ava.
 #dubaiinteriors #interiorphotography #architecturephotography #dubaidesign
@@ -127,13 +127,13 @@ Then he turned off my favourite lamp. ×
 
 | Slide | Content |
 |---|---|
-| 1 (cover) | Split before/after on the 35° line. Text: *Mise-en-scène No.01 — swipe for the suit →* |
+| 1 (cover) | Split before/after on the 35° line. Text: *Mise-en-scène No.01 — swipe for the scene →* |
 | 2 | Before #1 + label BEFORE |
 | 3 | After #1 + label AFTER |
 | 4 | Before #2 / After #2 (split) |
 | 5 | Detail shot — texture or material, no label |
 | 6 | Navid's set-up frame: tripod and window light |
-| 7 | Porcelain slide, Syne headline: *Same place. New suit.* + "Want one? DM 'SUIT'" |
+| 7 | Porcelain slide, Syne headline: *Same place. New scene.* + "Want one? DM 'SCENE'" |
 
 **Caption:** use the #2 caption shape, but end with: `Save this for your next shoot. ×`
 
@@ -162,7 +162,7 @@ Then he turned off my favourite lamp. ×
 | 3–12 s | ① Light | "One: light. Shoot when the sun is soft — not at noon in Dubai." |
 | 12–21 s | ② Less | "Two: less. Take three things off the table before you shoot." |
 | 21–30 s | ③ One hero | "Three: one hero. One dish, one chair, one corner — not everything at once." |
-| 30–36 s | Same place. New suit. × | "That's it. That's the suit." |
+| 30–36 s | Same place. New scene. × | "That's it. That's the scene." |
 
 **Caption:** `3 decisions that make a place look expensive. None of them cost money. Save this. ×` + hashtags.
 
@@ -175,7 +175,7 @@ Then he turned off my favourite lamp. ×
 - "Before" = their current Instagram posts (screenshots, with permission) or a quick phone shot on arrival.
 - "After" = NxA's shoot.
 
-**Ava on location (walk-and-talk):** "This is [café] in [area]. Lovely coffee — but online it was wearing a t-shirt. Let's fix that."
+**Ava on location (walk-and-talk):** "This is [café] in [area]. Lovely coffee — but online nobody could feel it. Let's find its story."
 
 **Outreach link:** this is the post we DM to the next 5 venues ("Here's what we did for [café] — we have an idea for yours.").
 
@@ -186,7 +186,7 @@ Then he turned off my favourite lamp. ×
 **Pick one trending audio** with a clear beat drop. Check it in the Reels audio browser the week you post; trends change weekly.
 
 **Structure:** 3 spaces, 3 drops. On each beat, a **35° × wipe** from before to after (No.01, No.02 and one detail).
-**On screen:** `Same place.` → `New suit.` → `×`
+**On screen:** `Same place.` → `New scene.` → `×`
 **Rule:** NxA colours and fonts only. No meme text, no off-brand stickers.
 
 ---

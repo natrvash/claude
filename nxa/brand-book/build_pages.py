@@ -213,7 +213,7 @@ page(s, "Colour", BONE, b)
 s += 1
 
 # 14 — Alternative palettes
-b = header(s, "Alternative palettes", "Same suit, four fabrics.", size=80)
+b = header(s, "Alternative palettes", "Same frame, four lights.", size=80)
 b += text(96, 300, "Secondary palettes for client work and campaigns. The core palette always owns the NxA page; these dress the content.", "body_l", INK, 0.8)
 for i, (name, use, cols) in enumerate(ALT_PALETTES):
     y = 380 + i * 160
@@ -234,7 +234,7 @@ NEUTRALS = [
     ("Mist + Sage", "Food, Persian kitchens, cafés", "#F0F2EC", "#CDD3C3", "#858A7C"),
     ("Bone + Dubai Sand", "Warm hotels, golden hour, desert", "#F6F2EC", DUBAI_SAND, "#8A8279"),
 ]
-b = header(s, "Neutral bases", "Change the shirt, keep the suit.", size=72)
+b = header(s, "Neutral bases", "New light, same frame.", size=72)
 b += text(96, 290, "Porcelain + Titanium is the core. The other bases may replace it for a client or a series — Ink, Damask Rose and Blush never change.", "body_m", INK, 0.8)
 for i, (name, use, light, mid, grey) in enumerate(NEUTRALS):
     x, y = 96 + (i % 2) * 880, 350 + (i // 2) * 350
@@ -243,7 +243,7 @@ for i, (name, use, light, mid, grey) in enumerate(NEUTRALS):
     for k, c in enumerate([light, mid, grey, INK, ROSE, BLUSH]):
         b += rect(x + 32 + k * 56, y + 230, 48, 48, c, stroke=INK)
     b += text(x + 32, y + 288, f"{light} · {mid} · {grey}", "caps", INK, 0.6, size=11)
-    b += text(x + 584, y + 48, "Same café.\nNew suit.", "serif_m", INK, size=30) + xmark(x + 770, y + 250, 36)
+    b += text(x + 584, y + 48, "Same place.\nNew scene.", "serif_m", INK, size=30) + xmark(x + 770, y + 250, 36)
 page(s, "Neutral bases", BONE, b)
 s += 1
 
@@ -251,7 +251,7 @@ s += 1
 b = header(s, "Typography", "Shout, whisper, speak.", size=80)
 cols = [
     ("Syne ExtraBold", "Display — the shout", "Aa", "display", "Futuristic, artful, wide.\nShort headlines only."),
-    ("Instrument Serif Italic", "Accent — the whisper", "Aa", "serif_l", "The suit. One line per layout,\nnext to the shout."),
+    ("Instrument Serif Italic", "Accent — the whisper", "Aa", "serif_l", "The story. One line per layout,\nnext to the shout."),
     ("Manrope", "Body — the speaking voice", "Aa", "body_l", "Clean and legible. Regular\nfor reading, Bold for labels."),
 ]
 for i, (fam, role, sample, st, note) in enumerate(cols):
@@ -259,7 +259,7 @@ for i, (fam, role, sample, st, note) in enumerate(cols):
     b += text(x, 300, sample, st, INK, size=200)
     b += text(x, 540, fam, "h2") + text(x, 590, role, "caps", ROSE) + text(x, 630, note, "body_m", INK, 0.75)
 b += rect(96, 740, W - 192, 1, INK, 0.2)
-b += text(96, 780, "From t-shirt", "display", size=88) + text(96, 880, "to suit.", "serif_l", ROSE, size=88)
+b += text(96, 780, "His frame.", "display", size=88) + text(96, 880, "Her story.", "serif_l", ROSE, size=88)
 b += text(1100, 790, "Display 96–160 · H1 56 · H2 32\nSerif accent 40–72 · Body 18–24\nLabels 14 caps, +18% tracking\nAll free Google Fonts.", "body_m", INK, 0.75)
 page(s, "Typography", BONE, b)
 s += 1
@@ -289,7 +289,7 @@ for i, (label, disp, wt, fs, body_font, note) in enumerate(alts):
     y = 330 + i * 230
     b += rect(1000, y, 824, 200, SAND if i != 1 else BLUSH, rx=4)
     b += text(1030, y + 24, label, "caps", ROSE)
-    b += text(1030, y + 60, "From t-shirt to suit.", "h1", INK, family=disp, weight=wt, fstyle=fs, size=48)
+    b += text(1030, y + 60, "His frame. Her story.", "h1", INK, family=disp, weight=wt, fstyle=fs, size=48)
     b += text(1030, y + 140, f"{disp} + {body_font} — {note}", "body_m", INK, 0.8, family=body_font, weight=400)
 page(s, "Type system", BONE, b)
 s += 1
@@ -329,7 +329,7 @@ for i, (name, use, base, second, accent, fg) in enumerate(MOODS):
     b += rect(x, y, 300, 533, base, rx=16, stroke=INK if base in (BONE, "#FAFAF7") else None)
     b += rect(x, y + 330, 300, 203, second, rx=0) + rect(x, y + 330, 300, 6, accent)
     b += text(x + 24, y + 40, name, "h2", fg, size=28) + xmark(x + 240, y + 470, 36, accent if accent != second else fg)
-    b += text(x + 24, y + 90, "Same café.\nNew suit.", "serif_m", fg, 0.9, size=30)
+    b += text(x + 24, y + 90, "Same place.\nNew scene.", "serif_m", fg, 0.9, size=30)
     # highlight cover
     b += f'<circle cx="{x + 40}" cy="{y + 600}" r="36" fill="{second}"/>' + icon("Food", x + 40, y + 600, 36, fg if second not in (SAND, BLUSH, "#BDB8B0") else INK)
     b += f'<circle cx="{x + 124}" cy="{y + 600}" r="36" fill="{base}" stroke="{INK}" stroke-opacity="0.2"/>' + icon("Spaces", x + 124, y + 600, 36, fg)
@@ -368,7 +368,7 @@ for i, (k, v) in enumerate(rules):
     y = 160 + i * 140
     b += text(980, y, k, "serif_m", ROSE) + text(980, y + 54, v, "body_m", BONE, 0.8)
 b += rect(96, 470, 320, 570, STONE, rx=24) + text(120, 990, "9:16 reel frame", "caps", BONE, 0.7)
-b += rect(116, 880, 280, 70, INK, 0.7, 8) + text(132, 896, "Same café. New suit.", "body_m", BONE)
+b += rect(116, 880, 280, 70, INK, 0.7, 8) + text(132, 896, "Same place. New scene.", "body_m", BONE)
 page(s, "Film & Reels", INK, b)
 s += 1
 
@@ -388,7 +388,7 @@ b += rect(sx, sy, sw, sw, SAND)
 b += f'<polygon points="{sx},{cut_l} {sx + sw},{cut_r:.1f} {sx + sw},{sy + sw} {sx},{sy + sw}" fill="{STONE}"/>'
 b += f'<line x1="{sx}" y1="{cut_l}" x2="{sx + sw}" y2="{cut_r:.1f}" stroke="{ROSE}" stroke-width="6"/>'
 b += text(sx + 20, sy + sw - 40, "BEFORE", "caps", BONE) + text(sx + sw - 20, sy + 24, "AFTER", "caps", INK, anchor="end")
-b += text(1446, 790, "T-shirt → suit split", "h2") + text(1446, 836, "Before/after on one frame,\ncut on the 35° line.", "body_m", INK, 0.75)
+b += text(1446, 790, "Before → after split", "h2") + text(1446, 836, "Before/after on one frame,\ncut on the 35° line.", "body_m", INK, 0.75)
 page(s, "Graphic devices", BONE, b)
 s += 1
 
@@ -396,7 +396,7 @@ s += 1
 b = header(s, "Instagram profile", "First 3 seconds\non the profile.", size=80)
 b += text(96, 420, "Name field (searchable)", "caps", ROSE) + text(96, 456, "NxA · Dubai Content Studio", "h2")
 b += text(96, 540, "Bio", "caps", ROSE)
-b += text(96, 576, "Two artists. One frame. ×\nPhoto, film & styling for Dubai’s independent places.\nFrom t-shirt to suit ↓", "body_l")
+b += text(96, 576, "Two artists. One frame. ×\nPhoto, film & styling for Dubai’s independent places.\nHis frame. Her story. ×", "body_l")
 b += text(96, 740, "Avatar: the Rose × on Ink.  Link: one booking link, never a link list.", "body_m", INK, 0.75)
 b += text(96, 776, "Handle: @nxa.uae", "body_m", INK, 0.75)
 px, py = 1180, 120
@@ -404,7 +404,7 @@ b += rect(px, py, 520, 900, INK, rx=48) + rect(px + 16, py + 16, 488, 868, BONE,
 b += f'<circle cx="{px + 100}" cy="{py + 150}" r="56" fill="{INK}"/>' + xmark(px + 66, py + 131, 68)
 b += text(px + 190, py + 115, "12      340      180", "h2", size=22) + text(px + 190, py + 150, "posts   followers   following", "body_m", INK, 0.6, size=14)
 b += text(px + 44, py + 230, "NxA · Dubai Content Studio", "body_m", size=16)
-b += text(px + 44, py + 258, "Two artists. One frame. ×\nPhoto, film & styling for Dubai’s\nindependent places.\nFrom t-shirt to suit ↓", "body_m", INK, 0.85, size=15)
+b += text(px + 44, py + 258, "Two artists. One frame. ×\nPhoto, film & styling for Dubai’s\nindependent places.\nHis frame. Her story. ×", "body_m", INK, 0.85, size=15)
 for i, h in enumerate(["Work", "Before/After", "Food", "Spaces", "Studio"]):
     cx = px + 80 + i * 92
     b += f'<circle cx="{cx}" cy="{py + 440}" r="34" fill="{[INK, SAND, BLUSH, SAND, ROSE][i]}"/>' + icon(h, cx, py + 440, 34, BONE if i in (0, 4) else INK)
@@ -437,7 +437,7 @@ b += text(tx[1] + 28, 560, "(none of them cost money)", "serif_m", ROSE, size=26
 b += rect(tx[2], 220, tw, th, BONE, stroke=INK) + text(tx[2] + 28, 300, "“Looking\nexpensive is\na decision,\nnot a budget.”", "serif_l", INK, size=48)
 b += text(tx[2] + 28, 220 + th - 60, "— NxA", "caps", ROSE)
 b += rect(tx[3], 220, tw, th, STONE) + rect(tx[3] + 24, 220 + th - 150, tw - 48, 110, INK, 0.75, 8)
-b += text(tx[3] + 44, 220 + th - 132, "Same café.\nNew suit.", "h2", BONE, size=30)
+b += text(tx[3] + 44, 220 + th - 132, "Same place.\nNew scene.", "h2", BONE, size=30)
 for i, l in enumerate(["Before → after\n1080×1350", "Carousel cover\n1080×1350", "Quote / point of view\n1080×1350", "Reel cover\n1080×1920 (safe 4:5)"]):
     b += text(tx[i], 720, l, "caps", INK, 0.7)
 b += text(96, 860, "Rules: one message per post · the × sign-off only, never the full logo on content · one Rose element per post.", "body_m", INK, 0.8)
@@ -455,7 +455,7 @@ b += text(96, 610, "Highlight covers: one line icon, mood colours, no text insid
 stories = [
     ("Question box", BLUSH, INK, "Ask Ava anything\nabout food styling ↓"),
     ("Behind the scenes", INK, BONE, "6:40 am.\nThe light is ready.\nAre you?"),
-    ("Book a shoot", ROSE, BONE, "Your place deserves\na better suit.\nDM “SUIT”."),
+    ("Book a shoot", ROSE, BONE, "Every place has\na story. Let’s\nframe yours.\nDM “SCENE”."),
 ]
 for i, (name, bg, fg, line) in enumerate(stories):
     x, y = 1000 + i * 290, 280
@@ -468,7 +468,7 @@ page(s, "Story & highlight covers", BONE, b)
 s += 1
 
 # 26 — Stationery
-b = header(s, "Stationery", "Small touches, same suit.", size=80)
+b = header(s, "Stationery", "Small touches, same frame.", size=80)
 b += rect(96, 360, 510, 330, INK, rx=8) + logo(171, 490, 360, BONE, ROSE)
 b += rect(646, 360, 510, 330, BONE, rx=8, stroke=INK) + text(686, 400, "Ava Izadpanah", "h2", size=28) + text(686, 440, "Filmmaker · Storyteller", "caps", ROSE)
 b += text(686, 560, "+971 — — —\nemail — — —\n@nxa.uae · Dubai", "body_m", INK, 0.85) + xmark(1090, 400, 40)
@@ -479,7 +479,7 @@ b += text(1250, 480, "NxA — Navid × Ava · Dubai\n@nxa.uae", "body_m", INK, 0
 b += text(1220, 710, "Email signature", "caps", INK, 0.7)
 b += rect(96, 780, 1728, 220, INK, rx=8) + clipped(1100, 780, 724, 220, lines35(1100, 780, 724, 220, 28, ROSE, 2, opacity=0.5), rx=8)
 b += logo(140, 860, 300, BONE, ROSE)
-b += text(1040, 840, "Proposal — The Lana Café", "h2", BONE, anchor="end") + text(1040, 890, "From t-shirt to suit.", "serif_m", ROSE, anchor="end")
+b += text(1040, 840, "Proposal — The Lana Café", "h2", BONE, anchor="end") + text(1040, 890, "His frame. Her story.", "serif_m", ROSE, anchor="end")
 page(s, "Stationery", BONE, b)
 s += 1
 

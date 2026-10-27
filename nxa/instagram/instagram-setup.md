@@ -29,7 +29,7 @@ NxA · Photo & Film Studio Dubai
 ```
 Art-directed photo & film for Dubai's independent places.
 Made by hand and camera. ×
-DM 'SUIT' ↓
+DM 'SCENE' ↓
 ```
 
 **Link:** `natrvash.com/nxa` (see `../website/natrvash-nxa.html`)
@@ -55,7 +55,7 @@ DM 'SUIT' ↓
 
 | Shortcut | Reply |
 |---|---|
-| `/suit` | Thank you for reaching out! ✨ Three quick questions so we can help: ① your venue and its Instagram, ② what you need — a shoot, monthly content or a new look, ③ when are you thinking? |
+| `/scene` | Thank you for reaching out! ✨ Three quick questions so we can help: ① your venue and its Instagram, ② what you need — a shoot, monthly content or a new look, ③ when are you thinking? |
 | `/wa` | Lovely — let's continue on WhatsApp so we can send examples and rates: [WhatsApp link]. Navid & Ava × |
 | `/rates` | Our shoots start from the rates at natrvash.com/nxa. Monthly content is 4,000–12,000 AED depending on what you need. Happy to tailor it after a quick call. |
 | `/thanks` | Thank you for the tag! We love what you're doing at [venue]. × |
@@ -68,17 +68,17 @@ Keep the ✨ out of posts; the voice rules allow one emoji at most, and saved re
 |---|---|---|
 | **Mise-en-scène** | Circle split on 35°, Ink on Titanium | Every makeover's before → after stories |
 | **Behind** | Camera, Porcelain on Ink | Set-ups, light, Ava × Navid moments |
-| **Us** | Rose × on Ink | Who we are, Navid & Ava, values, the "t-shirt to suit" idea |
-| **Book** | Frame corners, Porcelain on Rose | How it works: DM SUIT → WhatsApp → call → shoot; services; FAQs |
+| **Us** | Rose × on Ink | Who we are, Navid & Ava, values, the "His frame. Her story." idea |
+| **Book** | Frame corners, Porcelain on Rose | How it works: DM SCENE → WhatsApp → call → shoot; services; FAQs |
 
 **Before launch:** post 3–4 stories into each highlight, so none of them is empty on day one.
 
 **"Book" highlight story sequence:**
 1. "How to work with NxA" (Rose background, Syne headline)
-2. "① DM us 'SUIT'"
+2. "① DM us 'SCENE'"
 3. "② We ask 3 questions"
 4. "③ We talk on WhatsApp or meet at your place"
-5. "④ We shoot. You get a suit." + link sticker → natrvash.com/nxa
+5. "④ We shoot. You get your scene." + link sticker → natrvash.com/nxa
 
 ## 5. Hashtags (3–5 per post, rotate)
 

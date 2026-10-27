@@ -8,7 +8,7 @@ from build_pages import (
 
 # 01 — Cover
 b = logo((W - 1100) / 2, 330, 1100, BONE, ROSE)
-b += text(W / 2, 640, "the look of a suit, made by hand.", "serif_m", BONE, 0.8, anchor="middle")
+b += text(W / 2, 640, "his frame. her story.", "serif_m", BONE, 0.8, anchor="middle")
 b += text(96, H - 100, "Brand Identity Book — v1.0", "caps", BONE, 0.6)
 b += text(W - 96, H - 100, "Navid × Ava  ·  Dubai  ·  2026", "caps", BONE, 0.6, anchor="end")
 page(-1, "Cover", INK, b)
@@ -51,11 +51,11 @@ page(1, "Our story", BONE, b)
 
 # 04 — The big idea
 b = chrome(2, "The big idea", True) + text(96, 200, "02 — The big idea", "caps", ROSE)
-b += text(96, 260, "From t-shirt", "display", BONE, size=160)
-b += text(96, 430, "to suit.", "serif_l", ROSE, size=150)
+b += text(96, 260, "His frame.", "display", BONE, size=160)
+b += text(96, 430, "Her story.", "serif_l", ROSE, size=150)
 b += text(96, 680, (
-    "Most small businesses show up online in a t-shirt and a hoodie. The big brands hire agencies a small\n"
-    "business can’t afford. NxA puts every client in a well-cut suit: tailored content, made by hand and\n"
+    "Navid builds the frame: light, lines, space and material. Ava tells the story: people, flavour and feeling.\n"
+    "Most small businesses get only one of the two. NxA gives you both in one frame — made by hand and\n"
     "camera, at a price a small business can pay."), "body_l", BONE, 0.85)
 b += text(96, 830, "Everything in this book serves that one idea.", "serif_m", BONE, 0.6)
 page(2, "The big idea", INK, b)
@@ -104,7 +104,7 @@ cards = [
         "Independent restaurants, cafés, boutique hotels and\nconcept stores in Dubai, under 50 staff.\n\n"
         "They want to look as good as the big names and win\nbookings — without a big-agency bill.\n\n"
         "They decide fast, by look and by trust. Instagram first.\n\n"
-        "Before → after: t-shirt content → a tailored look that\nmatches the real quality of the place.")),
+        "Before → after: generic content → a composed look\nand a real story that match the place.")),
     (1004, BLUSH, "Secondary segment", "Design & lifestyle brands", (
         "Interior studios, furniture and design brands, developer\nshow units, fashion and lifestyle labels.\n\n"
         "They care about space, material and craft — Navid’s\nhome ground.\n\n"
@@ -138,10 +138,10 @@ b += text(96, 420, "Ava speaks. Navid frames. We write like a friend with\nimpec
 for k, (a, z) in enumerate([("a friend with taste", "a sales deck"), ("confident — we show the work", "boastful"), ("futuristic & minimal", "cold"), ("playful in the studio", "careless with clients")]):
     y = 600 + k * 76
     b += text(96, y, f"We sound like {a}", "body_l") + text(856, y + 2, f"never {z}", "serif_m", ROSE, anchor="end", size=28) + rect(96, y + 56, 760, 1, INK, 0.15)
-b += text(1000, 170, "Words we use", "caps", ROSE) + text(1000, 206, "tailored · frame · light · texture · table ·\nspace · story · hand-made · the suit", "h2", size=30)
+b += text(1000, 170, "Words we use", "caps", ROSE) + text(1000, 206, "tailored · frame · light · texture · table ·\nspace · story · hand-made · the scene", "h2", size=30)
 b += text(1000, 330, "Words we ban", "caps", ROSE) + text(1000, 366, "elevate · next level · game-changer · unlock ·\npremium quality content · in today’s fast-paced\nworld · fake urgency", "body_l", INK, 0.6)
 b += text(1000, 520, "Sample caption", "caps", ROSE) + rect(1000, 556, 824, 230, SAND)
-b += text(1032, 588, "Same café. Same table. Same coffee.\nWe just changed the light, the angle and the story.\nThis is what a suit looks like on a small business. ×", "body_l")
+b += text(1032, 588, "Same café. Same table. Same coffee.\nWe just changed the light, the angle and the story.\nHis frame. Her story. ×", "body_l")
 b += text(1032, 730, "Emoji: one, max. Hashtags: 3–5 topic tags, never a block.", "body_m", INK, 0.6)
 page(7, "Voice & tone", BONE, b)
 

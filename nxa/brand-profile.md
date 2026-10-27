@@ -10,7 +10,7 @@
 - **Stage:** Brand new, 0 followers, no NxA social channels yet. Draft logo exists (`nxa/assets/logo-draft.svg`).
 
 ## Positioning
-- **The metaphor (core idea):** Most small businesses show up online in a t-shirt and hoodie. NxA puts them in a well-cut suit.
+- **Slogan (core idea):** His frame. Her story. Navid builds the frame, Ava tells the story — most small businesses get only one of the two.
 - **What's different:** Two named artists, not a faceless agency. One team covers **space** (Navid: architecture and interiors) and **food, styling and story** (Ava). Dubai F&B agencies sell volume marketing. Solo studios cover one craft. NxA is art-led, multidisciplinary and personal.
 - **Price position:** Affordable luxury. Omega, not Patek Philippe and not Swatch. The big-hotel look at a price a company with under 50 staff can pay.
 - **Why believe it:** Navid's award-recognised architectural and interior photography, past boutique hotel and hospitality work, Ava's food and Persian culinary depth, and real hands and real cameras on every job.
@@ -26,7 +26,7 @@
 - **Cares about:** Looking as good as the big names, getting bookings, standing out on a feed full of the same flat-lay.
 - **Believes / objects:** "Good content is either cheap phone stuff or an agency I can't afford." "Every agency says they're premium."
 - **Where:** Instagram first. Decides fast, by look and trust.
-- **Transformation:** T-shirt to suit. Generic or DIY content becomes a tailored visual identity that matches the quality of the place.
+- **Transformation:** Generic or DIY content becomes a composed look and a real story that match the quality of the place.
 ### Segment 2: Design, interiors and lifestyle brands (secondary)
 - **Who:** Interior studios, furniture and design brands, developers' show units, fashion and lifestyle labels.
 - **Buyer vs follower note:** Followers will include creatives and design lovers. Buyers are owners. Content must impress the first and convert the second.
@@ -41,7 +41,7 @@
   - Futuristic and minimal, never cold.
   - Playful in the studio, sharp in the meeting.
 - **Who speaks:** Ava is the on-camera voice and story. Navid is the eye behind the camera, seen through his frames, hands and process; he is shy and quiet on camera, and that is part of the character.
-- **Words we use:** tailored, frame, light, texture, table, space, story, hand-made, "the suit".
+- **Words we use:** tailored, frame, light, texture, table, space, story, hand-made, "the scene".
 - **Words we ban:** "elevate", "next level", "game-changer", "unlock", "premium quality content", "in today's fast-paced world", fake urgency.
 - **Signature devices:** Short lines. Real process over claims. Emoji at most one, never as bullets. Hashtags: 3–5 topic tags, never a block.
 - **Language:** English. A touch of Persian warmth (food, hospitality) where it's natural.

@@ -23,7 +23,7 @@ for i, (tag, name, light, mid, stone, note) in enumerate(OPTIONS):
         b += rect(x + 40 + k * 70, y + 330, 60, 60, c, stroke=INK)
     b += text(x + 40, y + 400, f"{light} · {mid} · grey {stone}", "caps", INK, 0.6, size=12)
     b += rect(x + 40, y + 430, 200, 40, INK, rx=20) + text(x + 140, y + 441, "Book a shoot", "caps", light, anchor="middle", size=12)
-    b += text(x + 550, y + 70, "Same café.\nNew suit.", "serif_m", INK, size=40)
+    b += text(x + 550, y + 70, "Same place.\nNew scene.", "serif_m", INK, size=40)
     b += xmark(x + 790, y + ch - 90, 44)
 out = Path(__file__).parent / "exports" / "NxA-neutral-options.svg"
 out.write_text(svg_doc(W, H, "#FFFFFF", b), encoding="utf-8")

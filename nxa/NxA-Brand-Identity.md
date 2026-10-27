@@ -1,7 +1,7 @@
 # NxA — Brand Identity
 
 > **Navid × Ava** · Creative content studio · Dubai · v1.0 · October 2026
-> *The look of a suit, made by hand.*
+> *His frame. Her story.*
 
 This file collects everything we have defined for NxA so far: the brand foundation, the visual identity and the Instagram identity. It is the single source of truth. The brand book (PDF/AI/JPG) and the Figma file are built from it.
 
@@ -46,7 +46,7 @@ This file collects everything we have defined for NxA so far: the brand foundati
 | **Founders** | Navid Atrvash (photographer, art director, artist) and Ava Izadpanah (filmmaker, storyteller, cook, stylist). Partners in life and work. |
 | **Base / market** | Dubai. Local businesses. English. |
 | **Stage** | Brand new. 0 followers. Instagram page not yet launched. |
-| **Core idea** | From t-shirt to suit. |
+| **Slogan** | His frame. Her story. |
 | **Price position** | Affordable luxury. Omega, not Patek Philippe, not Swatch. |
 | **Point of view** | Made by hand and camera, by real people. |
 
@@ -71,9 +71,9 @@ NxA is a creative studio in Dubai run by two artists. Navid is a photographer an
 
 ## 3. The big idea
 
-# From t-shirt *to suit.*
+# His frame. *Her story.*
 
-Most small businesses show up online in a t-shirt and a hoodie. They either make content themselves (often rubbish) or hire a professional they can't really afford — too expensive for companies under 50 employees. NxA puts every client in a well-cut suit: tailored content, made by hand and camera, at a price a small business can pay.
+Navid builds the frame: light, lines, space and material. Ava tells the story: people, flavour and feeling. Most small businesses get only one of the two — a nice photo with no story, or a story with no eye — and big agencies cost more than a company under 50 employees can pay. NxA gives you both in one frame, made by hand and camera, at a price a small business can pay.
 
 Everything in the identity serves this one idea.
 
@@ -142,7 +142,7 @@ Everything in the identity serves this one idea.
 - **Want:** To look as good as the big names and win bookings, without a big-agency bill.
 - **Believe / object:** "Good content is either cheap phone stuff or an agency I can't afford." "Every agency says they're premium."
 - **Where:** Instagram first. Decide fast, by look and by trust.
-- **Transformation:** T-shirt content → a tailored look that matches the real quality of the place.
+- **Transformation:** Generic or DIY content → a composed look and a real story that match the quality of the place.
 
 ### Secondary segment: Design and lifestyle brands
 - Interior studios, furniture and design brands, developer show units, fashion and lifestyle labels.
@@ -185,7 +185,7 @@ These set the visual level. The paying clients are their smaller neighbours: **t
 | futuristic & minimal | cold |
 | playful in the studio | careless with clients |
 
-**Words we use:** tailored · frame · light · texture · table · space · story · hand-made · the suit
+**Words we use:** tailored · frame · light · texture · table · space · story · hand-made · the scene
 
 **Words we ban:** elevate · next level · game-changer · unlock · premium quality content · in today's fast-paced world · fake urgency
 
@@ -194,7 +194,7 @@ These set the visual level. The paying clients are their smaller neighbours: **t
 **Sample caption**
 > Same café. Same table. Same coffee.
 > We just changed the light, the angle and the story.
-> This is what a suit looks like on a small business. ×
+> His frame. Her story. ×
 
 **Pronunciation:** NxA = "N-ex-A" · Navid = "na-VEED" · Ava = "AH-va"
 
@@ -251,7 +251,7 @@ A: M89.831 4.134L127.289 30.215L133.230 30.215L89.831 0.000L86.409 0.000L86.409 
 
 **Rule:** Rose is a spark, never a flood. *Damask Rose* is a nod to the Persian rose.
 
-### Neutral bases — change the shirt, keep the suit
+### Neutral bases — new light, same frame
 
 Porcelain + Titanium is the core. The other bases may replace it for a client or a series; Ink, Damask Rose and Blush never change.
 
@@ -266,7 +266,7 @@ Porcelain + Titanium is the core. The other bases may replace it for a client or
 
 ## 12. Alternative palettes
 
-**Same suit, four fabrics.** Secondary palettes for client work and campaigns. The core palette always owns the NxA page; these dress the content. The logo's × stays Damask Rose or Ink in every palette.
+**Same frame, four lights.** Secondary palettes for client work and campaigns. The core palette always owns the NxA page; these dress the content. The logo's × stays Damask Rose or Ink in every palette.
 
 | Palette | For | Colours |
 |---|---|---|
@@ -284,7 +284,7 @@ Porcelain + Titanium is the core. The other bases may replace it for a client or
 | Role | Font | Use |
 |---|---|---|
 | Display — the shout | **Syne** ExtraBold / Bold | Futuristic, artful, wide. Short headlines only. |
-| Accent — the whisper | **Instrument Serif** Italic | The suit. One line per layout, next to the shout. |
+| Accent — the whisper | **Instrument Serif** Italic | The story. One line per layout, next to the shout. |
 | Body — the speaking voice | **Manrope** Regular / Bold | Body copy, captions; Bold caps for labels. |
 
 **Scale (Figma text styles)**
@@ -358,7 +358,7 @@ Porcelain + Titanium is the core. The other bases may replace it for a client or
 | Studio | Camera | Rose |
 | Book | × | Porcelain |
 
-**Story templates:** Question box ("Ask Ava anything about food styling ↓") · Behind the scenes ("6:40 am. The light is ready. Are you?") · Book a shoot ("Your place deserves a better suit. DM 'SUIT'."). Text in the top 60%, stickers in the safe middle, the × in the corner.
+**Story templates:** Question box ("Ask Ava anything about food styling ↓") · Behind the scenes ("6:40 am. The light is ready. Are you?") · Book a shoot ("Every place has a story. Let's frame yours. DM 'SCENE'."). Text in the top 60%, stickers in the safe middle, the × in the corner.
 
 ---
 
@@ -401,7 +401,7 @@ Porcelain + Titanium is the core. The other bases may replace it for a client or
 - **The 35° line** — dividers, wipes, crops. Always at the logo's angle.
 - **The × stamp** — sign-off on posts, avatar, watermark at 8% opacity.
 - **Frame corners** — crop marks around a hero shot: the photographer's view.
-- **T-shirt → suit split** — before/after on one frame, cut on the 35° line.
+- **Before → after split** — before/after on one frame, cut on the 35° line.
 
 ---
 
@@ -412,7 +412,7 @@ Porcelain + Titanium is the core. The other bases may replace it for a client or
 |---|---|
 | Handle | **@nxa.uae** |
 | Name field (searchable) | NxA · Photo & Film Studio Dubai |
-| Bio | Art-directed photo & film for Dubai's independent places.<br>Made by hand and camera. ×<br>DM 'SUIT' ↓ |
+| Bio | Art-directed photo & film for Dubai's independent places.<br>Made by hand and camera. ×<br>DM 'SCENE' ↓ |
 | Account | Business · category Photographer · WhatsApp button |
 | Avatar | Rose × on Ink |
 | Link | natrvash.com/nxa — a dedicated NxA page on the existing site (`website/natrvash-nxa.html`) |
@@ -448,7 +448,7 @@ Rose appears in one tile per row, max. No puzzle grids — each post stands alon
 
 - **Business card** — 85 × 55 mm. Front: reversed logo on Ink. Back: name, role in Rose caps, contact, × in the corner.
 - **Email signature** — name, role, "NxA — Navid × Ava · Dubai", site and handle, small primary logo.
-- **Proposal cover** — Ink with reversed logo, 35° weave pattern at 50%, client name and "From t-shirt to suit."
+- **Proposal cover** — Ink with reversed logo, 35° weave pattern at 50%, client name and "His frame. Her story."
 
 ---
 

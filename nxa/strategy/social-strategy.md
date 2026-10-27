@@ -39,7 +39,7 @@ For the first 3 months NxA builds a **portfolio on Instagram (@nxa.uae)** and tr
 | Pillar | What it is | Format | Job |
 |---|---|---|---|
 | **1 · Ava's stories** | Ava on camera telling stories about past work, ideas and process | Reels, 30–60 s | Trust, personality, follows |
-| **2 · Mise-en-scène No.XX** | T-shirt → suit makeovers of real Dubai places (spec, collab or client) | Reel reveal + before/after carousel | Proof, shares, enquiries |
+| **2 · Mise-en-scène No.XX** | Before → after makeovers of real Dubai places (spec, collab or client) | Reel reveal + before/after carousel | Proof, shares, enquiries |
 | **3 · Behind the frame** | Ava interviews Navid: one question per Reel, behind the scenes | Reels, 20–45 s | The craft, the couple, the "real hands" promise |
 
 **Ava's formats by topic (Q13)**
@@ -56,7 +56,7 @@ For the first 3 months NxA builds a **portfolio on Instagram (@nxa.uae)** and tr
 
 **Mise-en-scène series rules**
 - Title: `Mise-en-scène No.01 — [Venue name]`, numbered forever (No.01, No.02…).
-- Structure: the place as it shows itself today (t-shirt) → the 35° × wipe → NxA's version (suit) → one line on what changed.
+- Structure: the place as it shows itself today (before) → the 35° × wipe → NxA's version (after) → one line on what changed.
 - Always tag the venue. Spec makeovers only with the owner's permission.
 
 ## 5. Weekly rhythm
@@ -111,7 +111,7 @@ Ask for written permission for posting and portfolio use on every shoot. Paid ad
 
 ## 9. Lead path (Q7)
 
-1. Posts and stories end with **"DM 'SUIT'"** (on sales posts only, max 1 in 5).
+1. Posts and stories end with **"DM 'SCENE'"** (on sales posts only, max 1 in 5).
 2. Instant reply (saved reply): "Thank you! Three quick questions: ① your venue and Instagram, ② what you need: a shoot, monthly content or a new look, ③ when?"
 3. After the answers → "Let's continue on WhatsApp: [number]". Send rates (natrvash.com/uae) and book a call or visit.
 4. Tracker stage: DM → WhatsApp → call/visit → proposal → signed.
@@ -122,7 +122,7 @@ Ask for written permission for posting and portfolio use on every shoot. Paid ad
 
 | # | Post | Pillar |
 |---|---|---|
-| 1 | Who we are — Ava introduces NxA and the "t-shirt to suit" idea; Navid's hands, his voice once | 1 |
+| 1 | Who we are — Ava introduces NxA and the "His frame. Her story." idea; Navid's hands, his voice once | 1 |
 | 2 | Mise-en-scène No.01 — [first spec venue] | 2 |
 | 3 | Behind the frame — "What's the first thing you look at in a room?" | 3 |
 | 4 | Ava's story — a past project (walk-and-talk) | 1 |
@@ -160,7 +160,7 @@ At about 4 posts a week, the 9 posts take roughly 2.5 weeks. Then:
 - Saves
 - Profile visits → follows (conversion of the profile)
 - Reel watch time / 3-second hold
-- DMs with "SUIT" and WhatsApp conversations
+- DMs with "SCENE" and WhatsApp conversations
 
 ## 13. What we won't do
 
