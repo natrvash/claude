@@ -410,7 +410,7 @@ Porcelain + Titanium is the core. The other bases may replace it for a client or
 ### Profile
 | Field | Content |
 |---|---|
-| Handle | `@nxa.studio` *(placeholder — confirm it is free)* |
+| Handle | **@nxa.uae** |
 | Name field (searchable) | NxA · Dubai Content Studio |
 | Bio | Two artists. One frame. ×<br>Photo, film & styling for Dubai's independent places.<br>From t-shirt to suit ↓ |
 | Avatar | Rose × on Ink |
@@ -506,6 +506,7 @@ Rose appears in one tile per row, max. No puzzle grids — each post stands alon
 | What | Where |
 |---|---|
 | This document | `nxa/NxA-Brand-Identity.md` |
+| Social strategy (Chapter 2) | `nxa/strategy/social-strategy.md` |
 | Brand profile (for AI skills) | `nxa/brand-profile.md` |
 | Draft logo (original) | `nxa/assets/logo-draft.svg` |
 | Brand book PDF / AI (31 pages) | `nxa/brand-book/exports/NxA-Brand-Identity-Book.pdf` · `.ai` |
@@ -521,7 +522,7 @@ Rose appears in one tile per row, max. No puzzle grids — each post stands alon
 
 ## 25. Open items
 
-- [ ] Instagram handle — check `@nxa.studio`, `@navidxava`, `@nxa.dubai`
+- [x] Instagram handle — **@nxa.uae**
 - [ ] Contact email and phone for stationery
 - [ ] Why misko.in and Harena.studio — what exactly to borrow
 - [ ] Why @deepstudio_creative is the anti-model
@@ -532,4 +533,4 @@ Rose appears in one tile per row, max. No puzzle grids — each post stands alon
 - [ ] Test the A (reads as Δ) with 3 strangers
 - [ ] Real portraits of Navid and Ava for the story page
 
-**Next:** Chapter 2 — Strategy.
+**Done:** Chapter 2 — Strategy (`strategy/social-strategy.md`). **Next:** Chapter 3 — Instagram.

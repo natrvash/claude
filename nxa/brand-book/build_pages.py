@@ -398,7 +398,7 @@ b += text(96, 420, "Name field (searchable)", "caps", ROSE) + text(96, 456, "NxA
 b += text(96, 540, "Bio", "caps", ROSE)
 b += text(96, 576, "Two artists. One frame. ×\nPhoto, film & styling for Dubai’s independent places.\nFrom t-shirt to suit ↓", "body_l")
 b += text(96, 740, "Avatar: the Rose × on Ink.  Link: one booking link, never a link list.", "body_m", INK, 0.75)
-b += text(96, 776, "Handle: @nxa.studio (to confirm — check it is free first).", "body_m", INK, 0.75)
+b += text(96, 776, "Handle: @nxa.uae", "body_m", INK, 0.75)
 px, py = 1180, 120
 b += rect(px, py, 520, 900, INK, rx=48) + rect(px + 16, py + 16, 488, 868, BONE, rx=36)
 b += f'<circle cx="{px + 100}" cy="{py + 150}" r="56" fill="{INK}"/>' + xmark(px + 66, py + 131, 68)
@@ -471,11 +471,11 @@ s += 1
 b = header(s, "Stationery", "Small touches, same suit.", size=80)
 b += rect(96, 360, 510, 330, INK, rx=8) + logo(171, 490, 360, BONE, ROSE)
 b += rect(646, 360, 510, 330, BONE, rx=8, stroke=INK) + text(686, 400, "Ava Izadpanah", "h2", size=28) + text(686, 440, "Filmmaker · Storyteller", "caps", ROSE)
-b += text(686, 560, "+971 — — —\nhello@nxa.studio\n@nxa.studio · Dubai", "body_m", INK, 0.85) + xmark(1090, 400, 40)
+b += text(686, 560, "+971 — — —\nemail — — —\n@nxa.uae · Dubai", "body_m", INK, 0.85) + xmark(1090, 400, 40)
 b += text(96, 710, "Business card — 85 × 55 mm, front & back", "caps", INK, 0.7)
 b += rect(1220, 360, 604, 330, SAND, rx=8)
 b += text(1250, 400, "Navid Atrvash", "h2", size=26) + text(1250, 440, "Photographer & Art Director", "caps", ROSE)
-b += text(1250, 480, "NxA — Navid × Ava · Dubai\nnxa.studio · @nxa.studio", "body_m", INK, 0.8) + logo(1250, 600, 180)
+b += text(1250, 480, "NxA — Navid × Ava · Dubai\n@nxa.uae", "body_m", INK, 0.8) + logo(1250, 600, 180)
 b += text(1220, 710, "Email signature", "caps", INK, 0.7)
 b += rect(96, 780, 1728, 220, INK, rx=8) + clipped(1100, 780, 724, 220, lines35(1100, 780, 724, 220, 28, ROSE, 2, opacity=0.5), rx=8)
 b += logo(140, 860, 300, BONE, ROSE)
@@ -495,7 +495,7 @@ page(s, "Rules & AI policy", BONE, b)
 s += 1
 
 # Back cover
-b = xmark((W - 300) / 2, 420, 300) + text(W / 2, 640, "hello@nxa.studio  ·  @nxa.studio  ·  Dubai", "caps", BONE, 0.7, anchor="middle")
+b = xmark((W - 300) / 2, 420, 300) + text(W / 2, 640, "@nxa.uae  ·  Dubai", "caps", BONE, 0.7, anchor="middle")
 b += text(96, H - 100, "NxA Brand Identity Book — v1.0 · 2026", "caps", BONE, 0.5)
 page(s, "Back cover", INK, b)
 

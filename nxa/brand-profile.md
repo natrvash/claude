@@ -61,7 +61,8 @@
 - **Hard-sell rules:** At most 1 in 5 posts sells. The work sells the rest.
 
 ## Channels
-- **Active platforms:** Instagram (new NxA page). Months 1–2 stand alone. From month 2–3, collaborate with @natrvash and Ava's pages.
+- **Active platforms:** Instagram only for months 1–3 (@nxa.uae) — see `strategy/social-strategy.md`.
+- **Collabs:** Months 1–2 stand alone. From month 2–3, collaborate with @natrvash and Ava's pages.
 - **Languages / markets:** English, Dubai.
 
 ## Goals (3 months)
@@ -83,7 +84,7 @@
 - **Rejected reference:** Cereal magazine. Right discipline, too calm for NxA.
 
 ## Open items
-- Instagram handle (e.g. @nxa.studio / @navidxava / @nxa.dubai).
+- Instagram handle: **@nxa.uae** (decided).
 - Why misko.in and Harena.studio: what exactly to borrow?
 - Why deepstudio_creative is the anti-model.
 - Confirm award wording and past-work permissions.
