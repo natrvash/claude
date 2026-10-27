@@ -51,7 +51,7 @@ def text(x, y, content, style, fill=INK, opacity=1, anchor="start", size=None, c
     baseline = y + fsize * 0.8
     spans = []
     for i, line in enumerate(content.split("\n")):
-        line = line.upper() if caps else line
+        line = (line.upper() if caps else line) or "\u00a0"  # empty tspans collapse
         dy = 0 if i == 0 else fsize * lh
         spans.append(f'<tspan x="{x}" dy="{dy:.1f}">{escape(line)}</tspan>')
     return (
@@ -130,6 +130,7 @@ def bands(x, y, w, h, step, color):
 
 
 def chrome(num, section, dark=False):
+    num = str(num).zfill(2)
     c = BONE if dark else INK
     return text(96, 64, "NxA — Brand Identity Book", "caps", c, 0.55) + text(
         W - 96, 64, f"{num}  ·  {section}", "caps", c, 0.55, anchor="end"
@@ -138,6 +139,7 @@ def chrome(num, section, dark=False):
 
 def header(num, section, title, dark=False, size=None):
     fg = BONE if dark else INK
+    num = str(num).zfill(2)
     return chrome(num, section, dark) + text(96, 150, f"{num} — {section}", "caps", ROSE) + text(96, 190, title, "display", fg, size=size)
 
 
