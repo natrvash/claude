@@ -19,7 +19,7 @@ This file collects everything we have defined for NxA so far: the brand foundati
 8. [Personality](#8-personality)
 9. [Voice and tone](#9-voice-and-tone)
 10. [Logo](#10-logo)
-11. [Colour](#11-colour)
+11. [Colour](#11-colour) (incl. neutral bases)
 12. [Alternative palettes](#12-alternative-palettes)
 13. [Typography](#13-typography)
 14. [Pattern](#14-pattern)
@@ -214,12 +214,12 @@ These set the visual level. The paying clients are their smaller neighbours: **t
 
 | Version | Letters | × | Use on |
 |---|---|---|---|
-| Primary | Ink | Damask Rose | Bone or Sand |
-| Reversed | Bone | Damask Rose | Ink |
-| On Rose | Bone | Ink | Damask Rose — statements |
+| Primary | Ink | Damask Rose | Porcelain or Titanium |
+| Reversed | Porcelain | Damask Rose | Ink |
+| On Rose | Porcelain | Ink | Damask Rose — statements |
 | Mono Ink | Ink | Ink | Print, stamps, emboss |
-| Mono Bone | Bone | Bone | Over dark photos |
-| The × | — | Rose / Ink / Bone | Avatar, favicon, sign-off |
+| Mono Porcelain | Porcelain | Porcelain | Over dark photos |
+| The × | — | Rose / Ink / Porcelain | Avatar, favicon, sign-off |
 
 **Clear space:** on every side = the height of the ×.
 **Minimum size:** wordmark 120 px digital / 30 mm print. Below that, or inside a circle, use the × alone.
@@ -238,32 +238,29 @@ A: M89.831 4.134L127.289 30.215L133.230 30.215L89.831 0.000L86.409 0.000L86.409 
 
 ## 11. Colour
 
-**Quiet base. One spark.**
+**Quiet base. One spark.** Porcelain and Titanium replaced Bone and Dubai Sand in October 2026: the warm creams read too close to Claude's own colours, and the cool pair is more futuristic.
 
 | Name | HEX | RGB | Use | Share |
 |---|---|---|---|---|
-| Bone | `#F6F2EC` | 246 242 236 | Main background, paper | 45% |
+| Porcelain | `#F4F4F2` | 244 244 242 | Main background, paper | 45% |
 | Ink | `#111111` | 17 17 17 | Letters, text, night frames | 30% |
-| Dubai Sand | `#E6DCCD` | 230 220 205 | Warm surfaces, cards | 12% |
+| Titanium | `#C9CDD4` | 201 205 212 | Cool surfaces, cards | 12% |
 | Damask Rose | `#D62271` | 214 34 113 | The ×, accents — one per frame | 8% |
-| Stone | `#8A8279` | 138 130 121 | Secondary text, lines | 3% |
+| Slate | `#7D838D` | 125 131 141 | Secondary text, lines | 3% |
 | Blush | `#F4D6E2` | 244 214 226 | Soft highlights, Ava's side | 2% |
 
-**Rule:** Rose is a spark, never a flood. *Damask Rose* is a nod to the Persian rose; Sand and Stone keep black + pink from reading as nightlife or beauty.
+**Rule:** Rose is a spark, never a flood. *Damask Rose* is a nod to the Persian rose.
 
-### Open decision: replace Bone + Dubai Sand?
+### Neutral bases — change the shirt, keep the suit
 
-Bone and Dubai Sand read close to Claude's own cream colours. These options swap only the light pair (and the matching grey); Ink, Damask Rose and Blush stay. Visual comparison: `brand-book/exports/NxA-neutral-options.jpg`.
+Porcelain + Titanium is the core. The other bases may replace it for a client or a series; Ink, Damask Rose and Blush never change.
 
-| Option | Light (replaces Bone) | Mid (replaces Dubai Sand) | Grey (replaces Stone) | Feel |
-|---|---|---|---|---|
-| Current | Bone `#F6F2EC` | Dubai Sand `#E6DCCD` | Stone `#8A8279` | Warm cream — close to Claude |
-| **A · Porcelain** | Porcelain `#F4F4F2` | Concrete `#D6D6D1` | Steel `#85857F` | Neutral gallery white. Most futuristic; Rose pops hardest. |
-| **B · Pearl** | Pearl `#F5EFF1` | Mauve Stone `#DCCBD1` | Mauve Grey `#8A7F84` | White with a breath of rose. Own-able, ties to the ×. |
-| **C · Pistachio Cream** | Mist `#F0F2EC` | Sage `#CDD3C3` | Olive Grey `#858A7C` | Green is magenta's opposite: fresh, Persian, food-friendly. |
-| **D · Chrome** | Cloud `#EEF0F3` | Titanium `#C9CDD4` | Slate `#7D838D` | Cool silver-blue. Tech, night, architecture. |
-
-**Recommendation:** **A · Porcelain** for the NxA page itself, since it's the most futuristic and lets the Rose × do the talking. Keep **C · Sage** as a secondary for food and Persian content.
+| Base | Light · mid · grey | Use for |
+|---|---|---|
+| **Core · Porcelain + Titanium** | `#F4F4F2` · `#C9CDD4` · `#7D838D` | The NxA page, decks, the brand book |
+| Pearl + Mauve Stone | `#F5EFF1` · `#DCCBD1` · `#8A7F84` | Beauty, fashion, Ava's styling work |
+| Mist + Sage | `#F0F2EC` · `#CDD3C3` · `#858A7C` | Food, Persian kitchens, cafés |
+| Bone + Dubai Sand | `#F6F2EC` · `#E6DCCD` · `#8A8279` | Warm hotels, golden hour, desert |
 
 ---
 
@@ -274,9 +271,9 @@ Bone and Dubai Sand read close to Claude's own cream colours. These options swap
 | Palette | For | Colours |
 |---|---|---|
 | **Night Majlis** | Restaurants after dark, events, launches | Ink `#111111` · Aubergine `#2B1A24` · Damask Rose `#D62271` · Brass `#B08D57` · Smoke `#3A3633` |
-| **Saffron & Pistachio** | Persian food, Ava's kitchen, warm F&B | Saffron `#E3A33B` · Pistachio `#A8B96A` · Pomegranate `#9E1F3A` · Rosewater `#F2D7D5` · Bone `#F6F2EC` |
+| **Saffron & Pistachio** | Persian food, Ava's kitchen, warm F&B | Saffron `#E3A33B` · Pistachio `#A8B96A` · Pomegranate `#9E1F3A` · Rosewater `#F2D7D5` · Porcelain `#F4F4F2` |
 | **Gallery** | Architecture, interiors, Navid's spaces | Chalk `#FAFAF7` · Concrete `#BDB8B0` · Shadow Blue `#A9B7C2` · Graphite `#3B3B3B` · Damask Rose `#D62271` |
-| **Desert Noon** | Hotels, exteriors, golden hour | Dubai Sand `#E6DCCD` · Terracotta `#C46A4A` · Date `#5B3A29` · Palm `#4F5D45` · Bone `#F6F2EC` |
+| **Desert Noon** | Hotels, exteriors, golden hour | Dubai Sand `#E6DCCD` · Terracotta `#C46A4A` · Date `#5B3A29` · Palm `#4F5D45` · Porcelain `#F4F4F2` |
 
 ---
 
@@ -330,9 +327,9 @@ Bone and Dubai Sand read close to Claude's own cream colours. These options swap
 | Pattern | Look | Use |
 |---|---|---|
 | **The 35° weave** | Rose lines on Ink | Story backgrounds, end cards |
-| **The lattice** | Ink cross-lines on Sand — a nod to mashrabiya screens | Packaging, proposals |
-| **The × field** | Ink ×s on Bone, every seventh in Rose | Stickers, tissue paper |
-| **The split** | Wide Bone bands on Rose | Announcements, launches |
+| **The lattice** | Ink cross-lines on Titanium — a nod to mashrabiya screens | Packaging, proposals |
+| **The × field** | Ink ×s on Porcelain, every seventh in Rose | Stickers, tissue paper |
+| **The split** | Wide Porcelain bands on Rose | Announcements, launches |
 
 **Rule:** Patterns dress our own surfaces — never behind client photos or food.
 
@@ -344,8 +341,8 @@ Bone and Dubai Sand read close to Claude's own cream colours. These options swap
 
 | Mood | For | Base · second · accent |
 |---|---|---|
-| **Morning light** | Cafés, breakfast, daylight spaces | Bone · Sand · Rose |
-| **Golden hour** | Hotels, terraces, exteriors | Sand · Terracotta · Date |
+| **Morning light** | Cafés, breakfast, daylight spaces | Porcelain · Titanium · Rose |
+| **Golden hour** | Hotels, terraces, exteriors | Dubai Sand · Terracotta · Date |
 | **Night service** | Restaurants at night, events | Ink · Aubergine · Rose |
 | **Studio** | NxA news, launches, offers | Rose · Blush · Ink |
 | **Gallery** | Architecture & interiors | Chalk · Concrete · Graphite |
@@ -355,11 +352,11 @@ Bone and Dubai Sand read close to Claude's own cream colours. These options swap
 | Highlight | Icon | Colour |
 |---|---|---|
 | Work | Frame corners | Ink |
-| Before/After | Circle split on 35° | Sand |
+| Before/After | Circle split on 35° | Titanium |
 | Food | Plate | Blush |
 | Spaces | Arch | Concrete |
 | Studio | Camera | Rose |
-| Book | × | Bone |
+| Book | × | Porcelain |
 
 **Story templates:** Question box ("Ask Ava anything about food styling ↓") · Behind the scenes ("6:40 am. The light is ready. Are you?") · Book a shoot ("Your place deserves a better suit. DM 'SUIT'."). Text in the top 60%, stickers in the safe middle, the × in the corner.
 
@@ -391,7 +388,7 @@ Bone and Dubai Sand read close to Claude's own cream colours. These options swap
 | 0–3 s | Open on the result — the finished plate, the lit room. On-screen words match spoken words. |
 | Ava | On camera, talking to one person. Warm, quick, real. Never read off a phone. |
 | Navid | Behind the camera. Seen through hands, process and the final frame. |
-| Captions | Always burned in: Manrope Bold, Bone on Ink at 70%, lower third, max 2 lines. |
+| Captions | Always burned in: Manrope Bold, Porcelain on Ink at 70%, lower third, max 2 lines. |
 | The × wipe | Signature transition: a 35° diagonal wipe from before to after. |
 | End card | The × on Ink, 1 second, no music sting. |
 
@@ -433,7 +430,7 @@ Rose appears in one tile per row, max. No puzzle grids — each post stands alon
 |---|---|---|
 | Before → after | 1080×1350 | Split on the 35° line, BEFORE/AFTER labels |
 | Carousel cover | 1080×1350 | Ink; Syne headline + one serif line, e.g. "3 things that make a café look expensive (none of them cost money)" |
-| Quote / point of view | 1080×1350 | Bone; serif italic, e.g. "Looking expensive is a decision, not a budget." |
+| Quote / point of view | 1080×1350 | Porcelain; serif italic, e.g. "Looking expensive is a decision, not a budget." |
 | Reel cover | 1080×1920 (safe 4:5) | Caption box on Ink at 75% |
 
 **Rules:** one message per post · the × sign-off only, never the full logo on content · one Rose element per post · captions follow the voice section.
@@ -511,13 +508,13 @@ Rose appears in one tile per row, max. No puzzle grids — each post stands alon
 | This document | `nxa/NxA-Brand-Identity.md` |
 | Brand profile (for AI skills) | `nxa/brand-profile.md` |
 | Draft logo (original) | `nxa/assets/logo-draft.svg` |
-| Brand book PDF / AI | `nxa/brand-book/exports/NxA-Brand-Identity-Book.pdf` · `.ai` |
+| Brand book PDF / AI (31 pages) | `nxa/brand-book/exports/NxA-Brand-Identity-Book.pdf` · `.ai` |
 | Brand book JPGs (4K) | `nxa/brand-book/exports/jpg/` |
 | Logo pack (SVG/PNG/JPG/PDF) | `nxa/brand-book/exports/logo-pack/` |
 | Everything zipped | `nxa/brand-book/exports/NxA-Brand-Kit.zip` |
 | Editable SVG pages | `nxa/brand-book/pages/` |
 | Pattern swatches | `nxa/brand-book/patterns/` |
-| Figma — pages 01–14, colour variables, text styles, logo components | https://www.figma.com/design/kGzpC4tkbXu0qLiKvfCqBm |
+| Figma — pages 01–14, colour variables, text styles, logo components (still uses the old Bone/Sand values) | https://www.figma.com/design/kGzpC4tkbXu0qLiKvfCqBm |
 | Figma — empty file for pages 15–30 | https://www.figma.com/design/VeSyl0jbomJSVNshFiTHVJ |
 
 ---

@@ -13,17 +13,19 @@ OUT = ROOT / "pages"
 W, H = 1920, 1080
 TAN35 = 0.7002
 
-INK, BONE, SAND, STONE, ROSE, BLUSH = "#111111", "#F6F2EC", "#E6DCCD", "#8A8279", "#D62271", "#F4D6E2"
+# Core palette. BONE/SAND/STONE hold Porcelain, Titanium and Slate (renamed Oct 2026).
+INK, BONE, SAND, STONE, ROSE, BLUSH = "#111111", "#F4F4F2", "#C9CDD4", "#7D838D", "#D62271", "#F4D6E2"
+DUBAI_SAND = "#E6DCCD"  # kept for the warm Desert Noon palette and Golden hour mood
 
 ALT_PALETTES = [
     ("Night Majlis", "Restaurants after dark, events, launches",
      [("Ink", INK), ("Aubergine", "#2B1A24"), ("Damask Rose", ROSE), ("Brass", "#B08D57"), ("Smoke", "#3A3633")]),
     ("Saffron & Pistachio", "Persian food, Ava’s kitchen, warm F&B",
-     [("Saffron", "#E3A33B"), ("Pistachio", "#A8B96A"), ("Pomegranate", "#9E1F3A"), ("Rosewater", "#F2D7D5"), ("Bone", BONE)]),
+     [("Saffron", "#E3A33B"), ("Pistachio", "#A8B96A"), ("Pomegranate", "#9E1F3A"), ("Rosewater", "#F2D7D5"), ("Porcelain", BONE)]),
     ("Gallery", "Architecture, interiors, Navid’s spaces",
      [("Chalk", "#FAFAF7"), ("Concrete", "#BDB8B0"), ("Shadow Blue", "#A9B7C2"), ("Graphite", "#3B3B3B"), ("Damask Rose", ROSE)]),
     ("Desert Noon", "Hotels, exteriors, golden hour, Dubai light",
-     [("Dubai Sand", SAND), ("Terracotta", "#C46A4A"), ("Date", "#5B3A29"), ("Palm", "#4F5D45"), ("Bone", BONE)]),
+     [("Dubai Sand", DUBAI_SAND), ("Terracotta", "#C46A4A"), ("Date", "#5B3A29"), ("Palm", "#4F5D45"), ("Porcelain", BONE)]),
 ]
 
 P_N = "M0.000 0.000L0.000 30.215L3.422 30.215L3.422 4.135L40.880 30.215L44.302 30.215L44.302 0.000L40.880 0.000L40.880 26.079L3.422 0.000Z"
@@ -186,9 +188,9 @@ s = 13  # first section rendered here (13 → page 15)
 # 13 — Colour
 swatches = [
     ("Ink", INK, "17 17 17", "Letters, text, night frames", BONE, 30),
-    ("Bone", BONE, "246 242 236", "Main background, paper", INK, 45),
-    ("Dubai Sand", SAND, "230 220 205", "Warm surfaces, cards", INK, 12),
-    ("Stone", STONE, "138 130 121", "Secondary text, lines", BONE, 3),
+    ("Porcelain", BONE, "244 244 242", "Main background, paper", INK, 45),
+    ("Titanium", SAND, "201 205 212", "Cool surfaces, cards", INK, 12),
+    ("Slate", STONE, "125 131 141", "Secondary text, lines", BONE, 3),
     ("Damask Rose", ROSE, "214 34 113", "The ×, accents, one per frame", BONE, 8),
     ("Blush", BLUSH, "244 214 226", "Soft highlights, Ava’s side", INK, 2),
 ]
@@ -206,7 +208,7 @@ for name, hexv, _, _, _, pct in [swatches[1], swatches[0]] + swatches[2:]:
     w = (W - 192) * pct / 100
     b += rect(x, 900, w, 56, hexv, stroke=INK if hexv == BONE else None)
     x += w
-b += text(96, 980, "Bone 45 · Ink 30 · Sand 12 · Rose 8 · Stone 3 · Blush 2 — Rose is a spark, never a flood.", "body_m", INK, 0.75)
+b += text(96, 980, "Porcelain 45 · Ink 30 · Titanium 12 · Rose 8 · Slate 3 · Blush 2 — Rose is a spark, never a flood.", "body_m", INK, 0.75)
 page(s, "Colour", BONE, b)
 s += 1
 
@@ -219,10 +221,30 @@ for i, (name, use, cols) in enumerate(ALT_PALETTES):
     for j, (cn, hv) in enumerate(cols):
         x = 700 + j * 230
         b += rect(x, y, 220, 130, hv, stroke=INK if hv in (BONE, "#FAFAF7") else None)
-        light = hv in (BONE, "#FAFAF7", SAND, "#F2D7D5", "#BDB8B0", "#A9B7C2", "#E3A33B", "#A8B96A")
+        light = hv in (BONE, "#FAFAF7", SAND, DUBAI_SAND, "#F2D7D5", "#BDB8B0", "#A9B7C2", "#E3A33B", "#A8B96A")
         b += text(x + 14, y + 80, f"{cn}\n{hv}", "caps", INK if light else BONE, 0.85, size=12)
 b += text(96, 1020, "Rule: the logo’s × stays Damask Rose or Ink in every palette.", "caps", ROSE)
 page(s, "Alternative palettes", BONE, b)
+s += 1
+
+# Neutral bases
+NEUTRALS = [
+    ("Core · Porcelain + Titanium", "The NxA page, decks, the brand book", BONE, SAND, STONE),
+    ("Pearl + Mauve Stone", "Beauty, fashion, Ava’s styling work", "#F5EFF1", "#DCCBD1", "#8A7F84"),
+    ("Mist + Sage", "Food, Persian kitchens, cafés", "#F0F2EC", "#CDD3C3", "#858A7C"),
+    ("Bone + Dubai Sand", "Warm hotels, golden hour, desert", "#F6F2EC", DUBAI_SAND, "#8A8279"),
+]
+b = header(s, "Neutral bases", "Change the shirt, keep the suit.", size=72)
+b += text(96, 290, "Porcelain + Titanium is the core. The other bases may replace it for a client or a series — Ink, Damask Rose and Blush never change.", "body_m", INK, 0.8)
+for i, (name, use, light, mid, grey) in enumerate(NEUTRALS):
+    x, y = 96 + (i % 2) * 880, 350 + (i // 2) * 350
+    b += rect(x, y, 848, 320, light, stroke=INK) + rect(x + 560, y + 24, 264, 272, mid)
+    b += logo(x + 32, y + 40, 320) + text(x + 32, y + 150, name, "h2", size=24) + text(x + 32, y + 190, use, "body_m", INK, 0.75, size=15)
+    for k, c in enumerate([light, mid, grey, INK, ROSE, BLUSH]):
+        b += rect(x + 32 + k * 56, y + 230, 48, 48, c, stroke=INK)
+    b += text(x + 32, y + 288, f"{light} · {mid} · {grey}", "caps", INK, 0.6, size=11)
+    b += text(x + 584, y + 48, "Same café.\nNew suit.", "serif_m", INK, size=30) + xmark(x + 770, y + 250, 36)
+page(s, "Neutral bases", BONE, b)
 s += 1
 
 # 15 — Typography
@@ -278,7 +300,7 @@ tiles = [
     ("The 35° weave", "Rose lines on Ink. Story backgrounds, end cards.", INK, lambda x, y, w, h: lines35(x, y, w, h, 28, ROSE, 3)),
     ("The lattice", "A nod to mashrabiya screens. Packaging, proposals.", SAND, lambda x, y, w, h: lines35(x, y, w, h, 46, INK, 2, both=True, opacity=0.8)),
     ("The × field", "Ink ×s, every seventh in Rose. Stickers, tissue paper.", BONE, lambda x, y, w, h: xfield(x, y, w, h, 26, 58, INK, ROSE)),
-    ("The split", "Wide Bone bands on Rose. Announcements, launches.", ROSE, lambda x, y, w, h: bands(x, y, w, h, 60, BONE)),
+    ("The split", "Wide Porcelain bands on Rose. Announcements, launches.", ROSE, lambda x, y, w, h: bands(x, y, w, h, 60, BONE)),
 ]
 for i, (name, use, bg, fn) in enumerate(tiles):
     x, y, w, h = 96 + i * 440, 330, 410, 470
@@ -295,7 +317,7 @@ s += 1
 # 18 — Colour moods for covers & stories
 MOODS = [
     ("Morning light", "Cafés, breakfast, daylight spaces", BONE, SAND, ROSE, INK),
-    ("Golden hour", "Hotels, terraces, exteriors", SAND, "#C46A4A", "#5B3A29", INK),
+    ("Golden hour", "Hotels, terraces, exteriors", DUBAI_SAND, "#C46A4A", "#5B3A29", INK),
     ("Night service", "Restaurants at night, events", INK, "#2B1A24", ROSE, BONE),
     ("Studio", "NxA news, launches, offers", ROSE, BLUSH, INK, BONE),
     ("Gallery", "Architecture & interiors", "#FAFAF7", "#BDB8B0", "#3B3B3B", INK),
@@ -338,7 +360,7 @@ rules = [
     ("0–3 s", "Open on the result — the finished plate, the lit room.\nThe words on screen match the words spoken."),
     ("Ava", "On camera, talking to one person.\nWarm, quick, real. Never read off a phone."),
     ("Navid", "Behind the camera. Seen through hands,\nprocess and the final frame."),
-    ("Captions", "Always burned in: Manrope Bold, Bone on Ink\nat 70%, lower third, max 2 lines."),
+    ("Captions", "Always burned in: Manrope Bold, Porcelain on Ink\nat 70%, lower third, max 2 lines."),
     ("The × wipe", "Our signature transition: a 35° diagonal\nwipe from before to after."),
     ("End card", "The × on Ink, 1 second, no music sting."),
 ]

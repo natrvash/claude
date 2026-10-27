@@ -26,13 +26,13 @@ files = {
     "NxA-logo-reversed": wordmark(BONE, ROSE),
     "NxA-logo-on-rose": wordmark(BONE, INK),
     "NxA-logo-mono-ink": wordmark(INK, INK),
-    "NxA-logo-mono-bone": wordmark(BONE, BONE),
-    "NxA-logo-primary-on-bone": wordmark(INK, ROSE, BONE, 16),
+    "NxA-logo-mono-porcelain": wordmark(BONE, BONE),
+    "NxA-logo-primary-on-porcelain": wordmark(INK, ROSE, BONE, 16),
     "NxA-logo-reversed-on-ink": wordmark(BONE, ROSE, INK, 16),
     "NxA-logo-on-rose-background": wordmark(BONE, INK, ROSE, 16),
     "NxA-mark-rose": mark_only(ROSE),
     "NxA-mark-ink": mark_only(INK),
-    "NxA-mark-bone": mark_only(BONE),
+    "NxA-mark-porcelain": mark_only(BONE),
     "NxA-instagram-avatar": mark_only(ROSE, INK, circle=False),
 }
 for name, svg in files.items():

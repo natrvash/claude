@@ -17,7 +17,7 @@ page(-1, "Cover", INK, b)
 sections = [
     "Our story", "The big idea", "Mission, vision, values", "Positioning", "Audience", "Personality",
     "Voice & tone", "The logo", "Construction — the 35° line", "Logo variations", "Clear space & size",
-    "Logo misuse", "Colour", "Alternative palettes", "Typography", "Type system", "Pattern", "Colour moods",
+    "Logo misuse", "Colour", "Alternative palettes", "Neutral bases", "Typography", "Type system", "Pattern", "Colour moods",
     "Photography", "Film & Reels", "Graphic devices", "Instagram profile", "Instagram grid", "Post templates",
     "Story & highlight covers", "Stationery", "Rules & AI policy",
 ]
@@ -172,9 +172,9 @@ page(9, "Construction", SAND, b)
 tw, th = 560, 340
 b = chrome(10, "Logo variations") + text(96, 150, "10 — Logo variations", "caps", ROSE)
 tiles = [
-    ("Primary — on Bone or Sand", BONE, INK, ROSE, False), ("Reversed — on Ink", INK, BONE, ROSE, False),
+    ("Primary — on Porcelain or Titanium", BONE, INK, ROSE, False), ("Reversed — on Ink", INK, BONE, ROSE, False),
     ("On Rose — for statements", ROSE, BONE, INK, False), ("Mono Ink — print, stamps, emboss", SAND, INK, INK, False),
-    ("Mono Bone — over dark photos", STONE, BONE, BONE, False), ("The × — avatar, favicon, sign-off", INK, None, ROSE, True),
+    ("Mono Porcelain — over dark photos", STONE, BONE, BONE, False), ("The × — avatar, favicon, sign-off", INK, None, ROSE, True),
 ]
 for k, (label, bg, letters, mark, only_x) in enumerate(tiles):
     x, y = 96 + (k % 3) * (tw + 24), 200 + (k // 3) * (th + 80)

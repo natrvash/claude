@@ -1,10 +1,10 @@
 # NxA Brand Identity Book
 
-All 30 pages, ready to use:
+All 31 pages, ready to use:
 
 | File | What it is |
 |---|---|
-| `exports/NxA-Brand-Identity-Book.pdf` | Full 30-page book, for sharing and printing |
+| `exports/NxA-Brand-Identity-Book.pdf` | Full 31-page book, for sharing and printing |
 | `exports/NxA-Brand-Identity-Book.ai` | The same book for Adobe Illustrator (PDF-compatible .ai) |
 | `exports/jpg/` | Every page as a 3840×2160 JPG |
 | `exports/logo-pack/` | Logo, × mark and Instagram avatar in SVG, PNG (transparent, 3000 px), JPG and PDF |
