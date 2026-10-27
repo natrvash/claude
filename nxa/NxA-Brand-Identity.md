@@ -407,15 +407,18 @@ Porcelain + Titanium is the core. The other bases may replace it for a client or
 
 ## 19. Instagram identity
 
-### Profile
+### Profile (decided in Chapter 3 — full setup in `instagram/instagram-setup.md`)
 | Field | Content |
 |---|---|
 | Handle | **@nxa.uae** |
-| Name field (searchable) | NxA · Dubai Content Studio |
-| Bio | Two artists. One frame. ×<br>Photo, film & styling for Dubai's independent places.<br>From t-shirt to suit ↓ |
+| Name field (searchable) | NxA · Photo & Film Studio Dubai |
+| Bio | Art-directed photo & film for Dubai's independent places.<br>Made by hand and camera. ×<br>DM 'SUIT' ↓ |
+| Account | Business · category Photographer · WhatsApp button |
 | Avatar | Rose × on Ink |
-| Link | One booking link — never a link list |
-| Highlights | Work · Before/After · Food · Spaces · Studio · Book |
+| Link | natrvash.com/nxa — a dedicated NxA page on the existing site (`website/natrvash-nxa.html`) |
+| Highlights | Mise-en-scène · Behind · Us · Book (`instagram/highlight-covers/`) |
+| Makeover series | **Mise-en-scène No.01 — [venue]** |
+| Captions | Short + one story line |
 
 ### Grid — a rhythm, not a puzzle
 Every 3 posts:
@@ -507,6 +510,8 @@ Rose appears in one tile per row, max. No puzzle grids — each post stands alon
 |---|---|
 | This document | `nxa/NxA-Brand-Identity.md` |
 | Social strategy (Chapter 2) | `nxa/strategy/social-strategy.md` |
+| Instagram setup + first 9 posts (Chapter 3) | `nxa/instagram/instagram-setup.md` · `nxa/instagram/launch-9.md` |
+| NxA web page for natrvash.com/nxa | `nxa/website/natrvash-nxa.html` |
 | Brand profile (for AI skills) | `nxa/brand-profile.md` |
 | Draft logo (original) | `nxa/assets/logo-draft.svg` |
 | Brand book PDF / AI (31 pages) | `nxa/brand-book/exports/NxA-Brand-Identity-Book.pdf` · `.ai` |
@@ -533,4 +538,4 @@ Rose appears in one tile per row, max. No puzzle grids — each post stands alon
 - [ ] Test the A (reads as Δ) with 3 strangers
 - [ ] Real portraits of Navid and Ava for the story page
 
-**Done:** Chapter 2 — Strategy (`strategy/social-strategy.md`). **Next:** Chapter 3 — Instagram.
+**Done:** Chapter 2 — Strategy (`strategy/social-strategy.md`). **Done:** Chapter 3 — Instagram. **Next:** Chapter 4 — Content.
