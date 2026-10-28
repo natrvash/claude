@@ -172,11 +172,24 @@
         v._hls = null;
       }
       if (/\.m3u8(\?|$)/.test(src) && window.Hls && window.Hls.isSupported()) {
+        // iPad Safari (and every iPad browser, which all run on it) plays hls.js through its
+        // ManagedMediaSource only when AirPlay is turned off for the video.
+        v.disableRemotePlayback = true;
         // Each clip is one short segment, so the quality it starts at is the quality it keeps:
         // start from the sharpest version the screen can use instead of the smallest.
-        v._hls = new window.Hls({ capLevelToPlayerSize: true, abrEwmaDefaultEstimate: 20000000, testBandwidth: false });
-        v._hls.loadSource(src);
-        v._hls.attachMedia(v);
+        var hls = new window.Hls({ capLevelToPlayerSize: true, abrEwmaDefaultEstimate: 20000000, testBandwidth: false });
+        v._hls = hls;
+        hls.on(window.Hls.Events.ERROR, function (event, data) {
+          if (!data.fatal || v._hls !== hls) return;
+          // If hls.js cannot play here, hand the stream to the browser's own player.
+          hls.destroy();
+          v._hls = null;
+          v.src = src;
+          v.load();
+          if (v.classList.contains('is-front')) play(v);
+        });
+        hls.loadSource(src);
+        hls.attachMedia(v);
       } else {
         v.src = src;
         v.load();
