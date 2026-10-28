@@ -487,34 +487,24 @@ body:has(.na-hero) .page-section:has(.na-about) {
 .na-org li span::before {
   content: " · ";
 }
-/* Published projects: a grid of website logos, gray until hovered. */
+/* Published projects: a grid of website logos, all black, magenta-free until hovered. */
 .na-pubs {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 18px 16px;
+  gap: 22px 14px;
 }
 .na-pubs a {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 6px;
-  text-decoration: none;
-  font-size: 11px;
-  letter-spacing: .06em;
-  text-align: center;
+  display: block;
 }
 .na-pubs img {
   display: block;
   width: 100%;
-  height: 44px;
+  aspect-ratio: 12 / 5;
   object-fit: contain;
-  filter: grayscale(1);
-  mix-blend-mode: multiply;
-  opacity: .8;
-  transition: filter .3s, opacity .3s;
+  opacity: .85;
+  transition: opacity .3s;
 }
 .na-pubs a:hover img {
-  filter: none;
   opacity: 1;
 }
 
