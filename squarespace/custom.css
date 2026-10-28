@@ -1,0 +1,528 @@
+/*
+  natrvash.com — Navid Atrvash × Ava Izadpanah
+  Paste all of this into: Website › Pages › Website Tools › Custom Code › Custom CSS
+
+  The header rules apply to the whole site. Everything else only switches on for a
+  page that holds the hero code block (.na-hero), so other pages stay as they are.
+*/
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&display=swap');
+
+:root {
+  --na-magenta: #D71270;
+  --na-magenta-light: #EF2C93;
+  --na-black: #040606;
+  --na-gray-dark: #656263;
+  --na-gray: #A7A5A6;
+  --na-gray-light: #BDBCBC;
+  --na-ink: #231F20;
+  --na-ease: cubic-bezier(.65, 0, .35, 1);
+}
+
+.na-sr {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+/* ---------- Header: white, sign only, magenta strip, menu button (whole site) ---------- */
+
+#header {
+  transition: transform .5s var(--na-ease);
+}
+#header::before {
+  content: "";
+  position: absolute;
+  z-index: 3;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 5px;
+  background: var(--na-magenta);
+}
+#header .header-background,
+#header .header-menu-bg {
+  background: #FFFFFF !important;
+  opacity: 1 !important;
+}
+#header .header-border,
+#header .header-dropshadow {
+  display: none !important;
+}
+#header .header-inner {
+  min-height: 44px;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  padding-left: 19px !important;
+  padding-right: 6px !important;
+}
+#header .header-title-logo img,
+#header .header-mobile-logo img {
+  width: auto !important;
+  max-height: 20px !important;
+}
+#header .burger-inner .top-bun,
+#header .burger-inner .patty,
+#header .burger-inner .bottom-bun {
+  background-color: var(--na-black) !important;
+}
+#header .header-burger-btn:hover .burger-inner > div {
+  background-color: var(--na-magenta) !important;
+}
+
+/* The menu opens as a small white panel under the header instead of a full-screen overlay. */
+#header .header-menu {
+  top: 44px !important;
+  right: 0 !important;
+  bottom: auto !important;
+  left: auto !important;
+  width: 260px;
+  max-width: 100vw;
+  height: auto !important;
+  text-align: left !important;
+  border-left: 5px solid var(--na-magenta);
+  background: #FFFFFF;
+}
+#header .header-menu .header-menu-nav {
+  padding: 8px 24px 14px;
+}
+#header .header-menu-nav-item {
+  padding: 0 !important;
+}
+#header .header-menu-nav-item a,
+#header .header-menu-controls-control {
+  display: block;
+  padding: 11px 0 !important;
+  font-family: 'Source Sans 3', system-ui, sans-serif !important;
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  letter-spacing: .14em !important;
+  text-transform: uppercase;
+  color: var(--na-black) !important;
+}
+#header .header-menu-nav-item a:hover {
+  color: var(--na-magenta) !important;
+}
+
+/* ---------- Home page only from here on ---------- */
+
+html:has(.na-hero) {
+  scroll-snap-type: y mandatory;
+}
+body:has(.na-hero) #page .page-section {
+  scroll-snap-align: start;
+}
+body:has(.na-hero) #footer-sections {
+  scroll-snap-align: end;
+}
+
+/* The header slides out of view while the film is on screen. */
+body.na-at-hero #header {
+  transform: translateY(-110%);
+}
+
+/* Magenta frame (drawn by the footer script) and the zoom that goes with it. */
+.na-mframe {
+  position: fixed;
+  inset: 0;
+  z-index: 9998;
+  pointer-events: none;
+  border: 0 solid var(--na-magenta);
+  transition: border-width .8s var(--na-ease);
+}
+body.na-framed .na-mframe {
+  border-width: 2.5vh 2.5vw;
+}
+body.na-framed2 .na-mframe {
+  border-width: 5vh 5vw;
+}
+/* The zoom scales what is inside a section, never the section itself, so page-by-page scrolling stays exact. */
+.na-hero,
+body:has(.na-hero) .page-section:has(.gallery-masonry) > .content-wrapper,
+body:has(.na-hero) #footer-sections .page-section > .content-wrapper {
+  transition: transform .8s var(--na-ease);
+}
+body.na-framed .na-hero {
+  transform: scale(.95);
+}
+body.na-framed2 .page-section:has(.gallery-masonry) > .content-wrapper,
+body.na-framed2 #footer-sections .page-section > .content-wrapper {
+  transform: scale(.9);
+}
+body:has(.na-hero) #header {
+  position: fixed !important;
+  top: 0;
+  right: 0;
+  left: 0;
+}
+body.na-framed2 #header {
+  transform-origin: 50% 50vh;
+  transform: scale(.9);
+}
+
+/* ---------- Section 1: film ---------- */
+
+body:has(.na-hero) .page-section:has(.na-hero) {
+  position: relative;
+  height: 100vh;
+  height: 100svh;
+  min-height: 0 !important;
+  padding: 0 !important;
+  overflow: hidden;
+  background: var(--na-black);
+}
+.page-section:has(.na-hero) :is(.content-wrapper, .content, [data-fluid-engine], [class^="fe-"], .fe-block, .sqs-block, .sqs-block-content, .sqs-block-code) {
+  position: static !important;
+}
+.page-section:has(.na-hero) .content-wrapper {
+  padding: 0 !important;
+  max-width: none !important;
+}
+.na-hero {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  overflow: hidden;
+  background: var(--na-black);
+}
+.na-hero-v {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+.na-hero-v.is-front {
+  opacity: 1;
+}
+.na-hero-shade {
+  position: absolute;
+  inset: 0;
+  background: rgba(4, 6, 6, .35);
+}
+.na-persp {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+.na-hero-sign {
+  position: absolute;
+  left: 50%;
+  bottom: 7%;
+  transform: translateX(-50%);
+  padding: 10px;
+  color: #FFFFFF !important;
+}
+.na-hero-sign svg {
+  display: block;
+  width: 80px;
+  height: 54px;
+  transform-origin: 50% 100%;
+}
+
+/* ---------- Section 2: photography (Squarespace Gallery › Slideshow: Simple) ---------- */
+
+body:has(.na-hero) .page-section:has(.gallery-slideshow) {
+  height: 100vh;
+  height: 100svh;
+  min-height: 0 !important;
+  padding: 0 !important;
+  background: #FFFFFF !important;
+}
+body:has(.na-hero) .page-section:has(.gallery-slideshow) .section-background {
+  background: #FFFFFF !important;
+}
+body:has(.na-hero) .page-section:has(.gallery-slideshow) .content-wrapper {
+  padding: 0 !important;
+  max-width: none !important;
+}
+body:has(.na-hero) .gallery-slideshow {
+  height: 100vh !important;
+  height: 100svh !important;
+  max-width: none !important;
+  margin: 0 !important;
+  padding: 72px 10% 28px !important;
+  box-sizing: border-box;
+}
+body:has(.na-hero) .gallery-slideshow .gallery-slideshow-wrapper {
+  margin-bottom: 46px !important;
+}
+body:has(.na-hero) .gallery-slideshow .gallery-slideshow-list {
+  left: 0 !important;
+  right: 0 !important;
+}
+body:has(.na-hero) .gallery-slideshow .gallery-slideshow-thumbnails {
+  display: none !important;
+}
+/* Thin arrows out in the white margins. */
+body:has(.na-hero) .gallery-slideshow .gallery-slideshow-controls {
+  left: -10vw;
+  width: calc(100% + 20vw);
+}
+body:has(.na-hero) .gallery-slideshow .gallery-slideshow-control {
+  width: 10vw !important;
+}
+body:has(.na-hero) .gallery-slideshow .gallery-slideshow-control-btn {
+  opacity: 1;
+}
+body:has(.na-hero) .gallery-slideshow .gallery-slideshow-control-btn::before {
+  display: none;
+}
+body:has(.na-hero) .gallery-slideshow .gallery-slideshow-control-btn svg {
+  stroke: var(--na-gray-dark) !important;
+  stroke-width: 1px;
+}
+body:has(.na-hero) .gallery-slideshow .gallery-slideshow-control-btn:hover svg {
+  stroke: var(--na-magenta) !important;
+}
+/* The image title becomes "Project : …" with a magenta rule under it. */
+body:has(.na-hero) .gallery-slideshow .gallery-caption-slideshow {
+  position: absolute;
+  left: 0;
+  right: auto;
+  top: calc(100% + 18px);
+  bottom: auto;
+  padding: 0;
+  text-align: left;
+}
+body:has(.na-hero) .gallery-slideshow .gallery-caption-wrapper {
+  display: inline-block;
+  min-width: 260px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--na-magenta);
+}
+body:has(.na-hero) .gallery-slideshow .gallery-caption-content {
+  margin: 0;
+  font-family: 'Source Sans 3', system-ui, sans-serif;
+  font-size: 14px;
+  color: var(--na-ink);
+}
+body:has(.na-hero) .gallery-slideshow .gallery-caption-content::before {
+  content: "Project : ";
+}
+
+/* ---------- Section 3: about (code block) ---------- */
+
+body:has(.na-hero) .page-section:has(.na-about) {
+  min-height: 100vh;
+  min-height: 100svh;
+  background: var(--na-gray) !important;
+}
+.na-about {
+  display: grid;
+  grid-template-columns: 280px minmax(0, 1fr);
+  align-items: center;
+  gap: 36px 40px;
+  padding: 60px 0 8px;
+  font-family: 'Source Sans 3', system-ui, sans-serif;
+  font-size: 15px;
+  color: var(--na-ink);
+  text-align: left;
+}
+.na-about p {
+  margin: 0;
+}
+.na-about a {
+  color: inherit;
+}
+.na-about a:hover {
+  color: var(--na-magenta);
+}
+.na-lab {
+  font-size: 13px !important;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+}
+.na-lab b {
+  font-weight: 700;
+}
+.na-about-photo {
+  margin: 0;
+}
+.na-about-photo img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1814 / 2000;
+  object-fit: cover;
+}
+.na-about-photo figcaption {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 8px;
+  font-size: 13px;
+}
+.na-about-people {
+  display: flex;
+  flex-direction: column;
+}
+.na-person {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 18px 36px;
+  padding: 22px 26px;
+  border: 2px solid var(--na-gray-dark);
+}
+.na-person-name {
+  display: flex;
+  flex: 0 0 230px;
+  flex-direction: column;
+  gap: 12px;
+}
+.na-person-name h2 {
+  margin: 0;
+  line-height: 0;
+  color: var(--na-black);
+}
+.na-wordmark-navid {
+  width: 159px;
+  height: 34px;
+}
+.na-wordmark-ava {
+  width: 202px;
+  height: 34px;
+}
+.na-person-text {
+  display: flex;
+  flex: 1 1 280px;
+  flex-direction: column;
+  gap: 12px;
+  min-width: 0;
+}
+.na-person-text > p:first-child {
+  font-size: 16px;
+  line-height: 1.55;
+}
+.na-contact {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 24px;
+  font-size: 14px;
+}
+.na-x {
+  position: relative;
+  z-index: 1;
+  height: 20px;
+  padding-left: 28px;
+}
+.na-x svg {
+  display: block;
+  width: 52px;
+  height: 52px;
+  margin-top: -16px;
+}
+.na-about-lists {
+  display: flex;
+  flex-wrap: wrap;
+  grid-column: 1 / -1;
+  gap: 28px 0;
+  padding-top: 28px;
+  border-top: 1px solid var(--na-gray-dark);
+}
+.na-list {
+  display: flex;
+  flex: 1 1 340px;
+  flex-direction: column;
+  gap: 12px;
+}
+.na-awards {
+  padding-right: 40px;
+}
+.na-published {
+  padding-left: 40px;
+  border-left: 1px solid var(--na-gray-dark);
+}
+.na-awards ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.na-awards li {
+  display: flex;
+  gap: 20px;
+  margin: 0;
+  padding: 8px 0;
+  border-bottom: 1px solid #C9C8C8;
+}
+.na-awards li::before {
+  display: none;
+}
+.na-pubs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+.na-pubs a {
+  display: flex;
+  flex: 1 1 110px;
+  flex-direction: column;
+  gap: 6px;
+  text-decoration: none;
+  font-size: 14px;
+}
+.na-pubs img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  border: 1px solid var(--na-gray-dark);
+  background: var(--na-gray-light);
+}
+
+/* ---------- Section 4: portfolio (Squarespace Gallery › Grid: Masonry) + site footer ---------- */
+
+body:has(.na-hero) .page-section:has(.gallery-masonry) {
+  min-height: 100vh;
+  min-height: 100svh;
+}
+body:has(.na-hero) #footer-sections .sqs-svg-icon--wrapper,
+body:has(.na-hero) #footer-sections .social-icon {
+  color: var(--na-gray) !important;
+  fill: var(--na-gray) !important;
+}
+
+/* ---------- Phones ---------- */
+
+@media (max-width: 767px) {
+  body:has(.na-hero) .gallery-slideshow {
+    padding: 60px 44px 20px !important;
+  }
+  body:has(.na-hero) .gallery-slideshow .gallery-slideshow-controls {
+    left: -44px;
+    width: calc(100% + 88px);
+  }
+  body:has(.na-hero) .gallery-slideshow .gallery-slideshow-control {
+    width: 44px !important;
+  }
+  .na-about {
+    grid-template-columns: minmax(0, 1fr);
+    row-gap: 28px;
+    padding-top: 40px;
+  }
+  .na-person {
+    padding: 18px;
+  }
+  .na-awards {
+    padding-right: 0;
+  }
+  .na-published {
+    padding-left: 0;
+    border-left: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #header,
+  .na-hero,
+  .na-mframe,
+  .na-hero-v,
+  body:has(.na-hero) .page-section > .content-wrapper {
+    transition: none !important;
+  }
+}

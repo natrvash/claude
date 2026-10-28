@@ -1,0 +1,46 @@
+<!--
+  Section 1 — Film (hero)
+  Paste into a Code Block in the FIRST section of the home page.
+
+  Video order — change only these two attributes:
+    data-mode="shuffle"              every visit starts from a random clip, all clips random
+    data-mode="fixed"                clips play in exactly the order of the list below
+    data-mode="first-then-shuffle"   the first N clips of the list play in order, then the rest at random
+    data-first="2"                   N for "first-then-shuffle" (ignored by the other modes)
+
+  Clip list — one clip per line, in the order you want. Upload clips with
+  Link > File in any text block; Squarespace gives them an address like /s/na-hero-01.mp4.
+-->
+<div class="na-hero" data-mode="shuffle" data-first="2">
+  <ul class="na-hero-clips" hidden>
+    <li>/s/na-hero-01.mp4</li>
+    <li>/s/na-hero-02.mp4</li>
+    <li>/s/na-hero-03.mp4</li>
+    <li>/s/na-hero-04.mp4</li>
+    <li>/s/na-hero-05.mp4</li>
+    <li>/s/na-hero-06.mp4</li>
+    <li>/s/na-hero-07.mp4</li>
+    <li>/s/na-hero-08.mp4</li>
+    <li>/s/na-hero-09.mp4</li>
+    <li>/s/na-hero-10.mp4</li>
+  </ul>
+
+  <h1 class="na-sr">Navid Atrvash × Ava Izadpanah — architectural photography and film</h1>
+  <video class="na-hero-v is-front" muted playsinline preload="auto" aria-hidden="true"></video>
+  <video class="na-hero-v" muted playsinline preload="auto" aria-hidden="true"></video>
+  <div class="na-hero-shade"></div>
+
+  <svg class="na-persp" viewBox="0 0 1440 900" preserveAspectRatio="none" aria-hidden="true">
+    <g fill="none" stroke="#FFFFFF" stroke-opacity="0.6" stroke-width="1">
+      <rect class="na-persp-rect" x="317" y="216" width="806" height="468"></rect>
+      <line class="na-persp-line" x1="0" y1="0" x2="317" y2="216"></line>
+      <line class="na-persp-line" x1="1440" y1="0" x2="1123" y2="216"></line>
+      <line class="na-persp-line" x1="0" y1="900" x2="317" y2="684"></line>
+      <line class="na-persp-line" x1="1440" y1="900" x2="1123" y2="684"></line>
+    </g>
+  </svg>
+
+  <a class="na-hero-sign" href="#na-next" aria-label="Scroll to photography">
+    <svg viewBox="360.6 237.1 120.5 81.5" fill="currentColor" aria-hidden="true"><path d="M 474.3 268.7 L 405.3 268.7 L 405.3 283.9 L 399.3 283.9 L 399.3 267.7 L 367.4 246.3 L 367.4 287.0 L 436.1 287.0 L 436.1 271.9 L 442.4 271.9 L 442.4 288.8 L 474.3 308.5 Z M 399.3 296.0 L 405.3 296.0 L 405.3 312.2 L 468.6 312.2 L 437.5 293.0 L 361.1 293.0 L 361.1 237.6 L 442.4 237.6 L 442.4 259.6 L 436.1 259.6 L 436.1 243.5 L 374.3 243.5 L 402.6 262.8 L 480.6 262.8 L 480.6 318.1 L 399.3 318.1 Z M 399.3 296.0"></path></svg>
+  </a>
+</div>

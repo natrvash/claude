@@ -1,0 +1,241 @@
+<!--
+  natrvash.com — Navid Atrvash × Ava Izadpanah
+  Paste all of this into: Website › Pages › Website Tools › Custom Code › Code Injection › FOOTER
+
+  It only does anything on a page that holds the hero code block (.na-hero).
+-->
+<script>
+(function () {
+  var hero = document.querySelector('.na-hero');
+  if (!hero) return;
+
+  var body = document.body;
+  var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  function sectionOf(el) {
+    return el ? el.closest('.page-section') : null;
+  }
+  var heroSection = sectionOf(hero);
+  var slideshow = document.querySelector('#page .gallery-slideshow');
+  var masonry = document.querySelector('#page .gallery-masonry');
+  var portfolioSection = sectionOf(masonry);
+  var footer = document.getElementById('footer-sections');
+  var nextSection = heroSection && heroSection.nextElementSibling;
+
+  /* ---------- Sign at the bottom of the film scrolls to the next section ---------- */
+
+  var sign = hero.querySelector('.na-hero-sign');
+  if (sign) {
+    sign.addEventListener('click', function (e) {
+      e.preventDefault();
+      var target = sectionOf(slideshow) || nextSection;
+      if (target) target.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth' });
+    });
+  }
+
+  /* ---------- Magenta frame, zoom and header, by which section is on screen ---------- */
+
+  var frame = document.createElement('div');
+  frame.className = 'na-mframe';
+  frame.setAttribute('aria-hidden', 'true');
+  body.appendChild(frame);
+
+  function covers(el, y) {
+    if (!el) return false;
+    var r = el.getBoundingClientRect();
+    return r.top <= y && r.bottom > y;
+  }
+  var mode = '';
+  function update() {
+    var mid = window.innerHeight / 2;
+    var next = 'open';
+    if (covers(heroSection, mid)) next = 'hero';
+    else if (covers(portfolioSection, mid) || covers(footer, mid)) next = 'portfolio';
+    if (next !== mode) {
+      mode = next;
+      body.classList.toggle('na-at-hero', mode === 'hero');
+      body.classList.toggle('na-framed', mode === 'hero');
+      body.classList.toggle('na-framed2', mode === 'portfolio');
+    }
+    // The portfolio and footer zoom around the middle of the screen, wherever they are scrolled to.
+    for (var k = 0; k < zoomed.length; k++) {
+      var wrap = zoomed[k];
+      var top = wrap.parentElement.getBoundingClientRect().top + wrap.offsetTop;
+      wrap.style.transformOrigin = '50% ' + (mid - top) + 'px';
+    }
+  }
+  var zoomed = [];
+  if (portfolioSection) zoomed = zoomed.concat(Array.prototype.slice.call(portfolioSection.querySelectorAll(':scope > .content-wrapper')));
+  if (footer) zoomed = zoomed.concat(Array.prototype.slice.call(footer.querySelectorAll('.page-section > .content-wrapper')));
+  window.addEventListener('scroll', update, { passive: true });
+  window.addEventListener('resize', update);
+  update();
+
+  /* ---------- Film: the clips in the order the code block asks for ---------- */
+
+  var clips = Array.prototype.map.call(hero.querySelectorAll('.na-hero-clips li'), function (li) {
+    return li.textContent.trim();
+  }).filter(Boolean);
+  var orderMode = (hero.getAttribute('data-mode') || 'shuffle').trim();
+  var firstCount = parseInt(hero.getAttribute('data-first'), 10) || 0;
+
+  function shuffled(list) {
+    var a = list.slice();
+    for (var k = a.length - 1; k > 0; k--) {
+      var j = Math.floor(Math.random() * (k + 1));
+      var t = a[k];
+      a[k] = a[j];
+      a[j] = t;
+    }
+    return a;
+  }
+  if (orderMode === 'shuffle') clips = shuffled(clips);
+  else if (orderMode === 'first-then-shuffle') clips = clips.slice(0, firstCount).concat(shuffled(clips.slice(firstCount)));
+
+  var vids = hero.querySelectorAll('.na-hero-v');
+  if (clips.length && vids.length === 2) {
+    var front = 0;
+    var index = 0;
+    var switching = false;
+    var load = function (v, src) {
+      v.muted = true;
+      v.src = src;
+      v.load();
+    };
+    var play = function (v) {
+      var p = v.play();
+      if (p && p.catch) p.catch(function () {});
+    };
+    load(vids[0], clips[0]);
+    play(vids[0]);
+    if (clips.length > 1) load(vids[1], clips[1]);
+    else vids[0].loop = true;
+
+    var onTime = function () {
+      var v = vids[front];
+      if (clips.length < 2 || switching || !v.duration || v.duration - v.currentTime > 0.9) return;
+      switching = true;
+      var other = vids[1 - front];
+      other.currentTime = 0;
+      play(other);
+      other.classList.add('is-front');
+      v.classList.remove('is-front');
+      front = 1 - front;
+      index = (index + 1) % clips.length;
+      setTimeout(function () {
+        v.pause();
+        load(v, clips[(index + 1) % clips.length]);
+        switching = false;
+      }, 1100);
+    };
+    vids[0].addEventListener('timeupdate', onTime);
+    vids[1].addEventListener('timeupdate', onTime);
+  }
+
+  /* ---------- Perspective frame that follows the pointer, a finger or a tilt ---------- */
+
+  var svg = hero.querySelector('.na-persp');
+  var rect = hero.querySelector('.na-persp-rect');
+  var lines = hero.querySelectorAll('.na-persp-line');
+  var signSvg = hero.querySelector('.na-hero-sign svg');
+  var target = null;
+  var tilt = null;
+  var box = null;
+  var signScale = 1;
+
+  function draw() {
+    var W = hero.clientWidth;
+    var H = hero.clientHeight;
+    if (!W || !H || !rect) return;
+    var w0 = 0.56 * W;
+    var h0 = 0.52 * H;
+    var a0 = w0 / h0;
+    var p = target || tilt;
+    var tx = p ? p.x : 0.5;
+    var ty = p ? p.y : 0.5;
+    // How close the pointer is to an edge (0 in the middle, 1 at an edge).
+    var t = Math.min(1, Math.max(Math.abs(2 * tx - 1), Math.abs(2 * ty - 1)));
+    // Near the edges the frame shrinks to half its area and turns 3:2 landscape.
+    var s = 1 - 0.5 * t;
+    var a = a0 + (1.5 - a0) * t;
+    var area = w0 * h0 * s * s;
+    // It never comes closer than 7.5% to the edges.
+    var mx = 0.075 * W;
+    var my = 0.075 * H;
+    var w = Math.min(Math.sqrt(area * a), W - 2 * mx);
+    var h = Math.min(Math.sqrt(area / a), H - 2 * my);
+    var cx = Math.min(Math.max(tx * W, mx + w / 2), W - mx - w / 2);
+    var cy = Math.min(Math.max(ty * H, my + h / 2), H - my - h / 2);
+    var goal = { x: cx - w / 2, y: cy - h / 2, w: w, h: h };
+    if (!box || reduceMotion) {
+      box = goal;
+    } else {
+      box.x += (goal.x - box.x) * 0.1;
+      box.y += (goal.y - box.y) * 0.1;
+      box.w += (goal.w - box.w) * 0.1;
+      box.h += (goal.h - box.h) * 0.1;
+    }
+    // The sign grows up to 20% as the pointer nears a corner.
+    var corner = Math.min(1, Math.sqrt(Math.pow(2 * tx - 1, 2) + Math.pow(2 * ty - 1, 2)) / Math.SQRT2);
+    var signGoal = 1 + 0.2 * corner;
+    signScale = reduceMotion ? signGoal : signScale + (signGoal - signScale) * 0.1;
+    if (signSvg) signSvg.style.transform = 'scale(' + signScale.toFixed(4) + ')';
+
+    svg.setAttribute('viewBox', '0 0 ' + W + ' ' + H);
+    rect.setAttribute('x', box.x);
+    rect.setAttribute('y', box.y);
+    rect.setAttribute('width', box.w);
+    rect.setAttribute('height', box.h);
+    var ends = [[0, 0, box.x, box.y], [W, 0, box.x + box.w, box.y], [0, H, box.x, box.y + box.h], [W, H, box.x + box.w, box.y + box.h]];
+    for (var k = 0; k < lines.length; k++) {
+      lines[k].setAttribute('x1', ends[k][0]);
+      lines[k].setAttribute('y1', ends[k][1]);
+      lines[k].setAttribute('x2', ends[k][2]);
+      lines[k].setAttribute('y2', ends[k][3]);
+    }
+  }
+  function tick() {
+    if (mode === 'hero') draw();
+    requestAnimationFrame(tick);
+  }
+  draw();
+  tick();
+
+  if (!reduceMotion) {
+    heroSection.addEventListener('mousemove', function (e) {
+      var r = hero.getBoundingClientRect();
+      target = { x: (e.clientX - r.left) / r.width, y: (e.clientY - r.top) / r.height };
+    });
+    heroSection.addEventListener('mouseleave', function () {
+      target = null;
+    });
+    // A finger nudges the frame only part of the way, so the swipe still scrolls.
+    var asked = false;
+    var onTouch = function (e) {
+      var DOE = window.DeviceOrientationEvent;
+      if (!asked && DOE && typeof DOE.requestPermission === 'function') {
+        asked = true;
+        DOE.requestPermission().catch(function () {});
+      }
+      if (!e.touches || !e.touches[0]) return;
+      var r = hero.getBoundingClientRect();
+      var x = (e.touches[0].clientX - r.left) / r.width;
+      var y = (e.touches[0].clientY - r.top) / r.height;
+      target = { x: 0.5 + (x - 0.5) * 0.5, y: 0.5 + (y - 0.5) * 0.5 };
+    };
+    heroSection.addEventListener('touchstart', onTouch, { passive: true });
+    heroSection.addEventListener('touchmove', onTouch, { passive: true });
+    heroSection.addEventListener('touchend', function () {
+      target = null;
+    });
+    // Tilting a phone or tablet moves the frame too.
+    window.addEventListener('deviceorientation', function (e) {
+      if (e.gamma == null || e.beta == null) return;
+      var clamp = function (v) {
+        return Math.max(-1, Math.min(1, v));
+      };
+      tilt = { x: 0.5 + clamp(e.gamma / 30) * 0.5, y: 0.5 + clamp((e.beta - 45) / 30) * 0.5 };
+    });
+  }
+})();
+</script>
