@@ -487,14 +487,11 @@ body:has(.na-hero) .page-section:has(.na-about) {
 .na-org li span::before {
   content: " · ";
 }
-/* Published projects: a grid of website logos, all black, magenta-free until hovered. */
+/* Published projects: a grid of publication logos, all in one black. */
 .na-pubs {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 22px 14px;
-}
-.na-pubs a {
-  display: block;
 }
 .na-pubs img {
   display: block;
@@ -502,10 +499,6 @@ body:has(.na-hero) .page-section:has(.na-about) {
   aspect-ratio: 12 / 5;
   object-fit: contain;
   opacity: .85;
-  transition: opacity .3s;
-}
-.na-pubs a:hover img {
-  opacity: 1;
 }
 
 /* ---------- Section 4: portfolio (Squarespace Gallery › Grid: Masonry) + site footer ---------- */
