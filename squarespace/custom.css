@@ -5,7 +5,7 @@
   The header rules apply to the whole site. Everything else only switches on for a
   page that holds the hero code block (.na-hero), so other pages stay as they are.
 */
-@import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@200;300;400;600;700&display=swap');
 
 :root {
   --na-magenta: #D71270;
@@ -397,8 +397,9 @@ body:has(.na-hero) .page-section:has(.na-about) {
   min-width: 0;
 }
 .na-person-text > p:first-child {
-  font-size: 16px;
-  line-height: 1.55;
+  font-size: 21px;
+  font-weight: 300 !important;
+  line-height: 1.45;
 }
 .na-x {
   position: relative;
