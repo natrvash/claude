@@ -167,14 +167,17 @@ body.na-framed2 #header {
 body:has(.na-hero) .page-section:has(.na-hero) {
   position: relative;
   height: 100vh;
-  height: 100svh;
+  height: ~"100svh";
   min-height: 0 !important;
   padding: 0 !important;
   overflow: hidden;
   background: var(--na-black);
 }
-.page-section:has(.na-hero) :is(.content-wrapper, .content, [data-fluid-engine], [class^="fe-"], .fe-block, .sqs-block, .sqs-block-content, .sqs-block-code) {
+.page-section:has(.na-hero) :is(.content-wrapper, .content, [data-fluid-engine], .fluid-engine, [class^="fe-"], .fe-block, .sqs-block, .sqs-block-content, .sqs-block-code) {
   position: static !important;
+}
+body:has(.na-hero) .page-section:has(.na-hero) .fluid-engine {
+  display: block !important;
 }
 .page-section:has(.na-hero) .content-wrapper {
   padding: 0 !important;
@@ -230,7 +233,7 @@ body:has(.na-hero) .page-section:has(.na-hero) {
 
 body:has(.na-hero) .page-section:has(.gallery-slideshow) {
   height: 100vh;
-  height: 100svh;
+  height: ~"100svh";
   min-height: 0 !important;
   padding: 0 !important;
   background: #FFFFFF !important;
@@ -244,7 +247,7 @@ body:has(.na-hero) .page-section:has(.gallery-slideshow) .content-wrapper {
 }
 body:has(.na-hero) .gallery-slideshow {
   height: 100vh !important;
-  height: 100svh !important;
+  height: ~"100svh" !important;
   max-width: none !important;
   margin: 0 !important;
   padding: 72px 10% 28px !important;
@@ -263,7 +266,7 @@ body:has(.na-hero) .gallery-slideshow .gallery-slideshow-thumbnails {
 /* Thin arrows out in the white margins. */
 body:has(.na-hero) .gallery-slideshow .gallery-slideshow-controls {
   left: -10vw;
-  width: calc(100% + 20vw);
+  width: ~"calc(100% + 20vw)";
 }
 body:has(.na-hero) .gallery-slideshow .gallery-slideshow-control {
   width: 10vw !important;
@@ -286,7 +289,7 @@ body:has(.na-hero) .gallery-slideshow .gallery-caption-slideshow {
   position: absolute;
   left: 0;
   right: auto;
-  top: calc(100% + 18px);
+  top: ~"calc(100% + 18px)";
   bottom: auto;
   padding: 0;
   text-align: left;
@@ -309,17 +312,29 @@ body:has(.na-hero) .gallery-slideshow .gallery-caption-content::before {
 
 /* ---------- Section 3: about (code block) ---------- */
 
-body:has(.na-hero) .page-section:has(.na-about) {
-  min-height: 100vh;
-  min-height: 100svh;
+body:has(.na-hero) .page-section:has(.na-about),
+body:has(.na-hero) .page-section:has(.na-about) .section-background {
+  min-height: 100vh !important;
+  min-height: ~"100svh" !important;
   background: var(--na-gray) !important;
+}
+/* The block sets its own layout, so Squarespace's block grid steps aside here
+   (otherwise the block's height in the editor stretches the whole section). */
+body:has(.na-hero) .page-section:has(.na-about) .fluid-engine {
+  display: block !important;
+}
+body:has(.na-hero) .page-section:has(.na-about) .content-wrapper {
+  padding: 0 !important;
+  max-width: none !important;
 }
 .na-about {
   display: grid;
-  grid-template-columns: 264px minmax(0, 1fr);
+  grid-template-columns: ~"264px minmax(0, 1fr)";
   align-items: center;
   gap: 28px 40px;
-  padding: 56px 0 8px;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 56px 4vw 24px;
   font-family: 'Source Sans 3', system-ui, sans-serif;
   font-size: 15px;
   color: var(--na-ink);
@@ -348,7 +363,7 @@ body:has(.na-hero) .page-section:has(.na-about) {
 .na-about-photo img {
   display: block;
   width: 100%;
-  aspect-ratio: 1814 / 2000;
+  aspect-ratio: ~"1814 / 2000";
   object-fit: cover;
 }
 .na-about-photo figcaption {
@@ -360,7 +375,7 @@ body:has(.na-hero) .page-section:has(.na-about) {
 /* The two boxes always share one height, whichever text is longer. */
 .na-about-people {
   display: grid;
-  grid-template-rows: 1fr auto 1fr;
+  grid-template-rows: ~"1fr auto 1fr";
 }
 .na-person {
   display: flex;
@@ -416,7 +431,7 @@ body:has(.na-hero) .page-section:has(.na-about) {
 .na-about-lists {
   display: flex;
   flex-wrap: wrap;
-  grid-column: 1 / -1;
+  grid-column: ~"1 / -1";
   gap: 28px 0;
   padding-top: 22px;
   border-top: 1px solid var(--na-gray-dark);
@@ -491,13 +506,13 @@ body:has(.na-hero) .page-section:has(.na-about) {
 /* Published projects: a grid of publication logos, all in one black. */
 .na-pubs {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: ~"repeat(3, minmax(0, 1fr))";
   gap: 22px 14px;
 }
 .na-pubs img {
   display: block;
   width: 100%;
-  aspect-ratio: 12 / 5;
+  aspect-ratio: ~"12 / 5";
   object-fit: contain;
   opacity: .85;
 }
@@ -506,7 +521,7 @@ body:has(.na-hero) .page-section:has(.na-about) {
 
 body:has(.na-hero) .page-section:has(.gallery-masonry) {
   min-height: 100vh;
-  min-height: 100svh;
+  min-height: ~"100svh";
 }
 body:has(.na-hero) #footer-sections .sqs-svg-icon--wrapper,
 body:has(.na-hero) #footer-sections .social-icon {
@@ -522,15 +537,15 @@ body:has(.na-hero) #footer-sections .social-icon {
   }
   body:has(.na-hero) .gallery-slideshow .gallery-slideshow-controls {
     left: -44px;
-    width: calc(100% + 88px);
+    width: ~"calc(100% + 88px)";
   }
   body:has(.na-hero) .gallery-slideshow .gallery-slideshow-control {
     width: 44px !important;
   }
   .na-about {
-    grid-template-columns: minmax(0, 1fr);
+    grid-template-columns: ~"minmax(0, 1fr)";
     row-gap: 28px;
-    padding-top: 40px;
+    padding: 64px 20px 32px;
   }
   .na-person {
     padding: 18px;
