@@ -294,7 +294,7 @@ body:has(.na-hero) #page .page-section:has(.sqs-native-video):not(:has(.na-hero)
 body:has(.na-hero) .page-section:has(.na-hero) {
   position: relative;
   height: 100vh;
-  height: ~"100svh";
+  height: ~"100dvh";
   min-height: 0 !important;
   padding: 0 !important;
   overflow: hidden;
@@ -360,7 +360,7 @@ body:has(.na-hero) .page-section:has(.na-hero) .fluid-engine {
 
 body:has(.na-hero) .page-section:has(.gallery-slideshow) {
   height: 100vh;
-  height: ~"100svh";
+  height: ~"100dvh";
   min-height: 0 !important;
   padding: 0 !important;
   background: #FFFFFF !important;
@@ -374,14 +374,19 @@ body:has(.na-hero) .page-section:has(.gallery-slideshow) .content-wrapper {
 }
 body:has(.na-hero) .gallery-slideshow {
   height: 100vh !important;
-  height: ~"100svh" !important;
+  height: ~"100dvh" !important;
   max-width: none !important;
   margin: 0 !important;
-  padding: 72px 10% 28px !important;
+  padding: 64px 10% 0 !important;
   box-sizing: border-box;
 }
+/* The space under the photo is the caption's. */
 body:has(.na-hero) .gallery-slideshow .gallery-slideshow-wrapper {
-  margin-bottom: 46px !important;
+  margin-bottom: 160px !important;
+}
+/* The photo rests on its caption, whatever its shape. */
+body:has(.na-hero) .gallery-slideshow .gallery-slideshow-item-img img {
+  object-position: 50% 100% !important;
 }
 body:has(.na-hero) .gallery-slideshow .gallery-slideshow-list {
   left: 0 !important;
@@ -411,26 +416,29 @@ body:has(.na-hero) .gallery-slideshow .gallery-slideshow-control-btn svg {
 body:has(.na-hero) .gallery-slideshow .gallery-slideshow-control-btn:hover svg {
   stroke: var(--na-magenta) !important;
 }
-/* The image title becomes "Project : …" with a magenta rule under it. */
+/* The image title becomes "Project : …", centred under the photo with a magenta rule under it. */
 body:has(.na-hero) .gallery-slideshow .gallery-caption-slideshow {
   position: absolute;
   left: 0;
-  right: auto;
-  top: ~"calc(100% + 18px)";
+  right: 0;
+  top: ~"calc(100% + 20px)";
   bottom: auto;
   padding: 0;
-  text-align: left;
+  text-align: center;
 }
 body:has(.na-hero) .gallery-slideshow .gallery-caption-wrapper {
   display: inline-block;
-  min-width: 260px;
-  padding-bottom: 8px;
+  max-width: 860px;
+  padding-bottom: 10px;
   border-bottom: 1px solid var(--na-magenta);
 }
 body:has(.na-hero) .gallery-slideshow .gallery-caption-content {
   margin: 0;
   font-family: 'Source Sans 3', system-ui, sans-serif;
-  font-size: 14px;
+  font-size: 16px;
+  line-height: 1.5;
+  white-space: pre-line;
+  text-align: center;
   color: var(--na-ink);
 }
 body:has(.na-hero) .gallery-slideshow .gallery-caption-content::before {
@@ -442,7 +450,7 @@ body:has(.na-hero) .gallery-slideshow .gallery-caption-content::before {
 body:has(.na-hero) .page-section:has(.na-about),
 body:has(.na-hero) .page-section:has(.na-about) .section-background {
   min-height: 100vh !important;
-  min-height: ~"100svh" !important;
+  min-height: ~"100dvh" !important;
   background: var(--na-gray) !important;
 }
 /* The block sets its own layout, so Squarespace's block grid steps aside here
@@ -648,7 +656,7 @@ body:has(.na-hero) .page-section:has(.na-about) .content-wrapper {
 
 body:has(.na-hero) .page-section:has(.gallery-masonry) {
   min-height: 100vh;
-  min-height: ~"100svh";
+  min-height: ~"100dvh";
 }
 body:has(.na-hero) #footer-sections .sqs-svg-icon--wrapper,
 body:has(.na-hero) #footer-sections .social-icon {
@@ -659,15 +667,29 @@ body:has(.na-hero) #footer-sections .social-icon {
 /* ---------- Phones ---------- */
 
 @media (max-width: 767px) {
+  /* Phones scroll freely through the long About page and settle on the pages around it. */
+  html:has(.na-hero) {
+    scroll-snap-type: y proximity;
+  }
   body:has(.na-hero) .gallery-slideshow {
-    padding: 60px 44px 20px !important;
+    padding: 72px 44px 0 !important;
+  }
+  body:has(.na-hero) .gallery-slideshow .gallery-slideshow-wrapper {
+    margin-bottom: 190px !important;
+  }
+  body:has(.na-hero) .gallery-slideshow .gallery-caption-content {
+    font-size: 14px;
+    line-height: 1.45;
   }
   body:has(.na-hero) .gallery-slideshow .gallery-slideshow-controls {
     left: -44px;
     width: ~"calc(100% + 88px)";
   }
+  /* The arrows sit level with the photo, which rests at the bottom of its space. */
   body:has(.na-hero) .gallery-slideshow .gallery-slideshow-control {
     width: 44px !important;
+    align-items: flex-end !important;
+    padding-bottom: 84px;
   }
   .na-about {
     grid-template-columns: ~"minmax(0, 1fr)";
