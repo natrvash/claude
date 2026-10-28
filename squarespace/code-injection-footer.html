@@ -125,6 +125,15 @@
     }).map(function (c) {
       return c.url;
     });
+    // The store's own players would each download their whole video; only their addresses are needed.
+    store.forEach(function (el) {
+      Array.prototype.forEach.call(el.querySelectorAll('video'), function (v) {
+        v.pause();
+        v.removeAttribute('src');
+        v.load();
+      });
+      el.parentNode.removeChild(el);
+    });
   } else {
     clips = Array.prototype.map.call(hero.querySelectorAll('.na-hero-clips li'), function (li) {
       return li.textContent.trim();
@@ -146,18 +155,48 @@
   if (orderMode === 'shuffle') clips = shuffled(clips);
   else if (orderMode === 'first-then-shuffle') clips = clips.slice(0, firstCount).concat(shuffled(clips.slice(firstCount)));
 
-  // Squarespace stores uploaded videos as HLS streams (.m3u8); hls.js plays them where the
-  // browser cannot on its own.
+  // Squarespace stores uploaded videos as HLS streams (.m3u8). Apple devices play them with their
+  // own player (on an iPhone or iPad every browser runs on Safari's engine, where hls.js can stall
+  // without an error); everywhere else hls.js plays them.
+  var isHls = function (src) {
+    return /\.m3u8(\?|$)/.test(src);
+  };
+  var appleNative = navigator.vendor === 'Apple Computer, Inc.' &&
+    !!document.createElement('video').canPlayType('application/vnd.apple.mpegurl');
+
   function withPlayer(done) {
-    var hls = clips.some(function (c) {
-      return /\.m3u8(\?|$)/.test(c);
-    });
-    if (!hls || window.Hls) return done();
+    if (appleNative || !clips.some(isHls) || window.Hls) return done();
     var tag = document.createElement('script');
     tag.src = 'https://cdnjs.cloudflare.com/ajax/libs/hls.js/1.5.13/hls.min.js';
     tag.onload = done;
     tag.onerror = done;
     document.head.appendChild(tag);
+  }
+
+  // A native player starts on the first version in the stream's list, the smallest, and a clip
+  // is too short for it to step up; so it gets the sharpest version's own playlist directly.
+  function sharpest(src, done) {
+    if (!window.fetch) return done(src);
+    fetch(src).then(function (r) {
+      return r.text();
+    }).then(function (list) {
+      var best = src;
+      var bestHeight = 0;
+      var lines = list.split(/\r?\n/);
+      for (var k = 0; k < lines.length; k++) {
+        var m = /^#EXT-X-STREAM-INF:.*RESOLUTION=\d+x(\d+)/.exec(lines[k]);
+        if (!m || +m[1] <= bestHeight) continue;
+        for (var j = k + 1; j < lines.length; j++) {
+          if (!lines[j] || lines[j].charAt(0) === '#') continue;
+          best = new URL(lines[j], src).href;
+          bestHeight = +m[1];
+          break;
+        }
+      }
+      done(best);
+    }).catch(function () {
+      done(src);
+    });
   }
 
   var vids = hero.querySelectorAll('.na-hero-v');
@@ -167,13 +206,29 @@
     var switching = false;
     var load = function (v, src) {
       v.muted = true;
+      v._want = src;
       if (v._hls) {
         v._hls.destroy();
         v._hls = null;
       }
-      if (/\.m3u8(\?|$)/.test(src) && window.Hls && window.Hls.isSupported()) {
-        // iPad Safari (and every iPad browser, which all run on it) plays hls.js through its
-        // ManagedMediaSource only when AirPlay is turned off for the video.
+      if (isHls(src) && appleNative) {
+        sharpest(src, function (url) {
+          if (v._want !== src) return;
+          if (url !== src) {
+            // Should the sharpest version not play, the whole stream still will.
+            v.onerror = function () {
+              v.onerror = null;
+              if (v._want !== src) return;
+              v.src = src;
+              v.load();
+              if (v.classList.contains('is-front')) play(v);
+            };
+          }
+          v.src = url;
+          v.load();
+          if (v.classList.contains('is-front')) play(v);
+        });
+      } else if (isHls(src) && window.Hls && window.Hls.isSupported()) {
         v.disableRemotePlayback = true;
         // Each clip is one short segment, so the quality it starts at is the quality it keeps:
         // start from the sharpest version the screen can use instead of the smallest.
