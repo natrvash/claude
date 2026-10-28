@@ -127,6 +127,8 @@
     });
     // The store's own players would each download their whole video; only their addresses are needed.
     store.forEach(function (el) {
+      var section = el.closest('.page-section');
+      if (section) section.style.display = 'none';
       Array.prototype.forEach.call(el.querySelectorAll('video'), function (v) {
         v.pause();
         v.removeAttribute('src');
