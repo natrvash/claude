@@ -27,10 +27,14 @@
   white-space: nowrap;
 }
 
-/* ---------- Header: white, sign only, magenta strip, menu button (whole site) ---------- */
+/* ---------- Header: white, sign only, magenta strip, menu button (whole site) ----------
+   These rules set the look whatever is chosen in Edit Site Header. */
 
 #header {
   transition: transform .5s var(--na-ease);
+}
+#header .header-announcement-bar-wrapper {
+  padding: 0 !important;
 }
 #header::before {
   content: "";
@@ -52,24 +56,88 @@
   display: none !important;
 }
 #header .header-inner {
+  box-sizing: border-box;
+  width: 100% !important;
   min-height: 44px;
-  padding-top: 0 !important;
-  padding-bottom: 0 !important;
-  padding-left: 19px !important;
-  padding-right: 6px !important;
+  max-width: none !important;
+  padding: 0 6px 0 19px !important;
+}
+#header .header-display-desktop,
+#header .header-display-mobile {
+  align-items: center;
+  min-height: 44px;
+}
+
+/* The black sign is the logo, whichever logo image is uploaded. */
+#header .header-title-logo a,
+#header .header-mobile-logo a {
+  display: block !important;
+  width: 30px !important;
+  height: 20px !important;
+  background: ~"url(data:image/svg+xml,%3Csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20viewBox=%27360.6%20237.1%20120.5%2081.5%27%3E%3Cpath%20fill=%27%23040606%27%20d=%27M%20474.3%20268.7%20L%20405.3%20268.7%20L%20405.3%20283.9%20L%20399.3%20283.9%20L%20399.3%20267.7%20L%20367.4%20246.3%20L%20367.4%20287.0%20L%20436.1%20287.0%20L%20436.1%20271.9%20L%20442.4%20271.9%20L%20442.4%20288.8%20L%20474.3%20308.5%20Z%20M%20399.3%20296.0%20L%20405.3%20296.0%20L%20405.3%20312.2%20L%20468.6%20312.2%20L%20437.5%20293.0%20L%20361.1%20293.0%20L%20361.1%20237.6%20L%20442.4%20237.6%20L%20442.4%20259.6%20L%20436.1%20259.6%20L%20436.1%20243.5%20L%20374.3%20243.5%20L%20402.6%20262.8%20L%20480.6%20262.8%20L%20480.6%20318.1%20L%20399.3%20318.1%20Z%20M%20399.3%20296.0%27/%3E%3C/svg%3E) left center / contain no-repeat";
 }
 #header .header-title-logo img,
 #header .header-mobile-logo img {
-  width: auto !important;
-  max-height: 20px !important;
+  width: 30px !important;
+  height: 20px !important;
+  opacity: 0 !important;
 }
-#header .burger-inner .top-bun,
-#header .burger-inner .patty,
-#header .burger-inner .bottom-bun {
-  background-color: var(--na-black) !important;
+#header .header-title-text {
+  display: none !important;
 }
-#header .header-burger-btn:hover .burger-inner > div {
-  background-color: var(--na-magenta) !important;
+
+/* The page list lives in the menu button on every screen size. */
+#header .header-display-desktop .header-nav,
+#header .header-display-desktop .header-actions {
+  display: none !important;
+}
+#header .header-display-desktop .header-title-nav-wrapper {
+  flex: 1 1 auto;
+}
+#header .header-display-desktop .header-burger {
+  display: flex !important;
+  margin-left: auto;
+}
+
+/* Menu button: three thin lines, a cross while the menu is open. */
+#header .burger-inner {
+  position: relative;
+}
+#header .burger-inner > div {
+  display: none !important;
+}
+#header .burger-inner::before,
+#header .burger-inner::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 22px;
+  height: 1.5px;
+  margin: -1px 0 0 -11px;
+  background: var(--na-black);
+  transition: transform .3s var(--na-ease), box-shadow .3s var(--na-ease), background .2s;
+}
+#header .burger-inner::before {
+  box-shadow: 0 -7px 0 var(--na-black), 0 7px 0 var(--na-black);
+}
+#header .burger-inner::after {
+  opacity: 0;
+}
+#header .header-burger-btn:hover .burger-inner::before,
+#header .header-burger-btn:hover .burger-inner::after {
+  background: var(--na-magenta);
+}
+#header .header-burger-btn:hover .burger-inner::before {
+  box-shadow: 0 -7px 0 var(--na-magenta), 0 7px 0 var(--na-magenta);
+}
+body.header--menu-open #header .header-burger-btn .burger-inner::before {
+  box-shadow: none;
+  transform: rotate(45deg);
+}
+body.header--menu-open #header .header-burger-btn .burger-inner::after {
+  opacity: 1;
+  transform: rotate(-45deg);
 }
 
 /* The menu opens as a small white panel under the header instead of a full-screen overlay. */
@@ -78,32 +146,81 @@
   right: 0 !important;
   bottom: auto !important;
   left: auto !important;
-  width: 260px;
+  width: 260px !important;
   max-width: 100vw;
   height: auto !important;
+  padding: 0 !important;
   text-align: left !important;
   border-left: 5px solid var(--na-magenta);
   background: #FFFFFF;
 }
+/* Squarespace only opens its menu on phones in some header layouts; open it everywhere. */
+body.header--menu-open #header .header-menu {
+  visibility: visible !important;
+  opacity: 1 !important;
+  pointer-events: auto !important;
+}
+body.header--menu-open #header .header-menu * {
+  visibility: inherit;
+}
 #header .header-menu .header-menu-nav {
+  position: relative;
+  height: auto !important;
   padding: 8px 24px 14px;
+  overflow: hidden;
+}
+#header .header-menu-nav-folder {
+  position: relative !important;
+  inset: auto !important;
+  height: auto !important;
+}
+/* One list at a time: the open sub-folder hides the list it came from. */
+#header .header-menu-nav-folder:not(.header-menu-nav-folder--active),
+#header .header-menu-nav-folder--open {
+  display: none !important;
+}
+#header .header-menu-nav-folder--active {
+  transform: none !important;
+}
+#header .header-menu-nav-folder-content,
+#header .header-menu-nav-wrapper {
+  height: auto !important;
+  min-height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
 }
 #header .header-menu-nav-item {
+  display: block !important;
+  margin: 0 !important;
   padding: 0 !important;
+  text-align: left !important;
 }
 #header .header-menu-nav-item a,
 #header .header-menu-controls-control {
-  display: block;
+  display: flex !important;
+  align-items: center;
+  gap: 8px;
+  width: 100% !important;
+  margin: 0 !important;
   padding: 11px 0 !important;
   font-family: 'Source Sans 3', system-ui, sans-serif !important;
   font-size: 13px !important;
   font-weight: 600 !important;
   letter-spacing: .14em !important;
+  line-height: 1.2 !important;
+  text-align: left !important;
   text-transform: uppercase;
   color: var(--na-black) !important;
 }
-#header .header-menu-nav-item a:hover {
+#header .header-menu-nav-item-content {
+  font: inherit !important;
+}
+#header .header-menu-nav-item a:hover,
+#header .header-menu-controls-control:hover {
   color: var(--na-magenta) !important;
+}
+#header .header-menu svg {
+  stroke: currentColor;
 }
 
 /* ---------- Home page only from here on ---------- */
