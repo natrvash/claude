@@ -2,8 +2,35 @@
   natrvash.com — Navid Atrvash × Ava Izadpanah
   Paste all of this into: Website › Pages › Website Tools › Custom Code › Code Injection › FOOTER
 
-  It only does anything on a page that holds the hero code block (.na-hero).
+  The first script runs on every page; the second only on the page that holds the
+  hero code block (.na-hero).
 -->
+<script>
+/* Squarespace's entrance animations (slide / fade / scale in) sometimes miss a very tall
+   block that is already on screen when the page opens, such as the Selective Projects grid on
+   a phone, and leave it invisible until the first scroll. Play any that are on screen but
+   have not started. */
+(function () {
+  var kinds = { preSlide: 'slideIn', preFade: 'fadeIn', preScale: 'scaleIn', preClip: 'clipIn', preFlex: 'flexIn' };
+  function wake() {
+    var h = window.innerHeight;
+    Object.keys(kinds).forEach(function (pre) {
+      Array.prototype.forEach.call(document.getElementsByClassName(pre), function (el) {
+        if (el.classList.contains(kinds[pre])) return;
+        var r = el.getBoundingClientRect();
+        if (r.top < h && r.bottom > 0) el.classList.add(kinds[pre]);
+      });
+    });
+  }
+  window.addEventListener('load', function () {
+    setTimeout(wake, 600);
+    setTimeout(wake, 1500);
+  });
+  window.addEventListener('pageshow', function (e) {
+    if (e.persisted) setTimeout(wake, 300);
+  });
+})();
+</script>
 <script>
 (function () {
   var hero = document.querySelector('.na-hero');
