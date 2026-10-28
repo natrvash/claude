@@ -73,9 +73,36 @@
 
   /* ---------- Film: the clips in the order the code block asks for ---------- */
 
-  var clips = Array.prototype.map.call(hero.querySelectorAll('.na-hero-clips li'), function (li) {
-    return li.textContent.trim();
-  }).filter(Boolean);
+  // Squarespace video blocks in another section of this page are the clip store: that
+  // section stays hidden (custom.css) and its videos play here, top to bottom, left to right.
+  // Without such a section the list in the code block is used.
+  var store = Array.prototype.filter.call(document.querySelectorAll('#page .sqs-native-video[data-config-video]'), function (el) {
+    return !heroSection.contains(el);
+  });
+  var clips;
+  if (store.length) {
+    var place = function (el) {
+      var cs = getComputedStyle(el.closest('.fe-block') || el);
+      return [parseInt(cs.gridRowStart, 10) || 0, parseInt(cs.gridColumnStart, 10) || 0];
+    };
+    clips = store.map(function (el) {
+      var cfg = {};
+      try {
+        cfg = JSON.parse(el.getAttribute('data-config-video'));
+      } catch (e) {}
+      return { at: place(el), url: (cfg.alexandriaUrl || '').replace('{variant}', 'playlist.m3u8') };
+    }).filter(function (c) {
+      return c.url;
+    }).sort(function (a, b) {
+      return a.at[0] - b.at[0] || a.at[1] - b.at[1];
+    }).map(function (c) {
+      return c.url;
+    });
+  } else {
+    clips = Array.prototype.map.call(hero.querySelectorAll('.na-hero-clips li'), function (li) {
+      return li.textContent.trim();
+    }).filter(Boolean);
+  }
   var orderMode = (hero.getAttribute('data-mode') || 'shuffle').trim();
   var firstCount = parseInt(hero.getAttribute('data-first'), 10) || 0;
 
@@ -92,15 +119,39 @@
   if (orderMode === 'shuffle') clips = shuffled(clips);
   else if (orderMode === 'first-then-shuffle') clips = clips.slice(0, firstCount).concat(shuffled(clips.slice(firstCount)));
 
+  // Squarespace stores uploaded videos as HLS streams (.m3u8); hls.js plays them where the
+  // browser cannot on its own.
+  function withPlayer(done) {
+    var hls = clips.some(function (c) {
+      return /\.m3u8(\?|$)/.test(c);
+    });
+    if (!hls || window.Hls) return done();
+    var tag = document.createElement('script');
+    tag.src = 'https://cdnjs.cloudflare.com/ajax/libs/hls.js/1.5.13/hls.min.js';
+    tag.onload = done;
+    tag.onerror = done;
+    document.head.appendChild(tag);
+  }
+
   var vids = hero.querySelectorAll('.na-hero-v');
-  if (clips.length && vids.length === 2) {
+  if (clips.length && vids.length === 2) withPlayer(function () {
     var front = 0;
     var index = 0;
     var switching = false;
     var load = function (v, src) {
       v.muted = true;
-      v.src = src;
-      v.load();
+      if (v._hls) {
+        v._hls.destroy();
+        v._hls = null;
+      }
+      if (/\.m3u8(\?|$)/.test(src) && window.Hls && window.Hls.isSupported()) {
+        v._hls = new window.Hls({ capLevelToPlayerSize: true });
+        v._hls.loadSource(src);
+        v._hls.attachMedia(v);
+      } else {
+        v.src = src;
+        v.load();
+      }
     };
     var play = function (v) {
       var p = v.play();
@@ -130,7 +181,7 @@
     };
     vids[0].addEventListener('timeupdate', onTime);
     vids[1].addEventListener('timeupdate', onTime);
-  }
+  });
 
   /* ---------- Perspective frame that follows the pointer, a finger or a tilt ---------- */
 

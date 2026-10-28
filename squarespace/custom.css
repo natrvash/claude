@@ -162,6 +162,11 @@ body.na-framed2 #header {
   transform: scale(.9);
 }
 
+/* A section of Squarespace video blocks is the film's clip store; visitors never see it. */
+body:has(.na-hero) #page .page-section:has(.sqs-native-video):not(:has(.na-hero)) {
+  display: none !important;
+}
+
 /* ---------- Section 1: film ---------- */
 
 body:has(.na-hero) .page-section:has(.na-hero) {
