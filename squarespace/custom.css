@@ -357,9 +357,10 @@ body:has(.na-hero) .page-section:has(.na-about) {
   margin-top: 8px;
   font-size: 13px;
 }
+/* The two boxes always share one height, whichever text is longer. */
 .na-about-people {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-rows: 1fr auto 1fr;
 }
 .na-person {
   display: flex;
@@ -398,12 +399,6 @@ body:has(.na-hero) .page-section:has(.na-about) {
 .na-person-text > p:first-child {
   font-size: 16px;
   line-height: 1.55;
-}
-.na-contact {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px 24px;
-  font-size: 14px;
 }
 .na-x {
   position: relative;
@@ -492,26 +487,35 @@ body:has(.na-hero) .page-section:has(.na-about) {
 .na-org li span::before {
   content: " · ";
 }
+/* Published projects: a grid of website logos, gray until hovered. */
 .na-pubs {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 14px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px 16px;
 }
 .na-pubs a {
   display: flex;
-  flex: 1 1 110px;
   flex-direction: column;
+  align-items: center;
   gap: 6px;
   text-decoration: none;
-  font-size: 14px;
+  font-size: 11px;
+  letter-spacing: .06em;
+  text-align: center;
 }
 .na-pubs img {
   display: block;
   width: 100%;
-  aspect-ratio: 16 / 10;
-  object-fit: cover;
-  border: 1px solid var(--na-gray-dark);
-  background: var(--na-gray-light);
+  height: 44px;
+  object-fit: contain;
+  filter: grayscale(1);
+  mix-blend-mode: multiply;
+  opacity: .8;
+  transition: filter .3s, opacity .3s;
+}
+.na-pubs a:hover img {
+  filter: none;
+  opacity: 1;
 }
 
 /* ---------- Section 4: portfolio (Squarespace Gallery › Grid: Masonry) + site footer ---------- */
