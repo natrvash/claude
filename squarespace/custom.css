@@ -228,6 +228,22 @@ body.header--menu-open #header .header-menu * {
   stroke: currentColor;
 }
 
+/* ---------- Collection pages (whole site) ----------
+   Squarespace slides a portfolio or blog grid in as one block. On a phone that block is
+   thousands of pixels tall, too big for Safari to draw as one animated layer, so it stays
+   black until the first scroll. The grid shows at once instead. */
+
+.collection-content-wrapper.preSlide,
+.collection-content-wrapper.preFade,
+.collection-content-wrapper.preScale,
+.collection-content-wrapper.preClip,
+.collection-content-wrapper.preFlex {
+  opacity: 1 !important;
+  transform: none !important;
+  clip-path: none !important;
+  transition: none !important;
+}
+
 /* ---------- Home page only from here on ---------- */
 
 html:has(.na-hero) {
