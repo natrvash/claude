@@ -235,6 +235,7 @@ html:has(.na-hero) {
 }
 body:has(.na-hero) #page .page-section {
   scroll-snap-align: start;
+  scroll-snap-stop: always;
 }
 body:has(.na-hero) #footer-sections {
   scroll-snap-align: end;
@@ -667,10 +668,6 @@ body:has(.na-hero) #footer-sections .social-icon {
 /* ---------- Phones ---------- */
 
 @media (max-width: 767px) {
-  /* Phones scroll freely through the long About page and settle on the pages around it. */
-  html:has(.na-hero) {
-    scroll-snap-type: y proximity;
-  }
   body:has(.na-hero) .gallery-slideshow {
     padding: 72px 44px 0 !important;
   }
