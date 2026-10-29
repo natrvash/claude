@@ -272,7 +272,7 @@
     var play = function (v) {
       var p = v.play();
       if (p && p.catch) p.catch(function (err) {
-        v._playError = err && err.name;
+        v._playError = (err && err.name) + ' at ' + (performance.now() / 1000).toFixed(1) + 's';
         if (waiting || err && err.name === 'AbortError') return;
         waiting = true;
         document.addEventListener('touchstart', resume, { capture: true, passive: true });
@@ -280,7 +280,8 @@
       });
     };
     load(vids[0], clips[0]);
-    play(vids[0]);
+    // On Apple devices the clip's address arrives a moment later and load() starts it then.
+    if (!(appleNative && isHls(clips[0]))) play(vids[0]);
     if (clips.length > 1) load(vids[1], clips[1]);
     else vids[0].loop = true;
 
