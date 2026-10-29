@@ -209,6 +209,8 @@
     var load = function (v, src) {
       v.muted = true;
       v._want = src;
+      // Squarespace keeps a still of every uploaded video: it shows until the clip plays.
+      if (isHls(src)) v.poster = src.replace(/playlist\.m3u8.*$/, 'thumbnail');
       if (v._hls) {
         v._hls.destroy();
         v._hls = null;
@@ -252,9 +254,30 @@
         v.load();
       }
     };
+    // A phone or tablet in Low Power Mode refuses to start any video on its own; the film then
+    // starts with the visitor's first touch or click anywhere on the page.
+    var waiting = false;
+    var resume = function () {
+      document.removeEventListener('touchstart', resume, true);
+      document.removeEventListener('click', resume, true);
+      waiting = false;
+      play(vids[front]);
+      // The same touch unlocks the other video too, so the next clip is not refused again.
+      var back = vids[1 - front];
+      var q = back.play();
+      if (q && q.then) q.then(function () {
+        if (!back.classList.contains('is-front')) back.pause();
+      }, function () {});
+    };
     var play = function (v) {
       var p = v.play();
-      if (p && p.catch) p.catch(function () {});
+      if (p && p.catch) p.catch(function (err) {
+        v._playError = err && err.name;
+        if (waiting || err && err.name === 'AbortError') return;
+        waiting = true;
+        document.addEventListener('touchstart', resume, { capture: true, passive: true });
+        document.addEventListener('click', resume, true);
+      });
     };
     load(vids[0], clips[0]);
     play(vids[0]);
@@ -280,6 +303,34 @@
     };
     vids[0].addEventListener('timeupdate', onTime);
     vids[1].addEventListener('timeupdate', onTime);
+
+    // natrvash.com/#na-debug shows what this device reports about the film, for troubleshooting.
+    if (location.hash === '#na-debug') {
+      var panel = document.createElement('pre');
+      panel.style.cssText = 'position:fixed;z-index:99999;left:8px;right:8px;top:52px;margin:0;padding:10px;max-height:70vh;overflow:auto;background:rgba(255,255,255,.94);color:#000;font:11px/1.4 ui-monospace,Menlo,monospace;white-space:pre-wrap;word-break:break-all';
+      document.body.appendChild(panel);
+      var log = [];
+      ['loadstart', 'loadedmetadata', 'canplay', 'playing', 'waiting', 'stalled', 'suspend', 'error', 'abort', 'emptied'].forEach(function (name) {
+        Array.prototype.forEach.call(vids, function (v, n) {
+          v.addEventListener(name, function () {
+            log.unshift(new Date().toISOString().slice(17, 23) + ' v' + n + ' ' + name);
+            log.length = Math.min(log.length, 14);
+          });
+        });
+      });
+      setInterval(function () {
+        panel.textContent = [
+          navigator.userAgent,
+          'vendor: ' + navigator.vendor + '   apple player: ' + appleNative + '   hls.js: ' + (window.Hls ? window.Hls.isSupported() : 'not loaded'),
+          'clips: ' + clips.length + '   waiting for a touch: ' + waiting
+        ].concat(Array.prototype.map.call(vids, function (v, n) {
+          return 'v' + n + (v.classList.contains('is-front') ? ' (front)' : '') + ': ready ' + v.readyState + ', network ' + v.networkState +
+            ', paused ' + v.paused + ', t ' + v.currentTime.toFixed(1) + ', size ' + v.videoWidth + 'x' + v.videoHeight +
+            ', error ' + (v.error ? v.error.code + ' ' + (v.error.message || '') : '-') + ', play refused: ' + (v._playError || '-') +
+            '\n    ' + (v.currentSrc || v.getAttribute('src') || '(hls.js)').replace(/\?.*/, '').slice(-70);
+        })).concat(['events:'], log).join('\n');
+      }, 500);
+    }
   });
 
   /* ---------- Perspective frame that follows the pointer, a finger or a tilt ---------- */
