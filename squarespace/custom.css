@@ -334,25 +334,32 @@ body:has(.na-hero) .page-section:has(.na-hero) .fluid-engine {
   overflow: hidden;
   background: var(--na-black);
 }
+/* Both clips stay fully visible, the next one waiting behind the front one: iPhones and iPads
+   only let a silent video start while it is visible. The front clip fades out to hand over. */
 .na-hero-v {
   position: absolute;
+  z-index: 0;
   inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+.na-hero-v.is-front {
+  z-index: 1;
+}
+.na-hero-v.is-leaving {
   opacity: 0;
   transition: opacity 1s ease;
 }
-.na-hero-v.is-front {
-  opacity: 1;
-}
 .na-hero-shade {
   position: absolute;
+  z-index: 2;
   inset: 0;
   background: rgba(4, 6, 6, .35);
 }
 .na-persp {
   position: absolute;
+  z-index: 2;
   inset: 0;
   width: 100%;
   height: 100%;
@@ -360,6 +367,7 @@ body:has(.na-hero) .page-section:has(.na-hero) .fluid-engine {
 }
 .na-hero-sign {
   position: absolute;
+  z-index: 3;
   left: 50%;
   bottom: 7%;
   transform: translateX(-50%);

@@ -289,13 +289,16 @@
       if (clips.length < 2 || switching || !v.duration || v.duration - v.currentTime > 0.9) return;
       switching = true;
       var other = vids[1 - front];
+      // The next clip starts behind the front one, then the front one fades out over it.
       other.currentTime = 0;
       play(other);
-      other.classList.add('is-front');
-      v.classList.remove('is-front');
+      v.classList.add('is-leaving');
       front = 1 - front;
       index = (index + 1) % clips.length;
       setTimeout(function () {
+        other.classList.add('is-front');
+        v.classList.remove('is-front');
+        v.classList.remove('is-leaving');
         v.pause();
         load(v, clips[(index + 1) % clips.length]);
         switching = false;
