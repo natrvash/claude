@@ -1,0 +1,4 @@
+nxa/videos/src/**/frames/
+nxa/videos/src/**/*.wav
+nxa/videos/src/**/strip.png
+nxa/videos/src/**/wave.png

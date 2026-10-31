@@ -4,7 +4,7 @@ Vertical 1080×1920 loops, 30 fps. Main graphics stay inside the centred 4:5 zon
 
 | # | Title | Background | Status |
 |---|---|---|---|
-| 01 | FRAME | Porcelain | v1 rendered |
+| 01 | FRAME | Porcelain | v2 rendered (Freeform storyboard) |
 | 02 | SPACE | Titanium | — |
 | 03 | TABLE | Blush | — |
 | 04 | LIGHT | Ink | — |
