@@ -1,0 +1,128 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><style>
+@font-face{font-family:Manrope;font-weight:200;src:url(fonts/manrope-latin-200-normal.woff2)}
+@font-face{font-family:Manrope;font-weight:400;src:url(fonts/manrope-latin-400-normal.woff2)}
+html,body{margin:0;background:#F4F4F2}
+</style></head><body>
+<svg id="s" xmlns="http://www.w3.org/2000/svg" width="1080" height="1920" viewBox="0 0 1080 1920"></svg>
+<script>
+const BG="#F4F4F2", LN="#111111", ACC="#D62271", SW=2.5;
+const CX=540, CY=960, FW=720, FH=900;
+const X0=CX-FW/2, Y0=CY-FH/2, X1=CX+FW/2, Y1=CY+FH/2;
+const MX=X1-30, MY=Y1-16, MS=62;                     // × position = loop point
+const XPATH="M63.649 11.851L60.679 13.919L51.102 7.252L57.043 7.252ZM51.102 22.963L73.668 7.252L79.609 7.252L57.043 22.963ZM67.062 18.364L70.033 16.296L79.609 22.963L73.668 22.963Z";
+
+// ---------- math
+const clamp=(v,a=0,b=1)=>Math.min(b,Math.max(a,v));
+const lerp=(a,b,t)=>a+(b-a)*t;
+const seg=(t,a,b)=>clamp((t-a)/(b-a));
+const eio=t=>t<.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2;          // easeInOutCubic
+const eout=t=>1-Math.pow(1-t,3);
+const back=t=>{const c=1.9;return 1+(c+1)*Math.pow(t-1,3)+c*Math.pow(t-1,2);};
+const L=(a,b,t)=>a.map((v,i)=>lerp(v,b[i],t));
+
+// ---------- room geometry (flat number array so rooms can morph into each other)
+// [ox,oy,ow,oh, ix,iy,iw,ih, d1x1,d1y1,d1x2,d1y2, d2x1,d2y1,d2x2,d2y2]
+function room(x,y,w,h,c,f=.45){
+  const iw=w*f, ih=h*f, r=c.includes("r"), b=c.includes("b");
+  const ix=r?x+w-iw:x, iy=b?y+h-ih:y;
+  const ox=r?x:x+w, oy=b?y:y+h, jx=r?ix:ix+iw, jy=b?iy:iy+ih;
+  const ly=b?iy:iy+ih;
+  return [x,y,w,h, ix,iy,iw,ih, ox,oy,jx,jy, r?x:x+w,ly, r?ix:ix+iw,ly];
+}
+function pinwheel(px,py,A,B,C){
+  return [room(px-A[0],py-A[1],A[0],A[1],A[2]),
+          room(px+8,py-B[1]*.55,B[0],B[1],B[2]),
+          room(px-C[0]+2,py+8,C[0],C[1],C[2])];
+}
+const RA=pinwheel(CX-40,CY-60,[440,248,"br"],[250,444,"bl"],[330,330,"tr"]);
+const RB=pinwheel(CX+10,CY-20,[290,435,"br"],[400,267,"tl"],[360,270,"tr"]);
+const RC=pinwheel(CX+20,CY-10,[330,380,"br"],[320,360,"bl"],[360,330,"tr"]);
+// final: one symmetric 4:5 room. Each of the 3 rooms lands on it, diagonals spread over the 4 corners
+const IW=FW*.42, IH=FH*.42, IX=CX-IW/2, IY=CY-IH/2;
+const D=[[X0,Y0,IX,IY],[X1,Y0,IX+IW,IY],[X1,Y1,IX+IW,IY+IH],[X0,Y1,IX,IY+IH]];
+const RF=[[0,2],[1,3],[2,0]].map(([a,b])=>[X0,Y0,FW,FH, IX,IY,IW,IH, ...D[a], ...D[b]]);
+const CA=[CX-40,CY-60];                                    // cluster centre of RA
+
+function scaleRooms(R,k,from,to){  // scale cluster around `from` by k, move `from` to `to`
+  return R.map(g=>g.map((v,i)=>{const ax=(i%2===0);
+    // widths/heights (indices 2,3,6,7) only scale
+    if(i===2||i===3||i===6||i===7) return v*k;
+    return ax? to[0]+(v-from[0])*k : to[1]+(v-from[1])*k; }));
+}
+
+// ---------- drawing helpers
+const rect=(x,y,w,h,o=1,col=LN,sw=SW)=>`<rect x="${x}" y="${y}" width="${Math.max(w,0)}" height="${Math.max(h,0)}" fill="none" stroke="${col}" stroke-width="${sw}" opacity="${o}"/>`;
+const line=(a,b,c,d,o=1,col=LN,sw=SW)=>`<line x1="${a}" y1="${b}" x2="${c}" y2="${d}" stroke="${col}" stroke-width="${sw}" opacity="${o}"/>`;
+const drawRoom=(g,o=1)=>rect(g[0],g[1],g[2],g[3],o)+rect(g[4],g[5],g[6],g[7],o)+line(g[8],g[9],g[10],g[11],o)+line(g[12],g[13],g[14],g[15],o);
+function mark(x,y,s,o=1,col=ACC){ if(s<=.5) return ""; const k=s/28.507;
+  return `<g opacity="${o}" transform="translate(${x-s/2} ${y-15.711*k/2}) scale(${k}) translate(-51.102 -7.252)"><path fill="${col}" d="${XPATH}"/></g>`; }
+function corners(cx,cy,w,h,col,Lc,sw,o=1,skipBR=false){
+  const x0=cx-w/2,y0=cy-h/2,x1=cx+w/2,y1=cy+h/2;
+  const p=[`M${x0} ${y0+Lc}V${y0}H${x0+Lc}`,`M${x1-Lc} ${y0}H${x1}V${y0+Lc}`,`M${x0+Lc} ${y1}H${x0}V${y1-Lc}`];
+  if(!skipBR) p.push(`M${x1} ${y1-Lc}V${y1}H${x1-Lc}`);
+  return p.map(d=>`<path d="${d}" fill="none" stroke="${col}" stroke-width="${sw}" stroke-linecap="square" opacity="${o}"/>`).join("");
+}
+const text=(t,x,y,size,w,o,track,col=LN)=>`<text x="${x}" y="${y}" fill="${col}" opacity="${o}" font-family="Manrope" font-weight="${w}" font-size="${size}" letter-spacing="${track}" text-anchor="middle">${t}</text>`;
+function hexMix(a,b,t){const p=h=>[1,3,5].map(i=>parseInt(h.slice(i,i+2),16));const A=p(a),B=p(b);
+  return "#"+A.map((v,i)=>Math.round(lerp(v,B[i],t)).toString(16).padStart(2,"0")).join("");}
+
+// ---------- timeline (seconds). Total 5.2s, loops: last frame == first frame
+const T={total:5.2};
+function render(t){
+  let s=`<rect width="1080" height="1920" fill="${BG}"/>`;
+
+  // A · × folds into a point (0.15–0.35)
+  if(t<0.40){
+    const k=eio(seg(t,.15,.35));
+    s+=mark(MX,MY,MS*(1-k));
+    if(k>.6) s+=`<circle cx="${MX}" cy="${MY}" r="${5*seg(k,.6,1)}" fill="${LN}"/>`;
+  }
+  // B · point splits into three tiny frames and travels toward centre, growing into rooms A (0.35–1.05)
+  if(t>=0.35 && t<1.35){
+    const a=eio(seg(t,.35,.65)), b=eout(seg(t,.65,1.05));
+    const TP=[lerp(MX,CX,.45),lerp(MY,CY,.45)];
+    const pos = b>0 ? L(TP,CA,b) : L([MX,MY],TP,a);
+    const k = b>0 ? lerp(.12,1,b) : lerp(0,.12,a);
+    if(t<0.75) s+=line(MX,MY,pos[0],pos[1],.15*(1-seg(t,.6,.75)),LN,1.5);  // faint travel trace
+    // tiny phase: thicker relative lines so they read
+    scaleRooms(RA,k,CA,pos).forEach(g=>s+=drawRoom(g));
+  }
+  // C · morph A→B (1.35–1.65), B→C (1.95–2.25), snap C→final (2.55–2.80)
+  if(t>=1.35 && t<3.60){
+    let R;
+    if(t<1.65)      R=RA.map((g,i)=>L(g,RB[i],eio(seg(t,1.35,1.65))));
+    else if(t<1.95) R=RB;
+    else if(t<2.25) R=RB.map((g,i)=>L(g,RC[i],eio(seg(t,1.95,2.25))));
+    else if(t<2.55) R=RC.map((g,i)=>{const j=Math.sin((t-2.25)*40)*2;return g.map((v,q)=>q%2?v:v+j*(i-1));}); // restless search
+    else            R=RC.map((g,i)=>L(g,RF[i],back(seg(t,2.55,2.80))));
+    // faint ghost of previous arrangement during morphs
+    if(t>=1.35&&t<1.80) RA.forEach(g=>s+=drawRoom(g,.10*(1-seg(t,1.6,1.8))));
+    if(t>=1.95&&t<2.40) RB.forEach(g=>s+=drawRoom(g,.10*(1-seg(t,2.2,2.4))));
+    const fade = 1-eio(seg(t,3.35,3.60));                  // room fades out into the title
+    R.forEach(g=>s+=drawRoom(g,fade));
+    // Rose corners pop exactly at the snap
+    if(t>=2.80){
+      const p=seg(t,2.80,2.95), pad=lerp(90,56,eout(p));
+      const toTitle=eio(seg(t,3.35,3.60));
+      const w=lerp(FW+pad,FW,toTitle), h=lerp(FH+pad,FH,toTitle);
+      const col=hexMix(ACC,LN,toTitle), sw=lerp(6,4,toTitle), Lc=lerp(72,64,toTitle);
+      s+=corners(CX,CY,w,h,col,Lc,sw,clamp(p*2),toTitle>.5);
+      if(toTitle>0 && toTitle<=.5){/* br corner still visible until it becomes the × */}
+    }
+  }
+  // D · title (3.60–5.00), × grows out of the bottom-right corner
+  if(t>=3.60){
+    const a=eout(seg(t,3.60,4.00)), out=eio(seg(t,5.00,5.30));
+    const rest=a*(1-out);
+    if(t>=3.60) s+=corners(CX,CY,FW,FH,LN,64,4,1-out,true);
+    s+=mark(MX,MY,MS*back(seg(t,3.65,3.95)));
+    const track=lerp(18,-2,eout(seg(t,3.60,4.20)));
+    s+=text("FRAME",CX,CY+50,180,200,rest,track);
+    s+=text("PHOTOGRAPHY",CX,CY+128,26,400,.7*eout(seg(t,3.85,4.25))*(1-out),6);
+  }
+  document.getElementById("s").innerHTML=s;
+}
+window.render=render; window.T=T;
+render(0);
+</script></body></html>
