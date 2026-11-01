@@ -4,7 +4,7 @@ Voice: a friend talking to a friend. Warm, casual, short. The series idea: you i
 
 | # | Title | Slogan | Status |
 |---|---|---|---|
-| 01 | FRAME | Only a few really feel like you. | ✅ approved |
+| 01 | FRAME | Only a few get it right. | ✅ approved |
 | 02 | SPACE | — | |
 | 03 | TABLE | — | |
 | 04 | LIGHT | — | |
