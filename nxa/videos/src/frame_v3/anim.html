@@ -6,7 +6,8 @@ html,body{margin:0;background:#F4F4F2}
 <svg id="s" xmlns="http://www.w3.org/2000/svg" width="1080" height="1920" viewBox="0 0 1080 1920"></svg>
 <script>
 // NxA 01 — FRAME (v2, from the Freeform storyboard). render(t) draws the frame at t seconds. Loop: t=0 == t=TOTAL.
-const TOTAL=8.1;
+const TOTAL=8.2;
+const ARM=24;                                           // + arm length, same at start and end
 // 1.05–5.05 is NA Post 01 footage (composited by build.sh); this page draws everything around it.
 const REF0=1.05, REF1=5.05;
 const BG="#F4F4F2", LN="#111111", ACC="#D62271", SW=2.5;
@@ -53,10 +54,10 @@ function render(t){
     const col=mix(ACC,LN,r), rot=45*(1-r);
     // 2 · arms grow left and up (0.45–0.90); right/down stubs retract
     const g=eio(seg(t,.45,.90));
-    const left=lerp(26,300,g), up=lerp(26,420,g), stub=26*(1-g);
+    const left=lerp(ARM,300,g), up=lerp(ARM,420,g), stub=ARM*(1-g);
     const a=seg(t,.15,.25);
     s+=`<g opacity="${a}" transform="rotate(${rot} ${PX} ${PY})">`
-      +line(PX-left,PY,PX+stub,PY,col,lerp(5,SW,g))+line(PX,PY-up,PX,PY+stub,col,lerp(5,SW,g))+`</g>`;
+      +line(PX-left,PY,PX+stub,PY,col,SW)+line(PX,PY-up,PX,PY+stub,col,SW)+`</g>`;
     // closing edges draw in (0.80–1.05)
     const c=eout(seg(t,.80,1.05));
     if(c>0){ s+=line(PX-300,PY,PX-300,PY-420*c)+line(PX,PY-420,PX-300*c,PY-420); }
@@ -76,22 +77,23 @@ function render(t){
     E.forEach((e,i)=>{
       const p=eio(seg(t,5.10+i*0.12,5.22+i*0.12));
       s+=line(...e);                                                     // ink edge underneath
-      if(p>0) s+=line(e[0],e[1],lerp(e[0],e[2],p),lerp(e[1],e[3],p),ACC,5); // rose trace
+      if(p>0) s+=line(e[0],e[1],lerp(e[0],e[2],p),lerp(e[1],e[3],p),ACC,SW); // rose trace
     });
   }
-  // 6 · fold: the frame shrinks into its corner and becomes a Rose + (5.00–5.50), + turns into × (5.50–5.80)
+  // 6 · ending = the start in reverse (all strokes SW, all Rose):
+  //   7.30–7.55 top and left edges retract  →  7.55–7.85 arms pull back into a +  →  7.85–8.05 + turns 45° into ×
   if(t>=7.1){
-    const f=eio(seg(t,7.1,7.55));
-    const w=FW*(1-f), h=FH*(1-f);
-    if(f<1) s+=rect(PX-w,PY-h,w,h,ACC,5);
-    const stub=26*eout(seg(t,7.40,7.60)), rot=45*eio(seg(t,7.60,7.90));
-    const arm=Math.max(stub, 26*(f>0.98?1:0));
-    if(t<7.90) s+=plus(PX,PY,Math.max(arm,1),rot,ACC,5, stub>0?1:0);
-    if(t>=7.80) s+=mark(PX,PY,64,seg(t,7.80,7.90));
+    const c=eio(seg(t,7.30,7.55));
+    if(c<1){ s+=line(FX0+FW*c,FY0,FX1,FY0,ACC,SW)+line(FX0,FY0+FH*c,FX0,FY1,ACC,SW); }
+    const g=eio(seg(t,7.55,7.85));
+    const left=lerp(FW,ARM,g), up=lerp(FH,ARM,g), stub=ARM*g;
+    const rot=45*eio(seg(t,7.85,8.05)), o=1-seg(t,8.00,8.06);
+    if(o>0) s+=`<g opacity="${o}" transform="rotate(${rot} ${PX} ${PY})">`+line(PX-left,PY,PX+stub,PY,ACC,SW)+line(PX,PY-up,PX,PY+stub,ACC,SW)+`</g>`;
+    if(t>=8.00) s+=mark(PX,PY,64,seg(t,8.00,8.06));
   }
   // title
   if(t>=5.55){
-    const rise=eout(seg(t,5.55,6.10)), out=1-eio(seg(t,7.1,7.5));
+    const rise=eout(seg(t,5.55,6.10)), out=1-eio(seg(t,7.1,7.4));
     const y=CY+64+lerp(170,0,rise);
     const txt=`<text x="${CX}" y="${y}" fill="${LN}" opacity="${out}" font-family="Manrope" font-weight="200" font-size="180" letter-spacing="-2" text-anchor="middle">FRAME</text>`;
     s+=`<defs><clipPath id="c"><rect x="0" y="0" width="${W}" height="${FY0-2}"/></clipPath></defs><g clip-path="url(#c)">${txt}</g>`;

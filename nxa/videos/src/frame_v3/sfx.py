@@ -2,7 +2,7 @@
 and a camera shutter when the frame is taken. Usage: python3 sfx.py <NA_Post_01.mp4>"""
 import numpy as np, wave, os, subprocess, sys
 D = os.path.dirname(os.path.abspath(__file__))
-SR, TOTAL = 48000, 8.1
+SR, TOTAL = 48000, 8.2
 REF0, REF_LEN = 1.05, 4.0
 N = int(SR * TOTAL)
 out = np.zeros((N, 2))
@@ -52,8 +52,9 @@ tickA = cut(1.08, 1.30); tickB = cut(2.50, 2.72)
 place(tickA, 0.30, .8)          # × turns into +
 place(tickB, 0.98, .9)          # first rectangle closes
 place(shutter(), 5.58, .9)      # 4th Rose edge: the frame is taken
-place(tickA, 7.52, .8)          # frame folds into +
-place(shutter(.55), 7.86, .7)   # + turns into ×
+place(tickA, 7.55, .8)          # edges retract (reverse of 0.98)
+place(tickB, 7.85, .6)          # arms back to +
+place(shutter(.55), 8.04, .7)   # + becomes ×
 
 out /= max(1e-9, np.max(np.abs(out))) * 1.12
 with wave.open(f"{D}/sfx.wav", "wb") as w:
