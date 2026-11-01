@@ -1,0 +1,102 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><style>
+@font-face{font-family:Manrope;font-weight:200;src:url(../fonts/manrope-latin-200-normal.woff2)}
+html,body{margin:0;background:#F4F4F2}
+</style></head><body>
+<svg id="s" xmlns="http://www.w3.org/2000/svg" width="1080" height="1920" viewBox="0 0 1080 1920"></svg>
+<script>
+// NxA 01 — FRAME (v2, from the Freeform storyboard). render(t) draws the frame at t seconds. Loop: t=0 == t=TOTAL.
+const TOTAL=8.1;
+// 1.05–5.05 is NA Post 01 footage (composited by build.sh); this page draws everything around it.
+const REF0=1.05, REF1=5.05;
+const BG="#F4F4F2", LN="#111111", ACC="#D62271", SW=2.5;
+const W=1080, H=1920, CX=540, CY=960, SAFE_Y0=285, SAFE_Y1=1635;
+const FW=480, FH=320, FX0=CX-FW/2, FY0=1090, FX1=FX0+FW, FY1=FY0+FH;
+const PX=FX1, PY=FY1;                                   // the frame's bottom-right corner = × / + = loop point
+const XPATH="M63.649 11.851L60.679 13.919L51.102 7.252L57.043 7.252ZM51.102 22.963L73.668 7.252L79.609 7.252L57.043 22.963ZM67.062 18.364L70.033 16.296L79.609 22.963L73.668 22.963Z";
+
+const clamp=(v,a=0,b=1)=>Math.min(b,Math.max(a,v)), lerp=(a,b,t)=>a+(b-a)*t, seg=(t,a,b)=>clamp((t-a)/(b-a));
+const eio=t=>t<.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2, eout=t=>1-Math.pow(1-t,3), ein=t=>t*t*t;
+function mix(a,b,t){const p=h=>[1,3,5].map(i=>parseInt(h.slice(i,i+2),16));const A=p(a),B=p(b);
+  return "#"+A.map((v,i)=>Math.round(lerp(v,B[i],t)).toString(16).padStart(2,"0")).join("");}
+const line=(a,b,c,d,col=LN,sw=SW,o=1)=>`<line x1="${a}" y1="${b}" x2="${c}" y2="${d}" stroke="${col}" stroke-width="${sw}" opacity="${o}" stroke-linecap="square"/>`;
+const rect=(x,y,w,h,col=LN,sw=SW,o=1)=>`<rect x="${x}" y="${y}" width="${Math.max(0,w)}" height="${Math.max(0,h)}" fill="none" stroke="${col}" stroke-width="${sw}" opacity="${o}"/>`;
+function mark(x,y,s,o=1){const k=s/28.507;
+  return `<g opacity="${o}" transform="translate(${x-s/2} ${y-15.711*k/2}) scale(${k}) translate(-51.102 -7.252)"><path fill="${ACC}" d="${XPATH}"/></g>`;}
+function plus(x,y,arm,rot,col,sw,o=1){
+  return `<g opacity="${o}" transform="rotate(${rot} ${x} ${y})">`+line(x-arm,y,x+arm,y,col,sw)+line(x,y-arm,x,y+arm,col,sw)+`</g>`;}
+
+// seeded random
+let seed=7; const rnd=()=>{seed=(seed*16807)%2147483647;return (seed-1)/2147483646;};
+// first rectangle drawn by the +
+const A=[PX-300,PY-420,300,420];
+// the crowd: each new rectangle slides out of the previous one
+const CROWD=[];
+for(let i=0;i<34;i++){const w=160+rnd()*360,h=140+rnd()*420;
+  CROWD.push([150+rnd()*(780-w), SAFE_Y0+60+rnd()*(SAFE_Y1-SAFE_Y0-120-h), w, h]);}
+CROWD.push([FX0,FY0,FW,FH]);                            // the last one to arrive is the chosen frame
+const FINAL=CROWD.length-1;
+// spawn times: slow at first, accelerating (1.05s → 2.40s)
+const SPAWN=CROWD.map((_,i)=>1.05+1.35*Math.pow(i/FINAL,0.62));
+const SLIDE=0.26;
+// fade order for 2.55–3.05 (random but fixed)
+const FADE=CROWD.map(()=>2.55+rnd()*0.45);
+
+function render(t){
+  let s=`<rect width="${W}" height="${H}" fill="${BG}"/>`;
+
+  // 1 · × turns 45° into a black + (0.15–0.45)
+  if(t<0.15){ s+=mark(PX,PY,64); }
+  else if(t<1.05){
+    const r=eio(seg(t,.15,.45));
+    if(t<0.25) s+=mark(PX,PY,64,1-seg(t,.15,.25));
+    const col=mix(ACC,LN,r), rot=45*(1-r);
+    // 2 · arms grow left and up (0.45–0.90); right/down stubs retract
+    const g=eio(seg(t,.45,.90));
+    const left=lerp(26,300,g), up=lerp(26,420,g), stub=26*(1-g);
+    const a=seg(t,.15,.25);
+    s+=`<g opacity="${a}" transform="rotate(${rot} ${PX} ${PY})">`
+      +line(PX-left,PY,PX+stub,PY,col,lerp(5,SW,g))+line(PX,PY-up,PX,PY+stub,col,lerp(5,SW,g))+`</g>`;
+    // closing edges draw in (0.80–1.05)
+    const c=eout(seg(t,.80,1.05));
+    if(c>0){ s+=line(PX-300,PY,PX-300,PY-420*c)+line(PX,PY-420,PX-300*c,PY-420); }
+  }
+
+  // first rectangle shrinks into the centre as the reference footage starts (1.05–1.30)
+  if(t>=1.05 && t<1.30){
+    const k=eio(seg(t,1.05,1.30)), g=A.map((v,q)=>q<2? lerp(v,[CX,CY][q],k) : v*(1-k));
+    s+=rect(...g,LN,SW,1-k);
+  }
+  // the chosen frame appears as the footage fades out (4.75–5.05)
+  if(t>=4.75 && t<5.10){ s+=rect(FX0,FY0,FW,FH,LN,SW,eio(seg(t,4.75,5.05))); }
+  // 5 · the chosen frame turns Rose edge by edge (3.00–3.48), title rises from behind it (3.45–4.00)
+  const landed=5.10;
+  if(t>=landed && t<7.1){
+    const E=[[FX0,FY0,FX1,FY0],[FX1,FY0,FX1,FY1],[FX1,FY1,FX0,FY1],[FX0,FY1,FX0,FY0]];
+    E.forEach((e,i)=>{
+      const p=eio(seg(t,5.10+i*0.12,5.22+i*0.12));
+      s+=line(...e);                                                     // ink edge underneath
+      if(p>0) s+=line(e[0],e[1],lerp(e[0],e[2],p),lerp(e[1],e[3],p),ACC,5); // rose trace
+    });
+  }
+  // 6 · fold: the frame shrinks into its corner and becomes a Rose + (5.00–5.50), + turns into × (5.50–5.80)
+  if(t>=7.1){
+    const f=eio(seg(t,7.1,7.55));
+    const w=FW*(1-f), h=FH*(1-f);
+    if(f<1) s+=rect(PX-w,PY-h,w,h,ACC,5);
+    const stub=26*eout(seg(t,7.40,7.60)), rot=45*eio(seg(t,7.60,7.90));
+    const arm=Math.max(stub, 26*(f>0.98?1:0));
+    if(t<7.90) s+=plus(PX,PY,Math.max(arm,1),rot,ACC,5, stub>0?1:0);
+    if(t>=7.80) s+=mark(PX,PY,64,seg(t,7.80,7.90));
+  }
+  // title
+  if(t>=5.55){
+    const rise=eout(seg(t,5.55,6.10)), out=1-eio(seg(t,7.1,7.5));
+    const y=CY+64+lerp(170,0,rise);
+    const txt=`<text x="${CX}" y="${y}" fill="${LN}" opacity="${out}" font-family="Manrope" font-weight="200" font-size="180" letter-spacing="-2" text-anchor="middle">FRAME</text>`;
+    s+=`<defs><clipPath id="c"><rect x="0" y="0" width="${W}" height="${FY0-2}"/></clipPath></defs><g clip-path="url(#c)">${txt}</g>`;
+  }
+  document.getElementById("s").innerHTML=s;
+}
+window.render=render; window.TOTAL=TOTAL; render(0);
+</script></body></html>
