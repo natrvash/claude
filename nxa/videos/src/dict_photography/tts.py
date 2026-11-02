@@ -6,14 +6,14 @@ MODEL = os.environ.get("PIPER_MODEL", "/tmp/piper/en_US-ryan-medium.onnx")
 # The assistant talks a little: introduces itself, looks the word up, reads the entry. Text on screen stays the same.
 PHRASES = [
     ("intro", "Hi, I'm your AI assistant."),
-    ("lookup", "I looked up"),
-    ("word", "photography"),
-    ("dict", "in the dictionary."),
-    ("pos", "It's a noun,"),
-    ("means", "and it means:"),
-    ("def", "the practice of taking pictures with a camera."),
+    ("word",  "Photography?"),
+    ("claim", "I can make a picture of anything in seconds now."),
+    ("pos",   "It has a pretty simple definition, I checked the dictionary:"),   # pronunciation + n. appear here
+    ("def",   "the practice of taking pictures with a camera."),
+    ("easy",  "Easy."),
+    ("ask",   "Is that what you're looking for? Want me to start taking pictures?"),
 ]
-GAPS = {"intro": .35, "lookup": .05, "word": .05, "dict": .35, "pos": .08, "means": .18, "def": 0}
+GAPS = {"intro": .25, "word": .25, "claim": .35, "pos": .12, "def": .3, "easy": .45, "ask": 0}
 
 def say(text, path):
     subprocess.run(["python3", "-m", "piper", "-m", MODEL, "-f", path, "--length-scale", "1.08"],
@@ -33,4 +33,5 @@ audio = np.concatenate(parts)
 with wave.open(f"{D}/narration.wav", "wb") as w:
     w.setnchannels(1); w.setsampwidth(2); w.setframerate(SR)
     w.writeframes((audio / max(1e-9, np.abs(audio).max()) * .9 * 32767).astype(np.int16).tobytes())
+tm['end'] = max(v[1] for v in tm.values())
 json.dump(tm, open(f"{D}/timings.json", "w"), indent=1); print(tm)

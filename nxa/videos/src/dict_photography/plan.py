@@ -3,8 +3,8 @@ so the music can stop dead on the beat. Usage: python3 plan.py <ava_seconds> [mu
 import json, sys, os
 D = os.path.dirname(os.path.abspath(__file__))
 tm = json.load(open(f"{D}/timings.json")); ava = float(sys.argv[1])
-d_end = tm["def"][1]
-STRIKE = [d_end + .35, d_end + .9]
+d_end = tm.get("end", tm["def"][1])
+STRIKE = [d_end + .55, d_end + 1.1]          # a beat after the question: the strike is the answer
 AVA = [STRIKE[1] + .45, STRIKE[1] + .45 + ava]
 content_end = AVA[1] + 1.3                     # the × lands at AVA end + .8, give it a beat to sit
 total, cut = content_end, None

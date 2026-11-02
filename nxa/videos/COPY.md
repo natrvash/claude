@@ -36,14 +36,14 @@ Notes
 Preview: `colour_map_v2.png` (rough layout, colour check only).
 
 ## AI assistant narration (draft — machine voice, reads the word and the textbook definition)
-The assistant is a little smug: "I can do this easily". The struck definition and Ava's line answer it.
+The assistant is a little smug: "I can do this easily", and ends by asking for a go-ahead. The strike is the "no"; Ava's line is the answer.
 The textbook definition is read word for word as shown on screen.
 
 | # | Word | AI narration |
 |---|---|---|
-| 1 | Photography | Hi, I'm your AI assistant. Photography? I can make a picture of anything in seconds now. It has a pretty simple definition, I checked the dictionary: the practice of taking pictures with a camera. Easy. |
-| 2 | Videography | Videography is something AI does pretty easily these days. Honestly, it's simple: the process of recording moving images. |
-| 3 | Navid × Ava | I tried to look up Navid cross Ava. Not in my dictionary. Let me search another one… nothing found. I think it's two people who work together. Sounds… simple? |
-| 4 | Composition | Composition? I can arrange a picture for you in a second. My references say: the arrangement of elements within a picture. Done. |
-| 5 | Styling | Need styling? I can style it for you myself. It's just arranging objects so they look good in a picture. |
-| 6 | Lighting | I can fix your lighting with one click. By definition, it's only the arrangement of lights to make a subject visible. |
+| 1 | Photography | Hi, I'm your AI assistant. Photography? I can make a picture of anything in seconds now. It has a pretty simple definition, I checked the dictionary: the practice of taking pictures with a camera. Easy. Is that what you're looking for? Want me to start taking pictures? |
+| 2 | Videography | Videography is something AI does pretty easily these days. Honestly, it's simple: the process of recording moving images. Is that what you're looking for? Should I start recording? |
+| 3 | Navid × Ava | I tried to look up Navid cross Ava. Not in my dictionary. Let me search another one… nothing found. I think it's two people who work together. Sounds… simple? Is that what you're looking for? Want me to keep searching? |
+| 4 | Composition | Composition? I can arrange a picture for you in a second. My references say: the arrangement of elements within a picture. Done. Is that what you're looking for? Shall I arrange it for you? |
+| 5 | Styling | Need styling? I can style it for you myself. It's just arranging objects so they look good in a picture. Is that what you're looking for? Want me to start styling? |
+| 6 | Lighting | I can fix your lighting with one click. By definition, it's only the arrangement of lights to make a subject visible. Is that what you're looking for? Should I turn the lights on? |

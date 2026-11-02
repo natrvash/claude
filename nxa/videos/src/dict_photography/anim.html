@@ -62,7 +62,8 @@ function rise(id,t,at,dur=.6,y=26){const p=eout(seg(t,at,at+dur)), el=document.g
 function render(t){
   // AI line meter: 7 thin lines driven by the machine voice; gone before Ava speaks
   const mt=document.getElementById("meter"), f=Math.min(ENV.length-1, Math.round(t*30));
-  mt.style.opacity = eout(seg(t,.15,.45)) * (1-eio(seg(t,TM.def[1]+.1,TM.def[1]+.5)));
+  const aiEnd=TM.end||TM.def[1];
+  mt.style.opacity = eout(seg(t,.15,.45)) * (1-eio(seg(t,aiEnd+.1,aiEnd+.5)));
   const order=[3,2,4,1,5,0,6];   // centre lines carry the low bands, outer lines the highs
   mt.querySelectorAll("i").forEach((el,i)=>{ const v=ENV[f]?ENV[f][order[i]]:0; el.style.height=(6+78*v)+"px"; });
   rise("word",t,TM.word[0]-.05,.7);
