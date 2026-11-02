@@ -14,9 +14,11 @@ html,body{margin:0;background:var(--bg)}
 .strike{position:absolute;height:3px;background:var(--acc);transform-origin:left center;transform:scaleX(0)}
 #line{position:absolute;left:96px;top:1130px;width:900px;font-family:Hand;font-size:66px;line-height:1.3}
 #line .row{display:block;white-space:nowrap;clip-path:inset(0 100% 0 0)}
+#cursor{position:absolute;left:104px;top:612px;width:4px;height:112px;background:var(--ink);opacity:0}
 #mark{position:absolute;left:868px;top:1490px;width:64px;opacity:0}
 </style></head><body>
 <div id="stage">
+  <div id="cursor"></div>
   <div id="word" class="blk">Photography</div>
   <div id="pos" class="blk">/fəˈtɒɡrəfi/ &nbsp;·&nbsp; n.</div>
   <div id="def" class="blk">The practice of taking pictures with a camera.</div>
@@ -55,6 +57,8 @@ function rise(id,t,at,dur=.6,y=26){const p=eout(seg(t,at,at+dur)), el=document.g
   el.style.opacity=p; el.style.transform=`translateY(${y*(1-p)}px)`; return el;}
 
 function render(t){
+  const cur=document.getElementById("cursor"), on=t<TM.word[0]-.05;
+  cur.style.opacity = on ? (Math.floor(t*2.2)%2===0 ? .85 : .15) * Math.min(1,t/.3) : 0;
   rise("word",t,TM.word[0]-.05,.7);
   rise("pos",t,TM.pos[0]-.05,.5,14).style.opacity*=.7;
   const def=rise("def",t,TM.def[0]-.05,.7);

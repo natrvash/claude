@@ -3,8 +3,17 @@ Writes narration.wav + timings.json. Voice model path: $PIPER_MODEL (default /tm
 import subprocess, wave, json, os, numpy as np
 D = os.path.dirname(os.path.abspath(__file__)); SR = 48000
 MODEL = os.environ.get("PIPER_MODEL", "/tmp/piper/en_US-ryan-medium.onnx")
-PHRASES = [("word", "Photography."), ("pos", "Noun."), ("def", "The practice of taking pictures with a camera.")]
-GAPS = {"word": .35, "pos": .45, "def": 0}
+# The assistant talks a little: introduces itself, looks the word up, reads the entry. Text on screen stays the same.
+PHRASES = [
+    ("intro", "Hi, I'm your AI assistant."),
+    ("lookup", "I looked up"),
+    ("word", "photography"),
+    ("dict", "in the dictionary."),
+    ("pos", "It's a noun,"),
+    ("means", "and it means:"),
+    ("def", "the practice of taking pictures with a camera."),
+]
+GAPS = {"intro": .35, "lookup": .05, "word": .05, "dict": .35, "pos": .08, "means": .18, "def": 0}
 
 def say(text, path):
     subprocess.run(["python3", "-m", "piper", "-m", MODEL, "-f", path, "--length-scale", "1.08"],

@@ -41,14 +41,11 @@ import music
 tm = json.load(open(f"{D}/timings.json"))
 spans = [(tm["word"][0], tm["def"][1]), (plan["AVA"][0], plan["AVA"][1])]
 MUSIC = os.environ.get("MUSIC")
-if MUSIC:
+if MUSIC:   # music is optional — by default the video ships with voices and sound effects only
     bed = load(MUSIC)[:N]
     k = int(.004 * SR); bed[-k:] *= np.linspace(1, 0, k)[:, None]       # 4 ms de-click only, not a fade
-    gain = float(os.environ.get("MUSIC_GAIN", ".55"))
-else:
-    bed = music.bed(plan["TOTAL"]); gain = .30
-duck = music.duck_curve(plan["TOTAL"], spans, depth=.30)
-place(bed * duck[:len(bed), None], 0, gain)
+    duck = music.duck_curve(plan["TOTAL"], spans, depth=.30)
+    place(bed * duck[:len(bed), None], 0, float(os.environ.get("MUSIC_GAIN", ".55")))
 # Ava's take
 if len(sys.argv) > 2:
     place(load(sys.argv[2]), plan["AVA"][0], 1.0)
