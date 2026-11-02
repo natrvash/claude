@@ -36,6 +36,12 @@ tick = ref[int(1.08*SR):int(1.30*SR)].copy(); f = int(.004*SR); tick[:f] *= np.l
 place(tick, plan["STRIKE"][0], .9)
 place(shutter(), plan["STRIKE"][1] - .05, .8)
 place(tick, plan["AVA"][1] + .45, .6)
+# music bed, ducked under the AI voice and under Ava's take
+import music
+tm = json.load(open(f"{D}/timings.json"))
+bed = music.bed(plan["TOTAL"])
+duck = music.duck_curve(plan["TOTAL"], [(tm["word"][0], tm["def"][1]), (plan["AVA"][0], plan["AVA"][1])], depth=.35)
+place(bed * duck[:len(bed), None], 0, .30)
 # Ava's take
 if len(sys.argv) > 2:
     place(load(sys.argv[2]), plan["AVA"][0], 1.0)
