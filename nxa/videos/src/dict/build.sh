@@ -13,6 +13,6 @@ for ID in "${IDS[@]}"; do
   ffmpeg -v error -y -i $W/mix.wav -af "loudnorm=I=-16:TP=-1.5:LRA=11" -ar 48000 $W/mix_norm.wav
   T=$(python3 -c "import json;print(json.load(open('$W/plan.json'))['TOTAL'])")
   ffmpeg -v error -y -framerate 30 -i $W/frames/f%04d.png -i $W/mix_norm.wav -c:v libx264 -preset slow -crf 16 -pix_fmt yuv420p -r 30 \
-    -c:a aac -b:a 256k -t "$T" -movflags +faststart "../../NxA_${ID}${YESBUT:+_yesbut}.mp4"
-  echo "built NxA_${ID}${YESBUT:+_yesbut}.mp4 (${T}s)"
+    -c:a aac -b:a 256k -t "$T" -movflags +faststart "../../NxA_${ID}${YESBUT:+_yesbut}$([ "${YESBUT:-}" = 2 ] && echo 2).mp4"
+  echo "built NxA_${ID}${YESBUT:+_yesbut}$([ "${YESBUT:-}" = 2 ] && echo 2).mp4 (${T}s)"
 done

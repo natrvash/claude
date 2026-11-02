@@ -64,9 +64,14 @@ function setup(entry, timings, plan, env){
   // the word must fit: shrink very long words
   const wd=document.getElementById("word"); let fs=132; while(wd.scrollWidth>880 && fs>80){fs-=4; wd.style.fontSize=fs+"px";}
   // optional "Yes, but" variant: faint YES sign on top, BUT bar laid over the struck definition
-  YB=!!(plan.yesbut);
+  // modes: "cover" = BUT bar laid over the struck definition, YES fades when Ava starts
+  //        "below" = struck definition stays, BUT bar sits under it, YES stays to the end
+  YB=plan.yesbut||false;
   if(YB){ const y=document.getElementById("yes"), bt=document.getElementById("but"), df=def.getBoundingClientRect();
-    y.style.display="block"; bt.style.display="flex"; bt.style.top=(df.top-sr.top-14)+"px"; bt.style.height=(df.height+28)+"px"; }
+    y.style.display="block"; bt.style.display="flex";
+    if(YB==="below"){ const top=df.bottom-sr.top+22, h=96; bt.style.top=top+"px"; bt.style.height=h+"px";
+      document.getElementById("line").style.top=(top+h+34)+"px"; }
+    else { bt.style.top=(df.top-sr.top-14)+"px"; bt.style.height=(df.height+28)+"px"; } }
   return plan;
 }
 let YB=false;
@@ -91,7 +96,7 @@ function render(t){
   ROWS.forEach(r=>{const a=AVA[0]+(AVA[1]-AVA[0])*acc/total, z=AVA[0]+(AVA[1]-AVA[0])*(acc+r.w)/total; acc+=r.w;
     const p=seg(t,a,z); r.el.style.visibility=p>0?'visible':'hidden'; r.el.style.clipPath=`inset(-20px calc(${100-100*p}% + ${12*(1-p)}px) -20px -12px)`;});
   if(YB){
-    const y=document.getElementById("yes"), yi=eout(seg(t,.25,.75)), yo=1-eio(seg(t,AVA[0],AVA[0]+.45));
+    const y=document.getElementById("yes"), yi=eout(seg(t,.25,.75)), yo=YB==="below"?1:1-eio(seg(t,AVA[0],AVA[0]+.45));
     y.style.opacity=yi*yo; y.style.transform=`translateY(${-40*(1-yi)}px)`;
     const w=eio(seg(t,STRIKE[1]+.05,STRIKE[1]+.42)); document.getElementById("but").style.clipPath=`inset(0 ${100-100*w}% 0 0)`;
   }
