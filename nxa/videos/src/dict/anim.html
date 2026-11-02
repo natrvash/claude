@@ -115,7 +115,8 @@ function render(t){
     rt.style.clipPath=`inset(-20px calc(${100-100*w}% + ${12*(1-w)}px) -20px calc(${100*e}% - 12px))`;
     // TAKE 2 stamp: small label, pressed in like a rubber stamp, stays
     const st=document.getElementById("stamp"), k=seg(t,AVA[0]+RETRY.stamp_at,AVA[0]+RETRY.stamp_at+.22);
-    st.style.opacity=k; st.style.transform=`rotate(-4deg) scale(${1.35-.35*eout(k)})`; }
+    const so=RETRY.stamp_out?1-eio(seg(t,AVA[0]+RETRY.stamp_out[0],AVA[0]+RETRY.stamp_out[1])):1;
+    st.style.opacity=k*so; st.style.transform=`rotate(-4deg) scale(${1.35-.35*eout(k)})`; }
   ROWS.forEach(r=>{const a=AVA[0]+(AVA[1]-AVA[0])*acc/total, z=AVA[0]+(AVA[1]-AVA[0])*(acc+r.w)/total;
     const p = P===null ? seg(t,a,z) : clamp((P*CHARS-accC)/(r.c-1)); acc+=r.w; accC+=r.c; r.el.style.visibility=p>0?'visible':'hidden'; r.el.style.clipPath=`inset(-20px calc(${100-100*p}% + ${12*(1-p)}px) -20px -12px)`;});
   if(YB){

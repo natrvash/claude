@@ -155,7 +155,11 @@
           2.15
         ],
         "stamp": "TAKE 2",
-        "stamp_at": 2.3
+        "stamp_at": 2.3,
+        "stamp_out": [
+          3.9,
+          4.8
+        ]
       },
       "write": [
         [
