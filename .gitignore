@@ -6,3 +6,4 @@ nxa/videos/src/**/tts/
 nxa/videos/src/**/plan.json
 nxa/videos/music/
 nxa/videos/music_tests/
+nxa/videos/src/**/envelope.json

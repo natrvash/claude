@@ -5,6 +5,7 @@ set -euo pipefail; cd "$(dirname "$0")"
 REF="$1"; AVA="${2:-}"; DUR=4.2
 if [ -n "$AVA" ]; then DUR=$(ffprobe -v error -show_entries format=duration -of csv=p=0 "$AVA"); fi
 python3 tts.py
+python3 envelope.py
 python3 plan.py "$DUR" ${MUSIC:-}
 node rec.js "$DUR"
 python3 mix.py "$REF" $AVA

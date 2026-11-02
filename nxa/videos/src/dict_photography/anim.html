@@ -14,11 +14,12 @@ html,body{margin:0;background:var(--bg)}
 .strike{position:absolute;height:3px;background:var(--acc);transform-origin:left center;transform:scaleX(0)}
 #line{position:absolute;left:96px;top:1130px;width:900px;font-family:Hand;font-size:66px;line-height:1.3}
 #line .row{display:block;white-space:nowrap;clip-path:inset(0 100% 0 0)}
-#cursor{position:absolute;left:104px;top:612px;width:4px;height:112px;background:var(--ink);opacity:0}
+#meter{position:absolute;left:104px;top:470px;height:84px;display:flex;align-items:center;gap:12px;opacity:0}
+#meter i{display:block;width:2.5px;background:var(--ink);height:6px;border-radius:2px}
 #mark{position:absolute;left:868px;top:1490px;width:64px;opacity:0}
 </style></head><body>
 <div id="stage">
-  <div id="cursor"></div>
+  <div id="meter"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
   <div id="word" class="blk">Photography</div>
   <div id="pos" class="blk">/fəˈtɒɡrəfi/ &nbsp;·&nbsp; n.</div>
   <div id="def" class="blk">The practice of taking pictures with a camera.</div>
@@ -31,7 +32,9 @@ let TM=null, STRIKE=[0,0], AVA=[0,0], ROWS=[];
 const clamp=(v,a=0,b=1)=>Math.min(b,Math.max(a,v)), seg=(t,a,b)=>clamp((t-a)/(b-a));
 const eout=t=>1-Math.pow(1-t,3), eio=t=>t<.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2;
 
-function setup(timings, avaDur, plan){
+let ENV=[];
+function setup(timings, avaDur, plan, env){
+  ENV=env||[];
   TM=timings;
   const stage=document.getElementById("stage"), sr=stage.getBoundingClientRect();
   // strike bars: one per rendered row of the definition
@@ -57,8 +60,11 @@ function rise(id,t,at,dur=.6,y=26){const p=eout(seg(t,at,at+dur)), el=document.g
   el.style.opacity=p; el.style.transform=`translateY(${y*(1-p)}px)`; return el;}
 
 function render(t){
-  const cur=document.getElementById("cursor"), on=t<TM.word[0]-.05;
-  cur.style.opacity = on ? (Math.floor(t*2.2)%2===0 ? .85 : .15) * Math.min(1,t/.3) : 0;
+  // AI line meter: 7 thin lines driven by the machine voice; gone before Ava speaks
+  const mt=document.getElementById("meter"), f=Math.min(ENV.length-1, Math.round(t*30));
+  mt.style.opacity = eout(seg(t,.15,.45)) * (1-eio(seg(t,TM.def[1]+.1,TM.def[1]+.5)));
+  const order=[3,2,4,1,5,0,6];   // centre lines carry the low bands, outer lines the highs
+  mt.querySelectorAll("i").forEach((el,i)=>{ const v=ENV[f]?ENV[f][order[i]]:0; el.style.height=(6+78*v)+"px"; });
   rise("word",t,TM.word[0]-.05,.7);
   rise("pos",t,TM.pos[0]-.05,.5,14).style.opacity*=.7;
   const def=rise("def",t,TM.def[0]-.05,.7);

@@ -7,7 +7,7 @@ const fs = require('fs');
   fs.rmSync(d + '/frames', { recursive: true, force: true }); fs.mkdirSync(d + '/frames');
   const b = await chromium.launch(); const p = await b.newPage({ viewport: { width: 1080, height: 1920 } });
   await p.goto('file://' + d + '/anim.html'); await p.evaluate(() => document.fonts.ready);
-  const plan = await p.evaluate(([tm, a, pl]) => setup(tm, a, pl), [timings, avaDur, JSON.parse(fs.readFileSync(d + '/plan.json'))]);
+  const plan = await p.evaluate(([tm, a, pl, env]) => setup(tm, a, pl, env), [timings, avaDur, JSON.parse(fs.readFileSync(d + '/plan.json')), JSON.parse(fs.readFileSync(d + '/envelope.json'))]);
   const fps = 30, n = Math.round(plan.TOTAL * fps);
   for (let i = 0; i < n; i++) { await p.evaluate(t => render(t), i / fps); await p.screenshot({ path: `${d}/frames/f${String(i).padStart(4, '0')}.png` }); }
   await b.close(); console.log(JSON.stringify(plan), 'frames', n);
