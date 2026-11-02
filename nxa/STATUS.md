@@ -18,15 +18,14 @@
 - Colour: brand palette; Damask Rose only on the key moment (the frame / the strike / the ×).
 - Lines: straight, precise, one stroke width.
 - Sound: NA Post 01 ticks and camera shutter; minimal.
-- Copy: all six lines final — see `videos/COPY.md`.
+- Copy: all six lines final — see `videos/COPY.md`. Names "Navid × Ava" appear on screen (confirmed).
+- Colour per video re-mapped to the new order — see `videos/COPY.md`.
 
 ### Video
 - `videos/NxA_01_FRAME_v3.mp4` — motion study built on the earlier FRAME concept
   (× → + → rectangles from NA Post 01 → Rose frame → title → ×). Source in `videos/src/frame_v3/`.
 
 ## Not done yet
-1. Confirm names "Navid × Ava" appear on screen in video 3.
-2. Re-map one background colour per video to the new order (Part 1 services, Part 2 craft).
 3. Design the dictionary-entry layout (word, pronunciation, definition, strike, line) and its motion.
 4. Decide how the FRAME motion study fits the new format (it was built before the dictionary idea).
 5. Build all six videos in the dictionary format.
