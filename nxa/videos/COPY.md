@@ -6,7 +6,7 @@ Voice: a friend talking to a friend. Warm, casual, short. The series idea: you i
 |---|---|---|---|
 | 01 | FRAME | Only a few get it right. | ✅ approved |
 | 02 | SPACE | The trick is capturing how it feels, not how big it is. | ✅ approved |
-| 03 | TABLE | — | |
+| 03 | TABLE | It has to look as good as it tastes. | ✅ approved |
 | 04 | LIGHT | — | |
 | 05 | FILM | — | |
 | 06 | N × A | — | |
