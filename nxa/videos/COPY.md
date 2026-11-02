@@ -1,18 +1,20 @@
 # NxA intro series — copy
 
-Voice: a friend talking to a friend. Warm, casual, short. The series idea: you introduce yourself, you don't pitch.
+Format: each video is a dictionary entry. The word and its textbook definition appear, the definition is struck through,
+and our line takes its place.
 
-| # | Title | Slogan | Status |
+Voice: a friend talking to a friend. Warm, casual, short. One sentence.
+
+| # | Word | Line | Status |
 |---|---|---|---|
-| 01 | FRAME | Only a few get it right. | ✅ approved |
-| 02 | SPACE | The trick is capturing how it feels, not how big it is. | ✅ approved |
-| 03 | TABLE | It has to look as good as it tastes. | ✅ approved |
-| 04 | LIGHT | Worth every hour it takes to find the light that makes the photo. | ✅ approved |
-| 05 | FILM | We keep poking around until we find the story worth telling. | ✅ approved |
-| 06 | N × A | We see things differently, which is exactly why it works. | ✅ approved |
+| 01 | Composition | Only a few get it right. | ✅ final |
+| 02 | Photography | The trick is capturing how it feels. | ✅ final |
+| 03 | Styling | It has to look as good as it is. | 🟡 wording under review |
+| 04 | Lighting | Worth every hour it takes to find the light that makes the photo. | 🟡 word under review |
+| 05 | Videography | We keep poking around until we find the story worth telling. | ✅ |
+| 06 | Navid × Ava | We see things differently, which is exactly why it works. | ✅ (names on screen — to confirm) |
 
 Notes
-- FRAME: works for any subject (space, furniture, food, people) — no "being there".
-- SPACE: the photo shows feeling and quality, not size; "capture" makes it what we do.
-- FILM: playful curiosity — we keep looking until the story shows up, then tell it.
-- LIGHT: covers both waiting for natural light and building our own lighting — "worth it" comes first.
+- Composition: "Compositioning" is not an English word; Composition is the standard term.
+- Photography: works for any subject — no "how big it is".
+- Lighting: we don't sell lighting as a service; the word stands for a value in the work.
