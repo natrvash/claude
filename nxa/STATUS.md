@@ -21,16 +21,11 @@
 - Copy: all six lines final — see `videos/COPY.md`. Names "Navid × Ava" appear on screen (confirmed).
 - Colour per video re-mapped to the new order — see `videos/COPY.md`.
 
-### Video
-- `videos/NxA_01_FRAME_v3.mp4` — motion study built on the earlier FRAME concept
-  (× → + → rectangles from NA Post 01 → Rose frame → title → ×). Source in `videos/src/frame_v3/`.
-
 ## Not done yet
-1. Design the dictionary-entry layout (word, pronunciation, definition, strike, line) and its motion.
-2. Decide how the FRAME motion study fits the new format (it was built before the dictionary idea).
-3. Build all six videos in the dictionary format.
-4. Instagram captions + hashtags for the six posts.
-5. Real camera shutter recording (current shutter is synthesised).
-6. Brand book typography page + Figma text styles — update if the Manrope Light titles become the rule.
-7. Move the Figma file into "NxA projects" (needs an editor seat on Ava's team, or Ava moves it).
-8. Brand book open items: Instagram handle, contact details, award wording, client permissions, etc.
+1. Design the dictionary-entry layout and its motion — on hold.
+2. Build all six videos in the dictionary format.
+3. Instagram captions + hashtags for the six posts.
+4. Real camera shutter recording (current shutter is synthesised).
+5. Brand book typography page + Figma text styles — update if the Manrope Light titles become the rule.
+6. Move the Figma file into "NxA projects" (needs an editor seat on Ava's team, or Ava moves it).
+7. Brand book open items: Instagram handle, contact details, award wording, client permissions, etc.
