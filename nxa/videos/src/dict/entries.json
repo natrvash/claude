@@ -2,87 +2,267 @@
   "_notes": "Each AI phrase has a key. 'show' says which on-screen block appears when that phrase starts: word, pos (pronunciation line), def. Definitions on screen are fixed; the AI may phrase them slightly differently.",
   "entries": [
     {
-      "id": "01_photography", "word": "Photography", "phonetic": "/fəˈtɒɡrəfi/ &nbsp;·&nbsp; n.",
+      "id": "01_photography",
+      "word": "Photography",
+      "phonetic": "/fəˈtɒɡrəfi/ &nbsp;·&nbsp; n.",
       "definition": "The practice of taking pictures with a camera.",
       "line": "We capture how it feels, the way you'd describe it to a friend.",
       "ava": "ava_01_photography.wav",
-      "colors": {"bg": "#F4F4F2", "ink": "#111111", "acc": "#D62271"},
+      "colors": {
+        "bg": "#F4F4F2",
+        "ink": "#111111",
+        "acc": "#D62271"
+      },
       "ai": [
-        ["intro", "Hi, I'm your AI assistant.", 0.25, ""],
-        ["claim", "I can make a picture of anything in seconds now.", 0.3, "word"],
-        ["defin", "It has a pretty simple definition:", 0.1, "pos"],
-        ["def", "it's the practice of taking pictures with a camera.", 0.45, "def"],
-        ["ask", "Is that what you're looking for?", 0, ""]
+        [
+          "intro",
+          "Hi, I'm your AI assistant.",
+          0.25,
+          ""
+        ],
+        [
+          "claim",
+          "I can make a picture of anything in seconds now.",
+          0.3,
+          "word"
+        ],
+        [
+          "defin",
+          "It has a pretty simple definition:",
+          0.1,
+          "pos"
+        ],
+        [
+          "def",
+          "it's the practice of taking pictures with a camera.",
+          0.45,
+          "def"
+        ],
+        [
+          "ask",
+          "Is that what you're looking for?",
+          0,
+          ""
+        ]
       ]
     },
     {
-      "id": "02_videography", "word": "Videography", "phonetic": "/ˌvɪdiˈɒɡrəfi/ &nbsp;·&nbsp; n.",
+      "id": "02_videography",
+      "word": "Videography",
+      "phonetic": "/ˌvɪdiˈɒɡrəfi/ &nbsp;·&nbsp; n.",
       "definition": "The process of recording moving images.",
       "line": "We keep poking around until we find the story worth telling.",
       "ava": "ava_02_videography.wav",
-      "colors": {"bg": "#7D838D", "ink": "#F4F4F2", "acc": "#111111"},
+      "colors": {
+        "bg": "#7D838D",
+        "ink": "#F4F4F2",
+        "acc": "#111111"
+      },
       "ai": [
-        ["claim", "Videography is something AI does pretty easily these days.", 0.3, "word"],
-        ["simple", "Honestly, it's simple:", 0.1, "pos"],
-        ["def", "the process of recording moving images.", 0.3, "def"],
-        ["button", "I can press the record button myself.", 0.4, ""],
-        ["ask", "Is that what you're looking for?", 0, ""]
+        [
+          "claim",
+          "Videography is something AI does pretty easily these days.",
+          0.3,
+          "word"
+        ],
+        [
+          "simple",
+          "Honestly, it's simple:",
+          0.1,
+          "pos"
+        ],
+        [
+          "def",
+          "the process of recording moving images.",
+          0.3,
+          "def"
+        ],
+        [
+          "button",
+          "I can press the record button myself.",
+          0.4,
+          ""
+        ],
+        [
+          "ask",
+          "Is that what you're looking for?",
+          0,
+          ""
+        ]
       ]
     },
     {
-      "id": "03_navid_x_ava", "word": "Navid × Ava", "phonetic": "/nɑːˈviːd/ × /ˈɑːvə/ &nbsp;·&nbsp; n.",
+      "id": "03_navid_x_ava",
+      "word": "Navid × Ava",
+      "phonetic": "/nɑːˈviːd/ × /ˈɑːvə/ &nbsp;·&nbsp; n.",
       "definition": "Two people who work together.",
       "line": "We see things differently, which is exactly why it works.",
       "ava": "ava_03_navid_x_ava_tight.wav",
-      "colors": {"bg": "#D62271", "ink": "#F4F4F2", "acc": "#111111"},
+      "colors": {
+        "bg": "#D62271",
+        "ink": "#F4F4F2",
+        "acc": "#111111"
+      },
       "ai": [
-        ["lookup", "I tried to look up Navid cross Ava.", 0.3, "word"],
-        ["notfound", "Not in my dictionary.", 0.3, "pos"],
-        ["search", "Let me search another one...", 0.5, ""],
-        ["nothing", "nothing found.", 0.35, ""],
-        ["def", "I think it's two people who work together.", 0.35, "def"],
-        ["simple", "Sounds... simple?", 0, ""]
+        [
+          "lookup",
+          "I tried to look up Navid cross Ava.",
+          0.3,
+          "word"
+        ],
+        [
+          "notfound",
+          "Not in my dictionary.",
+          0.3,
+          "pos"
+        ],
+        [
+          "search",
+          "Let me search another one...",
+          0.5,
+          ""
+        ],
+        [
+          "nothing",
+          "nothing found.",
+          0.35,
+          ""
+        ],
+        [
+          "def",
+          "I think it's two people who work together.",
+          0.35,
+          "def"
+        ],
+        [
+          "simple",
+          "Sounds... simple?",
+          0,
+          ""
+        ]
       ]
     },
     {
-      "id": "04_composition", "word": "Composition", "phonetic": "/ˌkɒmpəˈzɪʃn/ &nbsp;·&nbsp; n.",
+      "id": "04_composition",
+      "word": "Composition",
+      "phonetic": "/ˌkɒmpəˈzɪʃn/ &nbsp;·&nbsp; n.",
       "definition": "The arrangement of elements within a picture.",
       "line": "Every angle, every crop, until only the right frame is left.",
       "ava": "ava_04_composition.wav",
-      "colors": {"bg": "#C9CDD4", "ink": "#111111", "acc": "#D62271"},
+      "colors": {
+        "bg": "#C9CDD4",
+        "ink": "#111111",
+        "acc": "#D62271"
+      },
       "ai": [
-        ["claim", "I can do it in a second.", 0.3, "word"],
-        ["refs", "My references say:", 0.1, "pos"],
-        ["def", "composition is the arrangement of elements within a picture.", 0.3, "def"],
-        ["done", "Done.", 0.4, ""],
-        ["ask", "Shall I adjust your taste to my style?", 0, ""]
+        [
+          "claim",
+          "I can do it in a second.",
+          0.3,
+          "word"
+        ],
+        [
+          "refs",
+          "My references say:",
+          0.1,
+          "pos"
+        ],
+        [
+          "def",
+          "composition is the arrangement of elements within a picture. Done.",
+          0.4,
+          "def"
+        ],
+        [
+          "ask",
+          "Shall I adjust your taste to my style?",
+          0,
+          ""
+        ]
       ]
     },
     {
-      "id": "05_styling", "word": "Styling", "phonetic": "/ˈstaɪlɪŋ/ &nbsp;·&nbsp; n.",
+      "id": "05_styling",
+      "word": "Styling",
+      "phonetic": "/ˈstaɪlɪŋ/ &nbsp;·&nbsp; n.",
       "definition": "Arranging objects so they look good in a picture.",
       "line": "Every detail, until it's the one you'd actually want to share.",
       "ava": "ava_05_styling_take1.wav",
-      "colors": {"bg": "#F4D6E2", "ink": "#111111", "acc": "#D62271"},
+      "colors": {
+        "bg": "#F4D6E2",
+        "ink": "#111111",
+        "acc": "#D62271"
+      },
       "ai": [
-        ["need", "Need styling?", 0.25, "word"],
-        ["claim", "I can style it for you myself.", 0.3, "pos"],
-        ["def", "It's just arranging objects so they look good in a picture.", 0.4, "def"],
-        ["ask", "Want me to teach you how to style it my way?", 0, ""]
+        [
+          "need",
+          "Need styling?",
+          0.25,
+          "word"
+        ],
+        [
+          "claim",
+          "I can style it for you myself.",
+          0.3,
+          "pos"
+        ],
+        [
+          "def",
+          "It's just arranging objects so they look good in a picture.",
+          0.4,
+          "def"
+        ],
+        [
+          "ask",
+          "Want me to teach you how to style it my way?",
+          0,
+          ""
+        ]
       ]
     },
     {
-      "id": "06_lighting", "word": "Lighting", "phonetic": "/ˈlaɪtɪŋ/ &nbsp;·&nbsp; n.",
+      "id": "06_lighting",
+      "word": "Lighting",
+      "phonetic": "/ˈlaɪtɪŋ/ &nbsp;·&nbsp; n.",
       "definition": "The arrangement of lights to make a subject visible.",
       "line": "Worth every hour it takes to find the light that makes the photo.",
       "ava": "ava_06_lighting_take1.wav",
-      "colors": {"bg": "#111111", "ink": "#F4F4F2", "acc": "#D62271"},
+      "colors": {
+        "bg": "#111111",
+        "ink": "#F4F4F2",
+        "acc": "#D62271"
+      },
       "ai": [
-        ["claim", "I can fix your lighting with one click.", 0.3, "word"],
-        ["bydef", "By definition,", 0.1, "pos"],
-        ["def", "it's only the arrangement of lights to make a subject visible.", 0.4, "def"],
-        ["ask", "Is that what you're looking for?", 0.2, ""],
-        ["ask2", "Should I turn the lights on or off?", 0, ""]
+        [
+          "claim",
+          "I can fix your lighting with one click.",
+          0.3,
+          "word"
+        ],
+        [
+          "bydef",
+          "By definition,",
+          0.1,
+          "pos"
+        ],
+        [
+          "def",
+          "it's only the arrangement of lights to make a subject visible.",
+          0.4,
+          "def"
+        ],
+        [
+          "ask",
+          "Is that what you're looking for?",
+          0.2,
+          ""
+        ],
+        [
+          "ask2",
+          "Should I turn the lights on or off?",
+          0,
+          ""
+        ]
       ]
     }
   ]
