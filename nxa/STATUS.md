@@ -27,7 +27,8 @@
   (Persian food angle, Saffron & Pistachio palette, Vazirmatn, Damask Rose "Persian rose" note) need revisiting.
 - Typography: Manrope Light titles apply to the intro series only; brand book unchanged for now.
 - Past work (Metro Vakil, Greenland, Sang-e Siah): permission granted, can be shown.
-- Email: Navid — navid@natrvash.com · Ava — ava@natrvash.com. Phone numbers and award link still to come.
+- Email: Navid — navid@natrvash.com · Ava — ava@natrvash.com. Phone numbers still to come.
+- Awards: full list in `AWARDS.md` (replaces the brand book's "2nd place plus finalist" placeholder).
 
 ## Not done yet
 1. Design the dictionary-entry layout and its motion — on hold.
@@ -36,5 +37,5 @@
 4. Real camera shutter recording (current shutter is synthesised).
 5. Brand book typography page + Figma text styles — update if the Manrope Light titles become the rule.
 6. Move the Figma file into "NxA projects" (needs an editor seat on Ava's team, or Ava moves it).
-7. Brand book open items: award link and phone numbers (coming), references (misko.in, Harena.studio, @deepstudio_creative), Ava's on-camera reference.
+7. Brand book open items: phone numbers (coming), references (misko.in, Harena.studio, @deepstudio_creative), Ava's on-camera reference.
 8. Revisit brand book sections that reference Persian culture.
