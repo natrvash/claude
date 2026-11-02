@@ -25,6 +25,10 @@
 - `videos/NxA_01_photography.mp4` … `videos/NxA_06_lighting.mp4` — dictionary entries, AI assistant voice (piper) + Ava's voice, line meter, Rose strike, handwritten line, ×. Voices and sound effects only — music to be added by Navid.
 - Build: `videos/src/dict/build.sh <NA_Post_01_sfx.mp4> [id]`; all text and colours in `videos/src/dict/entries.json`.
 
+## Intro series — FINAL package
+- `videos/NxA_Intro_Series_FINAL.zip`: Yes/But versions (YES stays, BUT under the struck definition), regular versions, Ava's clips, copy.
+- Navid × Ava: Ava's false start is erased, TAKE 2 stamp lands and fades, line rewritten in sync with her second take.
+
 ## Brand decisions (November 2026)
 - Instagram handle: **@nxa.uae** (name field "NxA.uae"). Live, 0 posts.
 - No Persian culture in the brand — NxA is international. Brand book sections that lean on it
