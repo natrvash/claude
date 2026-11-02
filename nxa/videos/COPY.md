@@ -8,7 +8,7 @@ and our line takes its place. Voice: a friend talking to a friend. Warm, casual,
 | # | Word | Pronunciation | Textbook definition (struck through) | Our line | Status |
 |---|---|---|---|---|---|
 | 1 | Photography | /fəˈtɒɡrəfi/ · n. | The practice of taking pictures with a camera. | We capture how it feels, not just how it looks. | 🟡 proposed |
-| 2 | Videography | /ˌvɪdiˈɒɡrəfi/ · n. | The process of recording moving images. | Keep poking around until you find the story worth telling. | ✅ |
+| 2 | Videography | /ˌvɪdiˈɒɡrəfi/ · n. | The process of recording moving images. | We keep poking around until we find the story worth telling. | ✅ final |
 | 3 | Navid × Ava | /nɑːˈviːd/ × /ˈɑːvə/ · n. | Two people who work together. | We see things differently, which is exactly why it works. | ✅ (names on screen — to confirm) |
 
 ## Part 2 — What we work with
