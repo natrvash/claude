@@ -69,6 +69,7 @@ function setup(entry, timings, plan, env){
   YB=plan.yesbut||false;
   if(YB){ const y=document.getElementById("yes"), bt=document.getElementById("but"), df=def.getBoundingClientRect();
     y.style.display="block"; bt.style.display="flex";
+    if(entry.yes){ if(entry.yes.bg) y.style.background=entry.yes.bg; if(entry.yes.color) y.style.color=entry.yes.color; y.style.boxShadow="none"; }
     if(YB==="below"){ const top=df.bottom-sr.top+22, h=96; bt.style.top=top+"px"; bt.style.height=h+"px";
       document.getElementById("line").style.top=(top+h+34)+"px"; }
     else { bt.style.top=(df.top-sr.top-14)+"px"; bt.style.height=(df.height+28)+"px"; } }
