@@ -22,7 +22,7 @@ html,body{margin:0;background:var(--bg)}
 #but{width:880px;box-sizing:border-box;padding:0 36px;background:var(--acc);color:#F4F4F2;font-weight:700;align-items:center;clip-path:inset(0 100% 0 0)}
 #retry{position:absolute;font-family:Hand;font-size:66px;line-height:1.3;white-space:nowrap;visibility:hidden}
 #retry .t{display:inline-block;clip-path:inset(0 100% 0 0)}
-#retry .s{position:absolute;left:-6px;top:52%;height:4px;background:var(--ink);transform-origin:left center;transform:scaleX(0) rotate(-2deg);border-radius:2px}
+#stamp{position:absolute;font-family:Manrope;font-weight:700;font-size:24px;letter-spacing:.18em;line-height:1;padding:10px 14px 9px 17px;color:var(--ink);box-shadow:inset 0 0 0 2.5px var(--ink);opacity:0;transform-origin:center}
 #mark{position:absolute;left:868px;top:1490px;width:64px;opacity:0}
 </style></head><body>
 <div id="stage">
@@ -31,7 +31,8 @@ html,body{margin:0;background:var(--bg)}
   <div id="pos" class="blk"></div>
   <div id="def" class="blk"></div>
   <div id="line"></div>
-  <div id="retry"><span class="t"></span><i class="s"></i></div>
+  <div id="retry"><span class="t"></span></div>
+  <div id="stamp"></div>
   <div id="yes" class="sign">YES,</div>
   <div id="but" class="sign"><span>BUT</span></div>
   <svg id="mark" viewBox="51.102 7.252 28.507 15.711"><path id="markp" d="M63.649 11.851L60.679 13.919L51.102 7.252L57.043 7.252ZM51.102 22.963L73.668 7.252L79.609 7.252L57.043 22.963ZM67.062 18.364L70.033 16.296L79.609 22.963L73.668 22.963Z"/></svg>
@@ -81,7 +82,9 @@ function setup(entry, timings, plan, env){
   RETRY=entry.retry||null; WRITE=entry.write||null; CHARS=entry.line.length;
   if(RETRY){ const r=document.getElementById("retry"), ln=document.getElementById("line");
     r.querySelector(".t").textContent=RETRY.text; r.style.left=ln.style.left||"96px"; r.style.left="96px";
-    r.style.top=(ln.offsetTop)+"px"; const s=r.querySelector(".s"); s.style.width=(r.querySelector(".t").offsetWidth+12)+"px"; }
+    r.style.top=(ln.offsetTop)+"px";
+    const st=document.getElementById("stamp"); st.textContent=RETRY.stamp||"TAKE 2";
+    st.style.top=(ln.offsetTop+2*86+22)+"px"; st.style.right="104px"; }
   return plan;
 }
 let YB=false, RETRY=null, WRITE=null, CHARS=1;
@@ -105,10 +108,14 @@ function render(t){
   const total=ROWS.reduce((s,r)=>s+r.w,0); let acc=0, accC=0;
   let P=null;   // overall written fraction (0..1) when the take has its own timing
   if(WRITE){ let c=0, prev=0; for(const [n,a,z] of WRITE){ c = t<AVA[0]+a ? c : (t<AVA[0]+z ? prev+(n-prev)*seg(t,AVA[0]+a,AVA[0]+z) : n); prev=n; } P=c/CHARS; }
-  if(RETRY){ const r=document.getElementById("retry"), rt=r.querySelector(".t"), rs=r.querySelector(".s");
-    const w=seg(t,AVA[0]+RETRY.write[0],AVA[0]+RETRY.write[1]), sc=eio(seg(t,AVA[0]+RETRY.scratch[0],AVA[0]+RETRY.scratch[1])), fo=1-eio(seg(t,AVA[0]+RETRY.fade[0],AVA[0]+RETRY.fade[1]));
-    r.style.visibility = w>0 && fo>0 ? "visible":"hidden"; r.style.opacity=fo;
-    rt.style.clipPath=`inset(-20px calc(${100-100*w}% + ${12*(1-w)}px) -20px -12px)`; rs.style.transform=`scaleX(${sc}) rotate(-2deg)`; }
+  if(RETRY){ const r=document.getElementById("retry"), rt=r.querySelector(".t");
+    // first attempt: written, then erased (fades while an eraser sweeps it away from the left)
+    const w=seg(t,AVA[0]+RETRY.write[0],AVA[0]+RETRY.write[1]), e=eio(seg(t,AVA[0]+RETRY.erase[0],AVA[0]+RETRY.erase[1]));
+    r.style.visibility = w>0 && e<1 ? "visible":"hidden"; r.style.opacity=1-e;
+    rt.style.clipPath=`inset(-20px calc(${100-100*w}% + ${12*(1-w)}px) -20px calc(${100*e}% - 12px))`;
+    // TAKE 2 stamp: small label, pressed in like a rubber stamp, stays
+    const st=document.getElementById("stamp"), k=seg(t,AVA[0]+RETRY.stamp_at,AVA[0]+RETRY.stamp_at+.22);
+    st.style.opacity=k; st.style.transform=`rotate(-4deg) scale(${1.35-.35*eout(k)})`; }
   ROWS.forEach(r=>{const a=AVA[0]+(AVA[1]-AVA[0])*acc/total, z=AVA[0]+(AVA[1]-AVA[0])*(acc+r.w)/total;
     const p = P===null ? seg(t,a,z) : clamp((P*CHARS-accC)/(r.c-1)); acc+=r.w; accC+=r.c; r.el.style.visibility=p>0?'visible':'hidden'; r.el.style.clipPath=`inset(-20px calc(${100-100*p}% + ${12*(1-p)}px) -20px -12px)`;});
   if(YB){

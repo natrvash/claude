@@ -24,6 +24,9 @@ ref = load(sys.argv[2])                                                    # NA 
 tick = ref[int(1.08*SR):int(1.30*SR)].copy(); f = int(.004*SR); tick[:f] *= np.linspace(0,1,f)[:,None]; tick[-f:] *= np.linspace(1,0,f)[:,None]
 place(tick, plan["STRIKE"][0], .9); place(shutter(), plan["STRIKE"][1] - .05, .8); place(tick, plan["AVA"][1] + .45, .6)
 place(load(sys.argv[3]), plan["AVA"][0], 1.0)                             # Ava
+E = {e["id"]: e for e in json.load(open(f"{D}/entries.json"))["entries"]}[sys.argv[1]]
+if E.get("retry", {}).get("stamp_at") is not None:                          # TAKE 2 stamp lands
+    place(tick, plan["AVA"][0] + E["retry"]["stamp_at"], .7)
 out /= max(1e-9, np.abs(out).max()) * 1.12
 with wave.open(f"{W}/mix.wav", "wb") as w:
     w.setnchannels(2); w.setsampwidth(2); w.setframerate(SR); w.writeframes((out * 32767).astype(np.int16).tobytes())
