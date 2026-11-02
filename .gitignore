@@ -4,3 +4,5 @@ nxa/videos/src/**/strip.png
 nxa/videos/src/**/wave.png
 nxa/videos/src/**/tts/
 nxa/videos/src/**/plan.json
+nxa/videos/music/
+nxa/videos/music_tests/

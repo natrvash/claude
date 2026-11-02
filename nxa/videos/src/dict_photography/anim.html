@@ -29,7 +29,7 @@ let TM=null, STRIKE=[0,0], AVA=[0,0], ROWS=[];
 const clamp=(v,a=0,b=1)=>Math.min(b,Math.max(a,v)), seg=(t,a,b)=>clamp((t-a)/(b-a));
 const eout=t=>1-Math.pow(1-t,3), eio=t=>t<.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2;
 
-function setup(timings, avaDur){
+function setup(timings, avaDur, plan){
   TM=timings;
   const stage=document.getElementById("stage"), sr=stage.getBoundingClientRect();
   // strike bars: one per rendered row of the definition
@@ -47,10 +47,8 @@ function setup(timings, avaDur){
   if(cur) out.push(cur); probe.remove();
   line.innerHTML=out.map(t=>`<span class="row">${t}</span>`).join("");
   ROWS=[...line.querySelectorAll(".row")].map(el=>({el,w:el.scrollWidth}));
-  const dEnd=TM.def[1];
-  STRIKE=[dEnd+.35, dEnd+.9];
-  AVA=[STRIKE[1]+.45, STRIKE[1]+.45+avaDur];
-  return {STRIKE, AVA, TOTAL:AVA[1]+2.0};
+  STRIKE=plan.STRIKE; AVA=plan.AVA;
+  return plan;
 }
 
 function rise(id,t,at,dur=.6,y=26){const p=eout(seg(t,at,at+dur)), el=document.getElementById(id);
