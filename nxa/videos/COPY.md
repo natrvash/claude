@@ -16,7 +16,7 @@ and our line takes its place. Voice: a friend talking to a friend. Warm, casual,
 | # | Word | Pronunciation | Textbook definition (struck through) | Our line | Status |
 |---|---|---|---|---|---|
 | 4 | Composition | /ˌkɒmpəˈzɪʃn/ · n. | The arrangement of elements within a picture. | Only a few get it right. | ✅ |
-| 5 | Styling | /ˈstaɪlɪŋ/ · n. | Arranging objects so they look good in a picture. | It has to look as good as it is. | 🟡 wording under review |
+| 5 | Styling | /ˈstaɪlɪŋ/ · n. | Arranging objects so they look good in a picture. | Every detail, until it's the one you'd actually want to share. | ✅ final |
 | 6 | Lighting | /ˈlaɪtɪŋ/ · n. | The arrangement of lights to make a subject visible. | Worth every hour it takes to find the light that makes the photo. | 🟡 under review |
 
 Notes
