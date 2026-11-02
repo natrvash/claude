@@ -21,6 +21,14 @@
 - Copy: all six lines final — see `videos/COPY.md`. Names "Navid × Ava" appear on screen (confirmed).
 - Colour per video re-mapped to the new order — see `videos/COPY.md`.
 
+## Brand decisions (November 2026)
+- Instagram handle: **@nxa.uae** (name field "NxA.uae"). Live, 0 posts.
+- No Persian culture in the brand — NxA is international. Brand book sections that lean on it
+  (Persian food angle, Saffron & Pistachio palette, Vazirmatn, Damask Rose "Persian rose" note) need revisiting.
+- Typography: Manrope Light titles apply to the intro series only; brand book unchanged for now.
+- Past work (Metro Vakil, Greenland, Sang-e Siah): permission granted, can be shown.
+- Award wording and contact details (email, phone): links/details coming from Navid.
+
 ## Not done yet
 1. Design the dictionary-entry layout and its motion — on hold.
 2. Build all six videos in the dictionary format.
@@ -28,4 +36,5 @@
 4. Real camera shutter recording (current shutter is synthesised).
 5. Brand book typography page + Figma text styles — update if the Manrope Light titles become the rule.
 6. Move the Figma file into "NxA projects" (needs an editor seat on Ava's team, or Ava moves it).
-7. Brand book open items: Instagram handle, contact details, award wording, client permissions, etc.
+7. Brand book open items: award wording and contact details (coming), references (misko.in, Harena.studio, @deepstudio_creative), Ava's on-camera reference.
+8. Revisit brand book sections that reference Persian culture.
