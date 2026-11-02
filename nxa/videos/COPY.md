@@ -7,10 +7,11 @@ Voice: a friend talking to a friend. Warm, casual, short. The series idea: you i
 | 01 | FRAME | Only a few get it right. | ✅ approved |
 | 02 | SPACE | The trick is capturing how it feels, not how big it is. | ✅ approved |
 | 03 | TABLE | It has to look as good as it tastes. | ✅ approved |
-| 04 | LIGHT | — | |
+| 04 | LIGHT | Worth every hour it takes to find the light that makes the photo. | ✅ approved |
 | 05 | FILM | — | |
 | 06 | N × A | — | |
 
 Notes
 - FRAME: works for any subject (space, furniture, food, people) — no "being there".
 - SPACE: the photo shows feeling and quality, not size; "capture" makes it what we do.
+- LIGHT: covers both waiting for natural light and building our own lighting — "worth it" comes first.
