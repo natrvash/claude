@@ -34,3 +34,16 @@ Notes
 | 6 | Lighting | Ink #111111 | Porcelain #F4F4F2 | Damask Rose #D62271 |
 
 Preview: `colour_map_v2.png` (rough layout, colour check only).
+
+## AI assistant narration (draft — machine voice, reads the word and the textbook definition)
+The assistant is a little smug: "I can do this easily". The struck definition and Ava's line answer it.
+The textbook definition is read word for word as shown on screen.
+
+| # | Word | AI narration |
+|---|---|---|
+| 1 | Photography | Hi, I'm your AI assistant. Photography? I can make a picture of anything in seconds now. It has a pretty simple definition, I checked the dictionary: the practice of taking pictures with a camera. Easy. |
+| 2 | Videography | Videography is something AI does pretty easily these days. Honestly, it's simple: the process of recording moving images. |
+| 3 | Navid × Ava | I tried to look up Navid cross Ava. Not in my dictionary. Let me search another one… nothing found. I think it's two people who work together. Sounds… simple? |
+| 4 | Composition | Composition? I can arrange a picture for you in a second. My references say: the arrangement of elements within a picture. Done. |
+| 5 | Styling | Need styling? I can style it for you myself. It's just arranging objects so they look good in a picture. |
+| 6 | Lighting | I can fix your lighting with one click. By definition, it's only the arrangement of lights to make a subject visible. |
