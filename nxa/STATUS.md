@@ -21,6 +21,10 @@
 - Copy: all six lines final — see `videos/COPY.md`. Names "Navid × Ava" appear on screen (confirmed).
 - Colour per video re-mapped to the new order — see `videos/COPY.md`.
 
+## Intro series — built (v1)
+- `videos/NxA_01_photography.mp4` … `videos/NxA_06_lighting.mp4` — dictionary entries, AI assistant voice (piper) + Ava's voice, line meter, Rose strike, handwritten line, ×. Voices and sound effects only — music to be added by Navid.
+- Build: `videos/src/dict/build.sh <NA_Post_01_sfx.mp4> [id]`; all text and colours in `videos/src/dict/entries.json`.
+
 ## Brand decisions (November 2026)
 - Instagram handle: **@nxa.uae** (name field "NxA.uae"). Live, 0 posts.
 - No Persian culture in the brand — NxA is international. Brand book sections that lean on it
@@ -32,11 +36,9 @@
 - Awards: full list in `AWARDS.md` (replaces the brand book's "2nd place plus finalist" placeholder).
 
 ## Not done yet
-1. Design the dictionary-entry layout and its motion — on hold.
-2. Build all six videos in the dictionary format.
-3. Instagram captions + hashtags for the six posts.
-4. Real camera shutter recording (current shutter is synthesised).
-5. Brand book typography page + Figma text styles — update if the Manrope Light titles become the rule.
-6. Move the Figma file into "NxA projects" (needs an editor seat on Ava's team, or Ava moves it).
-7. Brand book open items: real phone number (placeholder in use), references (misko.in, Harena.studio, @deepstudio_creative), Ava's on-camera reference.
-8. Revisit brand book sections that reference Persian culture.
+1. Instagram captions + hashtags for the six posts.
+2. Real camera shutter recording (current shutter is synthesised).
+3. Brand book typography page + Figma text styles — update if the Manrope Light titles become the rule.
+4. Move the Figma file into "NxA projects" (needs an editor seat on Ava's team, or Ava moves it).
+5. Brand book open items: real phone number (placeholder in use), references (misko.in, Harena.studio, @deepstudio_creative), Ava's on-camera reference.
+6. Revisit brand book sections that reference Persian culture.
