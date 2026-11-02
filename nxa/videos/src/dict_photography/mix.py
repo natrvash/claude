@@ -29,7 +29,7 @@ def shutter():
 
 # machine voice, slightly band-limited so it reads as "speaker", centred
 voice = load(f"{D}/narration.wav", 1)[:, 0]
-place(voice, 0, .85)
+place(voice, 0, .9)
 # Post 01 tick when the strike starts, shutter when it lands, soft tick for the ×
 ref = load(sys.argv[1])
 tick = ref[int(1.08*SR):int(1.30*SR)].copy(); f = int(.004*SR); tick[:f] *= np.linspace(0,1,f)[:,None]; tick[-f:] *= np.linspace(1,0,f)[:,None]
