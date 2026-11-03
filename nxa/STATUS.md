@@ -40,7 +40,7 @@
 - Awards: full list in `AWARDS.md` (replaces the brand book's "2nd place plus finalist" placeholder).
 
 ## Not done yet
-1. Instagram captions + hashtags for the six posts.
+1. Instagram captions — drafted in `videos/CAPTIONS.md` (1 approved, 2–6 for review).
 2. Real camera shutter recording (current shutter is synthesised).
 3. Brand book typography page + Figma text styles — update if the Manrope Light titles become the rule.
 4. Move the Figma file into "NxA projects" (needs an editor seat on Ava's team, or Ava moves it).
