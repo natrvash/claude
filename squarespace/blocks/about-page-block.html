@@ -1,0 +1,113 @@
+<!--
+  natrvash.com/about (Profile in the menu): the studio page.
+  Paste into ONE Code Block that fills a section with the magenta theme (the same as the Navid and Ava cards).
+  Delete the page's old blocks (Frame & Form, the text and the photo); everything is in this block.
+  Each list row is one <div class="na-studio-row">: the label in <dt>, the text in <dd>.
+-->
+<div class="na-studio">
+  <header class="na-studio-head">
+    <h1>Natrvash — Navid Atrvash &amp; Ava Izadpanah</h1>
+    <p>Architectural photography and film studio based in Dubai, working across the Middle East and beyond.</p>
+  </header>
+
+  <div class="na-studio-intro">
+    <figure class="na-studio-photo">
+      <img src="https://images.squarespace-cdn.com/content/v1/659f954a111dbd2ab12a0c26/fdff5549-f782-48c6-a60c-32011dad02a9/na-duo.jpg?format=1000w" alt="Navid Atrvash and Ava Izadpanah, the founders of Natrvash, with a camera on a tripod">
+    </figure>
+    <div class="na-studio-panel">
+      <p class="na-studio-lead">Natrvash photographs and films architecture, interiors and hospitality for architects, interior designers and brands, and retouches architectural images for photographers worldwide.</p>
+      <p>The studio is run by Navid Atrvash, an M.Arch-trained art director and photographer, and Ava Izadpanah, a stylist and architectural videographer trained in architecture and interior design. Together they read a space the way its designer meant it, and bring it to the image in stills and motion.</p>
+    </div>
+  </div>
+
+  <div class="na-studio-people">
+    <a class="na-studio-person" href="/navid">
+      <span class="na-studio-name">Navid Atrvash</span>
+      <span class="na-studio-role">Art Director | Photographer</span>
+      <span class="na-studio-note">M.Arch · IPA · Architecture MasterPrize · EPA Gold</span>
+      <span class="na-studio-more">Profile →</span>
+    </a>
+    <a class="na-studio-person" href="/ava">
+      <span class="na-studio-name">Ava Izadpanah</span>
+      <span class="na-studio-role">Stylist | Videographer</span>
+      <span class="na-studio-note">Architecture &amp; interior design · heritage restoration</span>
+      <span class="na-studio-more">Profile →</span>
+    </a>
+  </div>
+
+  <dl class="na-studio-list">
+    <div class="na-studio-row">
+      <dt>Photography</dt>
+      <dd>Architecture, interiors, hospitality and public spaces — <a href="/selective">Selective Projects</a></dd>
+    </div>
+    <div class="na-studio-row">
+      <dt>Film</dt>
+      <dd>Short architectural films for architecture firms, interior designers, restaurants and cultural institutions</dd>
+    </div>
+    <div class="na-studio-row">
+      <dt>Art direction &amp; styling</dt>
+      <dd>Concept, set styling and direction from first visit to final frame</dd>
+    </div>
+    <div class="na-studio-row">
+      <dt>Retouching</dt>
+      <dd>Architectural retouching for photographers worldwide, matched to each photographer's style — <a href="/retouching">see the work</a></dd>
+    </div>
+    <div class="na-studio-row">
+      <dt>Recognition</dt>
+      <dd>IPA Honorable Mention 2025<br>IPA Official Selection 2025 &amp; 2026<br>Architecture MasterPrize Best of Best 2025<br>European Photography Awards Gold 2025<br>Architecture MasterPrize Winner 2026</dd>
+    </div>
+    <div class="na-studio-row">
+      <dt>Published</dt>
+      <dd>ArchDaily · designboom · Parametric Architecture · Amazing Architecture · Architecture MasterPrize · 2A Magazine</dd>
+    </div>
+    <div class="na-studio-row">
+      <dt>Where</dt>
+      <dd>Based in Dubai, UAE · available for projects across the Middle East and beyond</dd>
+    </div>
+    <div class="na-studio-row">
+      <dt>Contact</dt>
+      <dd><a href="mailto:hello@natrvash.com">hello@natrvash.com</a> · <a href="/navid">Navid</a> · <a href="/ava">Ava</a></dd>
+    </div>
+  </dl>
+</div>
+<style>
+  /* Studio page in the brand CD style: black panels with 50% grey lines inside the magenta section. */
+  .na-studio { width: 100%; padding: 0 0 40px; font-family: 'Source Sans 3', system-ui, sans-serif; color: #FFFFFF; text-align: left; }
+  .na-studio a { color: #FFFFFF !important; text-decoration: underline; text-underline-offset: 3px; }
+  .na-studio-head { margin: 0 0 28px; }
+  .na-studio-head h1 { margin: 0 0 8px !important; font-family: inherit !important; font-size: 54px !important; font-weight: 400 !important; line-height: 1.1 !important; letter-spacing: -.01em !important; text-transform: none !important; color: #FFFFFF !important; }
+  .na-studio-head p { margin: 0 !important; font-size: 24px; font-weight: 300; line-height: 1.35; }
+  .na-studio-intro { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); background: #040606; border: 4px solid #656263; }
+  .na-studio-photo { margin: 0; border-right: 2px solid #656263; }
+  .na-studio-photo img { display: block; width: 100%; height: 100%; object-fit: cover; aspect-ratio: 1814 / 2000; }
+  .na-studio-panel { display: flex; flex-direction: column; justify-content: center; gap: 18px; padding: 32px; }
+  .na-studio-panel p { margin: 0 !important; font-size: 18px; line-height: 1.55; }
+  .na-studio-panel .na-studio-lead { font-size: 26px; font-weight: 300; line-height: 1.35; }
+  .na-studio-people { display: grid; grid-template-columns: 1fr 1fr; background: #040606; border: 4px solid #656263; border-top: 0; }
+  .na-studio-person { display: flex; flex-direction: column; gap: 6px; padding: 24px 28px; text-decoration: none !important; }
+  .na-studio-person + .na-studio-person { border-left: 2px solid #656263; }
+  .na-studio-name { font-size: 26px; font-weight: 400; line-height: 1.2; }
+  .na-studio-role { font-size: 14px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+  .na-studio-note { font-size: 16px; }
+  .na-studio-more { margin-top: 6px; font-size: 14px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: #F7B3D2; }
+  .na-studio-person:hover .na-studio-more, .na-studio-person:focus-visible .na-studio-more { text-decoration: underline; }
+  .na-studio-list { margin: 0; background: #040606; border: 4px solid #656263; border-top: 0; }
+  .na-studio-row { display: grid; grid-template-columns: 240px minmax(0, 1fr); gap: 6px 28px; padding: 18px 28px; }
+  .na-studio-row + .na-studio-row { border-top: 2px solid #656263; }
+  .na-studio-row dt { margin: 0; padding-top: 2px; font-size: 14px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+  .na-studio-row dd { margin: 0; font-size: 18px; line-height: 1.55; }
+  @media (max-width: 767px) {
+    .na-studio-head h1 { font-size: 34px !important; }
+    .na-studio-head p { font-size: 19px; }
+    .na-studio-intro, .na-studio-people { grid-template-columns: minmax(0, 1fr); }
+    .na-studio-photo { border-right: 0; border-bottom: 2px solid #656263; }
+    .na-studio-panel { padding: 20px; }
+    .na-studio-panel .na-studio-lead { font-size: 21px; }
+    .na-studio-person { padding: 18px 20px; }
+    .na-studio-person + .na-studio-person { border-left: 0; border-top: 2px solid #656263; }
+    .na-studio-row { grid-template-columns: minmax(0, 1fr); padding: 16px 20px; }
+  }
+  /* The page's own section takes the magenta brand colour, whatever theme it was given. */
+  body:has(.na-studio) #page .page-section:has(.na-studio),
+  body:has(.na-studio) #page .page-section:has(.na-studio) .section-background { background: #D71270 !important; }
+</style>
