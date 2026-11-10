@@ -774,3 +774,33 @@ body:has(.na-hero) #footer-sections .social-icon {
     transition: none !important;
   }
 }
+
+/* ---------- Squarespace editor ----------
+   While a page is being edited, the film, the frame and the About layout step aside so every block
+   keeps its own edit controls. Visitors never see this. */
+
+body.sqs-edit-mode-active .na-mframe {
+  display: none !important;
+}
+body.sqs-edit-mode-active .page-section:has(.na-hero) {
+  height: auto !important;
+  min-height: 420px !important;
+  overflow: visible !important;
+}
+body.sqs-edit-mode-active .page-section:has(.na-hero) :is(.content-wrapper, .content, .fluid-engine, .fe-block, .sqs-block, .sqs-block-content, .sqs-block-code) {
+  position: relative !important;
+}
+body.sqs-edit-mode-active .na-hero {
+  position: relative !important;
+  height: 360px;
+  pointer-events: none;
+}
+body.sqs-edit-mode-active .page-section:has(.na-hero) .fluid-engine,
+body.sqs-edit-mode-active .page-section:has(.na-about) .fluid-engine,
+body.sqs-edit-mode-active .page-section:has(.na-about--dark) .fluid-engine,
+body.sqs-edit-mode-active .page-section:has(.na-bio) .fluid-engine {
+  display: grid !important;
+}
+body.sqs-edit-mode-active #header {
+  transform: none !important;
+}
