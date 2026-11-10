@@ -1,0 +1,45 @@
+# natrvash.com — what is left to do
+
+Last updated: 10 Nov 2026. Code for every step is in this folder and on the copy page
+(https://claude.ai/artifact/AnFpeCRDvPpQfV96s7QMnq, boxes numbered below).
+
+## Waiting to be installed
+
+- Homepage: box 1 (film Code Block), box 2 (About Code Block), box 3 (Custom CSS).
+  If the editor hides the blocks' Edit buttons: empty Custom CSS, save, replace boxes 1 and 2,
+  then paste box 3. Box 3 now also makes the editor step aside; check that the Edit buttons show.
+- Box 11 (studio schema) in Settings › Advanced › Code Injection › Header; remove it from the /about page header if it was put there.
+- Homepage SEO title, description and social image; Settings › Business Information (Natrvash, Dubai, hello@natrvash.com, phone).
+- Portfolio gallery alt text: the 90 images are named by file (NATRVASH-5888.jpg …); give each the project name.
+- /navid and /ava: short SEO titles, magenta theme on the panel section, panel's right edge one column wider,
+  Ava's social image, Ava's Instagram link to instagram.com/ava.izadpanah, mobile gap under Save Contact.
+- /about: box 10 (black-and-white About, needs box 3) and SEO title/description.
+
+## Next sessions
+
+1. Personal Projects pages
+   - Maelstrom: box 12 (facts panel), box 13 (schema), "Vista Gallery" → "Vista Art Gallery", SEO, social image, alt text.
+   - Thousands Flower → Thousands of Flowers: rename, slug /thousands-of-flowers, URL mapping
+     `/thousands-flower -> /thousands-of-flowers 301`, H1, new opening paragraph, "Vista" → "Vista Plus" (2014),
+     box 14 (facts panel), box 15 (schema), SEO, alt text, menu label.
+2. Retouching page: Services and FAQ section (services: blending, sky and dusk, removal, perspective and colour,
+   matching each photographer's style; turnaround by project; any file-sharing service; two revision rounds;
+   price on request; no mention of test images).
+3. Google Business Profile for Natrvash in Dubai.
+4. Google Search Console: connect through Squarespace Settings › SEO and submit https://www.natrvash.com/sitemap.xml.
+5. 26 Nov 2026: re-run the Squarespace AI Visibility report (same 11 prompts, ChatGPT and Gemini) and compare.
+
+## Open details
+
+- QR code: confirm its exact address. /navidcontact works; /Navidcontact (capital N) is a 404 and would need
+  `/Navidcontact -> / 301`.
+- Behance: rename "Milestone" to Maelstrom.
+- Footer says "managed by Ali Atrvash"; change to Navid if wanted.
+- Retouching page: optional credit lines from collaborating photographers linking back to the site.
+
+## Decisions to keep
+
+- Based in Dubai, working across the Middle East and beyond; Iran is not named except in exhibition history.
+- Name shown as Navid Atrvash; (Ali) only in schema and text where useful. Studio name: Natrvash.
+- Ava: wife and creative partner, co-founder; titles Art Director | Photographer and Stylist | Videographer.
+- Brand: Pantone 214C magenta, black, 50% grey; Source Sans 3; CD-style black panels with grey lines.
