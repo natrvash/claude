@@ -44,4 +44,16 @@
     .na-bio-lead { padding: 20px; font-size: 24px; }
     .na-bio-row { grid-template-columns: minmax(0, 1fr); padding: 16px 20px; }
   }
+  /* The contact card above takes the brand typeface and a title that fits on one line. */
+  body:has(.na-bio) #page .page-section:not(:has(.na-bio)) :is(h1, h2, h3, p, a, .sqs-block-button-element) { font-family: 'Source Sans 3', system-ui, sans-serif !important; }
+  body:has(.na-bio) #page .page-section:not(:has(.na-bio)) h1 { font-weight: 400 !important; letter-spacing: -.01em; }
+  body:has(.na-bio) #page .page-section:not(:has(.na-bio)) h2 { font-size: 26px !important; font-weight: 300 !important; line-height: 1.25 !important; }
+  body:has(.na-bio) #page .page-section:not(:has(.na-bio)) p { font-size: 18px !important; }
+  body:has(.na-bio) #page .page-section:not(:has(.na-bio)) .sqs-block-button-element { font-weight: 600 !important; letter-spacing: .12em !important; }
+  /* The profile section sits close under the card. */
+  body:has(.na-bio) #page .page-section:has(.na-bio) { padding-top: 0 !important; min-height: 0 !important; }
+  body:has(.na-bio) #page .page-section:has(.na-bio) .content-wrapper { padding-top: 0 !important; }
+  @media (max-width: 640px) {
+    body:has(.na-bio) #page .page-section:not(:has(.na-bio)) h2 { font-size: 20px !important; }
+  }
 </style>
