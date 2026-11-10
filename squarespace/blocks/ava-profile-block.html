@@ -30,17 +30,18 @@
   </dl>
 </div>
 <style>
-  /* Profile list: white text on black boxes, with the section's colour (magenta) showing between them. */
+  /* As on the brand CD: one black panel inside the magenta frame, divided by thin 50% grey lines. */
   .na-bio { max-width: 860px; margin: 0 auto; padding: 8px 0 24px; font-family: 'Source Sans 3', system-ui, sans-serif; text-align: left; }
-  .na-bio-lead { margin: 0 0 8px !important; padding: 24px 28px; background: #040606; color: #FFFFFF !important; font-size: 22px; font-weight: 400; line-height: 1.45; }
-  .na-bio-list { display: grid; gap: 8px; margin: 0; }
-  .na-bio-row { display: grid; grid-template-columns: 220px minmax(0, 1fr); gap: 6px 28px; padding: 18px 28px; background: #040606; color: #FFFFFF; }
+  .na-bio-lead { margin: 0 !important; padding: 28px 32px; background: #040606; color: #FFFFFF !important; font-size: 33px; font-weight: 300; line-height: 1.3; border: 4px solid #656263; border-bottom: 0; }
+  .na-bio-list { margin: 0; background: #040606; border: 4px solid #656263; border-top: 2px solid #656263; }
+  .na-bio-row { display: grid; grid-template-columns: 220px minmax(0, 1fr); gap: 6px 28px; padding: 18px 28px; color: #FFFFFF; }
+  .na-bio-row + .na-bio-row { border-top: 2px solid #656263; }
   .na-bio-row dt { margin: 0; padding-top: 2px; font-size: 14px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: #FFFFFF; }
   .na-bio-row dd { margin: 0; font-size: 18px; line-height: 1.55; color: #FFFFFF; }
   .na-bio a { color: #FFFFFF !important; text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px; }
   .na-bio a:hover, .na-bio a:focus-visible { text-decoration-thickness: 2px; outline: none; }
   @media (max-width: 640px) {
-    .na-bio-lead { padding: 20px; font-size: 19px; }
+    .na-bio-lead { padding: 20px; font-size: 24px; }
     .na-bio-row { grid-template-columns: minmax(0, 1fr); padding: 16px 20px; }
   }
 </style>
