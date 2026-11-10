@@ -1,0 +1,35 @@
+<a href="#" id="savecontact" style="display:inline-block;padding:14px 28px;
+   background:#fff;color:#000;text-decoration:none;font-family:inherit;
+   font-size:15px;letter-spacing:0.05em;">SAVE CONTACT</a>
+
+<script>
+(function(){
+  var vcf = [
+    "BEGIN:VCARD",
+    "VERSION:3.0",
+    "N:Izadpanah;Ava;;;",
+    "FN:Ava Izadpanah",
+    "ORG:Navid Atrvash Photography Services L.L.C",
+    "TITLE:Stylist & Architectural Videographer",
+    "TEL;TYPE=CELL,VOICE:+971505812585",
+    "EMAIL;TYPE=INTERNET,WORK:Ava@Natrvash.com",
+    "URL:https://natrvash.com",
+    "ADR;TYPE=WORK:;;;Dubai;;;United Arab Emirates",
+    "X-SOCIALPROFILE;TYPE=instagram:https://instagram.com/ava.izadpanah",
+    "NOTE:Instagram: @ava.izadpanah",
+    "END:VCARD"
+  ].join("\r\n");
+
+  document.getElementById("savecontact").addEventListener("click", function(e){
+    e.preventDefault();
+    var blob = new Blob([vcf], {type:"text/vcard;charset=utf-8"});
+    var url = URL.createObjectURL(blob);
+    var a = document.createElement("a");
+    a.href = url;
+    a.download = "ava-izadpanah.vcf";
+    document.body.appendChild(a);
+    a.click();
+    setTimeout(function(){ URL.revokeObjectURL(url); a.remove(); }, 1000);
+  });
+})();
+</script>
