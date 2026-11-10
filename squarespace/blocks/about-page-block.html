@@ -1,113 +1,175 @@
 <!--
-  natrvash.com/about (Profile in the menu): the studio page.
-  Paste into ONE Code Block that fills a section with the magenta theme (the same as the Navid and Ava cards).
-  Delete the page's old blocks (Frame & Form, the text and the photo); everything is in this block.
-  Each list row is one <div class="na-studio-row">: the label in <dt>, the text in <dd>.
+  natrvash.com/about (Profile in the menu): the same layout and content as the homepage About section, in black and white.
+  Paste into ONE Code Block in a section of its own; delete the page's old blocks (Frame & Form, the text and the photo).
+  It uses the About styles already in Custom CSS; the black-and-white colours are below.
 -->
-<div class="na-studio">
-  <header class="na-studio-head">
-    <h1>Natrvash — Navid Atrvash &amp; Ava Izadpanah</h1>
-    <p>Architectural photography and film studio based in Dubai, working across the Middle East and beyond.</p>
-  </header>
+<div class="na-about na-about--dark">
+  <h1 class="na-about-intro">Natrvash — architectural photography and film studio based in Dubai, working across the Middle East and beyond.</h1>
 
-  <div class="na-studio-intro">
-    <figure class="na-studio-photo">
-      <img src="https://images.squarespace-cdn.com/content/v1/659f954a111dbd2ab12a0c26/fdff5549-f782-48c6-a60c-32011dad02a9/na-duo.jpg?format=1000w" alt="Navid Atrvash and Ava Izadpanah, the founders of Natrvash, with a camera on a tripod">
-    </figure>
-    <div class="na-studio-panel">
-      <p class="na-studio-lead">Natrvash photographs and films architecture, interiors and hospitality for architects, interior designers and brands, and retouches architectural images for photographers worldwide.</p>
-      <p>The studio is run by Navid Atrvash, an M.Arch-trained art director and photographer, and Ava Izadpanah, a stylist and architectural videographer trained in architecture and interior design. Together they read a space the way its designer meant it, and bring it to the image in stills and motion.</p>
+  <figure class="na-about-photo">
+    <img src="https://images.squarespace-cdn.com/content/v1/659f954a111dbd2ab12a0c26/fdff5549-f782-48c6-a60c-32011dad02a9/na-duo.jpg?format=750w" alt="Navid Atrvash and Ava Izadpanah with a camera on a tripod">
+    <figcaption><span>Navid</span><span>Ava</span></figcaption>
+  </figure>
+
+  <div class="na-about-people">
+    <article class="na-person">
+      <div class="na-person-name">
+        <h2>
+          <a href="/navid"><svg class="na-wordmark-navid" viewBox="333.0 250.7 332.0 70.9" fill="currentColor" role="img" aria-label="Navid Atrvash"><path d="M 374.7 277.4 L 336.7 251.0 L 336.7 251.0 L 336.7 251.0 L 333.3 251.0 L 333.3 281.6 L 336.7 281.6 L 336.7 255.2 L 374.7 281.6 L 378.1 281.6 L 378.1 251.0 L 374.7 251.0 Z M 374.7 277.4"></path><path d="M 504.9 251.0 L 464.4 251.0 L 464.4 254.5 L 505.7 254.5 L 505.7 278.1 L 464.4 278.1 L 464.4 281.6 L 504.9 281.6 C 507.3 281.6 509.2 279.6 509.2 277.3 L 509.2 255.3 C 509.2 252.9 507.3 251.0 504.9 251.0"></path><path d="M 388.1 251.0 L 388.1 251.0 L 384.7 251.0 L 384.7 281.6 L 415.0 281.6 L 415.0 278.1 L 388.1 278.1 L 388.1 255.2 L 426.0 281.6 L 432.0 281.6 L 388.1 251.0 Z M 388.1 251.0"></path><path d="M 454.0 281.6 L 457.4 281.6 L 457.4 251.0 L 454.0 251.0 Z M 454.0 281.6"></path><path d="M 443.6 277.4 L 405.7 251.0 L 399.7 251.0 L 443.6 281.6 L 443.6 281.6 L 443.6 281.6 L 447.1 281.6 L 447.1 251.0 L 443.6 251.0 Z M 443.6 277.4"></path><path d="M 516.2 290.7 L 516.2 321.2 L 546.8 321.2 L 546.8 317.8 L 519.7 317.8 L 519.7 294.8 L 557.6 321.2 L 563.6 321.2 L 519.7 290.7 Z M 516.2 290.7"></path><path d="M 336.7 290.7 L 336.7 290.7 L 333.3 290.7 L 333.3 321.2 L 363.7 321.2 L 358.8 317.8 L 336.7 317.8 L 336.7 294.8 L 374.7 321.2 L 380.7 321.2 L 336.7 290.7 Z M 336.7 290.7"></path><path d="M 661.2 321.2 L 664.7 321.2 L 664.7 290.7 L 661.2 290.7 Z M 661.2 321.2"></path><path d="M 623.1 290.7 L 619.7 290.7 L 619.7 321.2 L 623.1 321.2 L 623.1 307.7 L 659.2 307.7 L 659.2 304.2 L 623.1 304.2 Z M 623.1 290.7"></path><path d="M 384.4 290.7 L 363.7 290.7 L 363.7 294.1 L 384.4 294.1 L 384.4 321.2 L 387.9 321.2 L 387.9 294.1 L 408.6 294.1 L 408.6 290.7 Z M 384.4 290.7"></path><path d="M 505.7 317.1 L 467.8 290.7 L 461.8 290.7 L 505.7 321.2 L 505.7 321.2 L 505.7 321.2 L 509.2 321.2 L 509.2 290.7 L 505.7 290.7 Z M 505.7 317.1"></path><path d="M 453.1 307.8 C 455.4 307.8 457.4 305.8 457.4 303.5 L 457.4 295.0 C 457.4 292.6 455.4 290.7 453.1 290.7 L 412.5 290.7 L 412.5 321.2 L 416.0 321.2 L 416.0 294.1 L 453.9 294.1 L 453.9 304.3 L 426.9 304.3 L 430.4 306.7 L 451.3 321.2 L 451.3 321.2 L 451.3 321.2 L 457.5 321.2 L 438.1 307.8 Z M 453.1 307.8"></path><path d="M 567.9 294.8 L 567.9 303.3 C 567.9 305.7 569.8 307.6 572.2 307.6 L 609.3 307.7 L 609.3 317.8 L 567.9 317.8 L 567.9 321.3 L 608.4 321.3 C 610.8 321.3 612.7 319.4 612.7 317.0 L 612.7 308.5 C 612.7 306.1 610.8 304.2 608.4 304.2 L 571.4 304.2 L 571.4 294.0 L 612.7 294.0 L 612.7 290.5 L 572.2 290.5 C 569.8 290.5 567.9 292.4 567.9 294.8"></path></svg></a>
+        </h2>
+        <p class="na-lab"><b>Art Director</b> |<br>Photographer</p>
+      </div>
+      <div class="na-person-text">
+        <p>Trained as an architect and working as an artist, Navid directs and photographs spaces, design and art objects with an understanding of why they were made the way they were.</p>
+        <p class="na-facts">M.Arch · IPA · Architecture MasterPrize · EPA Gold · <a href="/navid">Profile →</a></p>
+      </div>
+    </article>
+
+    <div class="na-x" role="img" aria-label="in collaboration with">
+      <svg viewBox="0 0 20 20" aria-hidden="true"><g stroke="#D71270" stroke-width="2" stroke-linecap="square"><line x1="2" y1="2" x2="18" y2="18"></line><line x1="18" y1="2" x2="2" y2="18"></line></g></svg>
     </div>
+
+    <article class="na-person">
+      <div class="na-person-name">
+        <h2>
+          <a href="/ava"><svg class="na-wordmark-ava" viewBox="240.8 106.6 210.1 35.4" fill="currentColor" role="img" aria-label="Ava Izadpanah"><path d="M 318.0 126.9 L 298.4 126.9 L 298.4 128.6 L 318.4 128.6 L 318.4 140.0 L 298.4 140.0 L 298.4 141.6 L 318.0 141.6 C 319.1 141.6 320.0 140.7 320.0 139.6 L 320.0 129.0 C 320.0 127.8 319.1 126.9 318.0 126.9"></path><path d="M 241.1 141.6 L 242.7 141.6 L 242.7 126.9 L 241.1 126.9 Z M 241.1 141.6"></path><path d="M 247.7 128.6 L 266.6 128.6 L 266.6 126.9 L 247.7 126.9 Z M 247.7 128.6"></path><path d="M 247.7 141.6 L 266.6 141.6 L 266.6 140.0 L 247.7 140.0 Z M 247.7 141.6"></path><path d="M 242.7 106.8 L 241.1 106.8 L 241.1 121.6 L 255.7 121.6 L 255.7 119.9 L 242.7 119.9 L 242.7 108.8 L 261.0 121.6 L 263.9 121.6 Z M 242.7 106.8"></path><path d="M 272.5 126.9 L 270.9 126.9 L 270.9 141.6 L 285.5 141.6 L 285.5 140.0 L 272.5 140.0 L 272.5 128.9 L 290.8 141.6 L 293.7 141.6 Z M 272.5 126.9"></path><path d="M 352.1 126.9 L 350.4 126.9 L 350.4 141.6 L 365.0 141.6 L 365.0 140.0 L 352.1 140.0 L 352.1 128.9 L 370.3 141.6 L 373.2 141.6 Z M 352.1 126.9"></path><path d="M 404.7 126.9 L 403.0 126.9 L 403.0 141.6 L 417.6 141.6 L 417.6 140.0 L 404.7 140.0 L 404.7 128.9 L 422.9 141.6 L 425.8 141.6 Z M 404.7 126.9"></path><path d="M 266.6 128.6 L 248.3 141.6 L 247.7 140.0 L 266.0 126.9 L 266.5 126.9 L 266.2 126.9 Z M 266.6 128.6"></path><path d="M 276.7 106.8 L 275.1 106.8 L 275.1 121.6 L 289.7 121.6 L 289.7 119.9 L 276.7 119.9 L 276.7 108.8 L 295.0 121.6 L 297.9 121.6 Z M 276.7 106.8"></path><path d="M 269.5 119.5 L 251.2 106.8 L 248.3 106.8 L 269.5 121.6 L 269.5 121.6 L 269.5 121.6 L 271.1 121.6 L 271.1 106.8 L 269.5 106.8 Z M 269.5 119.5"></path><path d="M 448.9 141.7 L 450.5 141.7 L 450.5 127.0 L 448.9 127.0 Z M 448.9 141.7"></path><path d="M 430.7 127.0 L 429.0 127.0 L 429.0 141.7 L 430.7 141.7 L 430.7 135.2 L 447.9 135.2 L 447.9 133.5 L 430.7 133.5 Z M 430.7 127.0"></path><path d="M 331.3 133.4 L 344.2 133.4 L 344.2 128.6 L 326.1 128.6 L 326.1 141.5 L 324.5 141.5 L 324.5 126.9 L 343.8 126.9 C 345.0 126.9 345.9 127.8 345.9 129.0 L 345.9 133.0 C 345.9 134.2 345.0 135.1 343.8 135.1 L 331.4 135.1 Z M 331.3 133.4"></path><path d="M 396.2 139.6 L 377.9 126.9 L 377.9 126.9 L 377.9 126.9 L 376.3 126.9 L 376.3 141.6 L 377.9 141.6 L 377.9 128.9 L 396.2 141.6 L 397.8 141.6 L 397.8 126.9 L 396.2 126.9 Z M 396.2 139.6"></path></svg></a>
+        </h2>
+        <p class="na-lab"><b>Stylist</b> |<br>Videographer</p>
+      </div>
+      <div class="na-person-text">
+        <p>With a refined eye shaped by years across different creative fields, Ava gives every space its character, from the placement of a single object to the final moving shot.</p>
+        <p class="na-facts">Architecture &amp; interior design · Arg Hotel restoration · <a href="/ava">Profile →</a></p>
+      </div>
+    </article>
   </div>
 
-  <div class="na-studio-people">
-    <a class="na-studio-person" href="/navid">
-      <span class="na-studio-name">Navid Atrvash</span>
-      <span class="na-studio-role">Art Director | Photographer</span>
-      <span class="na-studio-note">M.Arch · IPA · Architecture MasterPrize · EPA Gold</span>
-      <span class="na-studio-more">Profile →</span>
-    </a>
-    <a class="na-studio-person" href="/ava">
-      <span class="na-studio-name">Ava Izadpanah</span>
-      <span class="na-studio-role">Stylist | Videographer</span>
-      <span class="na-studio-note">Architecture &amp; interior design · heritage restoration</span>
-      <span class="na-studio-more">Profile →</span>
-    </a>
+  <div class="na-about-lists">
+    <div class="na-list na-awards">
+      <p class="na-lab"><b>Awards</b> &amp; Recognition</p>
+      <!-- One block per competition and year. Copy a <li> to add an award, or a whole <div class="na-org"> to add a competition. -->
+      <div class="na-orgs">
+        <div class="na-org">
+          <h3><b>2026</b> International Photography Awards (IPA)</h3>
+          <ul>
+            <li><b>Official Selection</b><i>Brickwave (Metro Station)</i><span>Architecture, Interior</span></li>
+            <li><b>Official Selection</b><i>Cut of Light</i><span>Architecture, Interior</span></li>
+          </ul>
+        </div>
+        <div class="na-org">
+          <h3><b>2026</b> Architecture MasterPrize (AMP)</h3>
+          <ul>
+            <li><b>Winner</b><i>Threshold, Sang-e Siah</i><span>Hospitality Exterior</span></li>
+            <li><b>Honorable Mention</b><i>Mirror Vortex</i><span>Public Exterior</span></li>
+            <li><b>Honorable Mention</b><i>Two Answers to the Same Block</i><span>Cityscapes</span></li>
+            <li><b>Honorable Mention</b><i>Yellow Fold</i><span>Industrial Interior</span></li>
+            <li><b>Honorable Mention</b><i>Cut of Light</i><span>Residential Interior</span></li>
+          </ul>
+        </div>
+        <div class="na-org">
+          <h3><b>2026</b> Architecture Photography Awards (APA)</h3>
+          <ul>
+            <li><b>2nd Place</b><i>Yellow Fold</i><span>Stairs</span></li>
+            <li><b>Finalist</b><i>Iran Tablo Factory</i><span>Stairs</span></li>
+            <li><b>Finalist</b><i>Vertical Drop</i><span>Stairs</span></li>
+            <li><b>Finalist</b><i>Brickwave</i><span>Public Transport</span></li>
+            <li><b>Finalist</b><i>Brickwave</i><span>Interior Architecture</span></li>
+            <li><b>Finalist</b><i>Hanging Garden</i><span>Windows</span></li>
+            <li><b>Finalist</b><i>Hanging Garden</i><span>Facade Design</span></li>
+          </ul>
+        </div>
+        <div class="na-org">
+          <h3><b>2026</b> PERSPA — Prix de la Perspective Architecturale (France)</h3>
+          <ul>
+            <li><b>Honourable Mention</b><i>Brickwave</i><span>Modern Architecture</span></li>
+          </ul>
+        </div>
+        <div class="na-org">
+          <h3><b>2025</b> International Photography Awards (IPA)</h3>
+          <ul>
+            <li><b>Honorable Mention (Professional)</b><i>Greenland Convention Center – Winter View</i><span>Architecture, Buildings</span></li>
+            <li><b>Official Selection</b><i>Greenland Convention Center – Winter View</i><span>Architecture, Buildings</span></li>
+          </ul>
+        </div>
+        <div class="na-org">
+          <h3><b>2025</b> European Photography Awards (EPA)</h3>
+          <ul>
+            <li><b>Gold Winner</b><i>Greenland Convention Center</i><span>Architecture Photography / Building</span></li>
+          </ul>
+        </div>
+        <div class="na-org">
+          <h3><b>2025</b> Architecture MasterPrize (AMP)</h3>
+          <ul>
+            <li><b>Best of Best</b><i>Vakil Metro Station</i><span>Public Interior</span></li>
+            <li><b>Winner</b><i>Greenland</i><span>Public Exterior</span></li>
+            <li><b>Honorable Mention</b><i>Molavi Restaurant</i><span>Commercial Interior</span></li>
+            <li><b>Honorable Mention</b><i>Villa No. 07</i><span>Residential Interior</span></li>
+          </ul>
+        </div>
+        <div class="na-org">
+          <h3><b>2025</b> Nexus International Photography Awards (NIPA)</h3>
+          <ul>
+            <li><b>Official Recognition</b><i>Greenland Convention Center</i><span>Architecture</span></li>
+          </ul>
+        </div>
+        <div class="na-org">
+          <h3><b>2025</b> Global Lens Photography Awards</h3>
+          <ul>
+            <li><b>Selected</b><i>Greenland</i><span>Architecture</span></li>
+          </ul>
+        </div>
+        <div class="na-org">
+          <h3><b>2025</b> Tokyo International Foto Awards (TIFA)</h3>
+          <ul>
+            <li><b>Honorable Mention</b><i>Greenland</i><span>Architecture, Buildings</span></li>
+          </ul>
+        </div>
+        <div class="na-org">
+          <h3><b>2025</b> Nikon</h3>
+          <ul>
+            <li><b>Selective Frame</b></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="na-list na-published">
+      <p class="na-lab"><b>Published</b> Projects</p>
+      <!-- One <img> per publication: the logo's address on the site in src, its name in alt. Copy a line to add one, delete a line to remove one; the order is the order on the page. -->
+      <div class="na-pubs">
+        <img src="https://images.squarespace-cdn.com/content/v1/659f954a111dbd2ab12a0c26/2949d8f4-9e94-4deb-8ab2-03f2d52fb688/na-pub-archdaily.png?format=500w" alt="ArchDaily">
+        <img src="https://images.squarespace-cdn.com/content/v1/659f954a111dbd2ab12a0c26/70cc195c-56ac-4e03-8a45-82a07fd6f7bb/na-pub-designboom.png?format=500w" alt="designboom">
+        <img src="https://images.squarespace-cdn.com/content/v1/659f954a111dbd2ab12a0c26/1c631c63-6fd1-40b7-a79c-ad3c235bbf8d/na-pub-architecture-masterprize.png?format=500w" alt="Architecture MasterPrize">
+        <img src="https://images.squarespace-cdn.com/content/v1/659f954a111dbd2ab12a0c26/77c45a8e-3ed9-47d6-885b-eb161722a7e5/na-pub-parametric-architecture.png?format=500w" alt="Parametric Architecture">
+        <img src="https://images.squarespace-cdn.com/content/v1/659f954a111dbd2ab12a0c26/b7b3b2ea-e6a1-40a8-9b69-f27e654e2dec/na-pub-amazing-architecture.png?format=500w" alt="Amazing Architecture">
+        <img src="https://images.squarespace-cdn.com/content/v1/659f954a111dbd2ab12a0c26/2c97c751-d0eb-4022-b4bb-6da72079ae76/na-pub-ida.png?format=500w" alt="IDA Design Awards">
+        <img src="https://images.squarespace-cdn.com/content/v1/659f954a111dbd2ab12a0c26/f4b73a80-9d9a-4428-94ef-babf6700cd96/na-pub-love-that-design.png?format=500w" alt="Love That Design">
+        <img src="https://images.squarespace-cdn.com/content/v1/659f954a111dbd2ab12a0c26/53e887f2-8e6c-4a95-8aa9-18046c26e221/na-pub-archnet.png?format=500w" alt="ArchNet">
+        <img src="https://images.squarespace-cdn.com/content/v1/659f954a111dbd2ab12a0c26/b739370e-c556-4509-b7e2-cb32303ac315/na-pub-2a-awards.png?format=500w" alt="2A Continental Architectural Awards">
+        <img src="https://images.squarespace-cdn.com/content/v1/659f954a111dbd2ab12a0c26/4e43bc08-16ba-4e25-9c26-3744d04fac51/na-pub-2a-magazine.png?format=500w" alt="2A Architecture &amp; Art Magazine">
+        <img src="https://images.squarespace-cdn.com/content/v1/659f954a111dbd2ab12a0c26/87913bb3-bf42-4ac5-9696-375a94a1a36e/na-pub-archoma.png?format=500w" alt="Archoma">
+        <img src="https://images.squarespace-cdn.com/content/v1/659f954a111dbd2ab12a0c26/e9fc1e7f-b0a5-4904-bb3e-1dd60bd86f2b/na-pub-apalmanac.png?format=500w" alt="APALMANAC">
+        <img src="https://images.squarespace-cdn.com/content/v1/659f954a111dbd2ab12a0c26/01259a7c-3524-4f0f-99de-4663af47a4cc/na-pub-kioskedia.png?format=500w" alt="KIOSKedia">
+        <img src="https://images.squarespace-cdn.com/content/v1/659f954a111dbd2ab12a0c26/ea2cf629-e200-4e7c-a267-90913e37ef08/na-pub-caoi.png?format=500w" alt="Contemporary Architecture of Iran">
+        <img src="https://images.squarespace-cdn.com/content/v1/659f954a111dbd2ab12a0c26/e0480b72-04f6-4b41-98c2-264029dfebb5/na-pub-honar-va-memari.png?format=500w" alt="Honar va Memari — Art and Architecture">
+      </div>
+    </div>
   </div>
-
-  <dl class="na-studio-list">
-    <div class="na-studio-row">
-      <dt>Photography</dt>
-      <dd>Architecture, interiors, hospitality and public spaces — <a href="/selective">Selective Projects</a></dd>
-    </div>
-    <div class="na-studio-row">
-      <dt>Film</dt>
-      <dd>Short architectural films for architecture firms, interior designers, restaurants and cultural institutions</dd>
-    </div>
-    <div class="na-studio-row">
-      <dt>Art direction &amp; styling</dt>
-      <dd>Concept, set styling and direction from first visit to final frame</dd>
-    </div>
-    <div class="na-studio-row">
-      <dt>Retouching</dt>
-      <dd>Architectural retouching for photographers worldwide, matched to each photographer's style — <a href="/retouching">see the work</a></dd>
-    </div>
-    <div class="na-studio-row">
-      <dt>Recognition</dt>
-      <dd>IPA Honorable Mention 2025<br>IPA Official Selection 2025 &amp; 2026<br>Architecture MasterPrize Best of Best 2025<br>European Photography Awards Gold 2025<br>Architecture MasterPrize Winner 2026</dd>
-    </div>
-    <div class="na-studio-row">
-      <dt>Published</dt>
-      <dd>ArchDaily · designboom · Parametric Architecture · Amazing Architecture · Architecture MasterPrize · 2A Magazine</dd>
-    </div>
-    <div class="na-studio-row">
-      <dt>Where</dt>
-      <dd>Based in Dubai, UAE · available for projects across the Middle East and beyond</dd>
-    </div>
-    <div class="na-studio-row">
-      <dt>Contact</dt>
-      <dd><a href="mailto:hello@natrvash.com">hello@natrvash.com</a> · <a href="/navid">Navid</a> · <a href="/ava">Ava</a></dd>
-    </div>
-  </dl>
 </div>
 <style>
-  /* Studio page in the brand CD style: black panels with 50% grey lines inside the magenta section. */
-  .na-studio { width: 100%; padding: 0 0 40px; font-family: 'Source Sans 3', system-ui, sans-serif; color: #FFFFFF; text-align: left; }
-  .na-studio a { color: #FFFFFF !important; text-decoration: underline; text-underline-offset: 3px; }
-  .na-studio-head { margin: 0 0 28px; }
-  .na-studio-head h1 { margin: 0 0 8px !important; font-family: inherit !important; font-size: 54px !important; font-weight: 400 !important; line-height: 1.1 !important; letter-spacing: -.01em !important; text-transform: none !important; color: #FFFFFF !important; }
-  .na-studio-head p { margin: 0 !important; font-size: 24px; font-weight: 300; line-height: 1.35; }
-  .na-studio-intro { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); background: #040606; border: 4px solid #656263; }
-  .na-studio-photo { margin: 0; border-right: 2px solid #656263; }
-  .na-studio-photo img { display: block; width: 100%; height: 100%; object-fit: cover; aspect-ratio: 1814 / 2000; }
-  .na-studio-panel { display: flex; flex-direction: column; justify-content: center; gap: 18px; padding: 32px; }
-  .na-studio-panel p { margin: 0 !important; font-size: 18px; line-height: 1.55; }
-  .na-studio-panel .na-studio-lead { font-size: 26px; font-weight: 300; line-height: 1.35; }
-  .na-studio-people { display: grid; grid-template-columns: 1fr 1fr; background: #040606; border: 4px solid #656263; border-top: 0; }
-  .na-studio-person { display: flex; flex-direction: column; gap: 6px; padding: 24px 28px; text-decoration: none !important; }
-  .na-studio-person + .na-studio-person { border-left: 2px solid #656263; }
-  .na-studio-name { font-size: 26px; font-weight: 400; line-height: 1.2; }
-  .na-studio-role { font-size: 14px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
-  .na-studio-note { font-size: 16px; }
-  .na-studio-more { margin-top: 6px; font-size: 14px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: #F7B3D2; }
-  .na-studio-person:hover .na-studio-more, .na-studio-person:focus-visible .na-studio-more { text-decoration: underline; }
-  .na-studio-list { margin: 0; background: #040606; border: 4px solid #656263; border-top: 0; }
-  .na-studio-row { display: grid; grid-template-columns: 240px minmax(0, 1fr); gap: 6px 28px; padding: 18px 28px; }
-  .na-studio-row + .na-studio-row { border-top: 2px solid #656263; }
-  .na-studio-row dt { margin: 0; padding-top: 2px; font-size: 14px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
-  .na-studio-row dd { margin: 0; font-size: 18px; line-height: 1.55; }
-  @media (max-width: 767px) {
-    .na-studio-head h1 { font-size: 34px !important; }
-    .na-studio-head p { font-size: 19px; }
-    .na-studio-intro, .na-studio-people { grid-template-columns: minmax(0, 1fr); }
-    .na-studio-photo { border-right: 0; border-bottom: 2px solid #656263; }
-    .na-studio-panel { padding: 20px; }
-    .na-studio-panel .na-studio-lead { font-size: 21px; }
-    .na-studio-person { padding: 18px 20px; }
-    .na-studio-person + .na-studio-person { border-left: 0; border-top: 2px solid #656263; }
-    .na-studio-row { grid-template-columns: minmax(0, 1fr); padding: 16px 20px; }
-  }
-  /* The page's own section takes the magenta brand colour, whatever theme it was given. */
-  body:has(.na-studio) #page .page-section:has(.na-studio),
-  body:has(.na-studio) #page .page-section:has(.na-studio) .section-background { background: #D71270 !important; }
+  /* The About page: the same layout as the homepage About section, in black and white. */
+  body:has(.na-about--dark) #page .page-section:has(.na-about--dark),
+  body:has(.na-about--dark) #page .page-section:has(.na-about--dark) .section-background { background: #040606 !important; }
+  body:has(.na-about--dark) #page .page-section:has(.na-about--dark) .fluid-engine { display: block !important; }
+  body:has(.na-about--dark) #page .page-section:has(.na-about--dark) .content-wrapper { padding: 0 !important; max-width: none !important; }
+  .na-about--dark, .na-about--dark p, .na-about--dark .na-about-intro, .na-about--dark .na-facts,
+  .na-about--dark .na-person-name h2, .na-about--dark .na-org h3, .na-about--dark .na-org li span { color: #FFFFFF !important; }
+  .na-about--dark .na-about-intro { font-size: 22px !important; font-weight: 300 !important; }
+  .na-about--dark .na-person { border-color: #FFFFFF; }
+  .na-about--dark .na-about-lists, .na-about--dark .na-published { border-color: #656263; }
+  .na-about--dark .na-org h3 { border-color: #FFFFFF; color: #FFFFFF !important; }
+  /* Three magenta accents: the collaboration cross, the award years and the profile links. */
+  .na-about--dark .na-org h3 b { color: #EF2C93 !important; }
+  .na-about--dark a { color: #FFFFFF !important; }
+  .na-about--dark .na-facts a { color: #EF2C93 !important; }
+  .na-about--dark .na-about-photo img { filter: grayscale(1); }
+  .na-about--dark .na-pubs img { filter: invert(1); mix-blend-mode: screen; opacity: .9; }
 </style>
