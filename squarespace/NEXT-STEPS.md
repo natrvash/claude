@@ -33,7 +33,8 @@ Last updated: 11 Nov 2026. Code for every step is in this folder and on the copy
    review). Top retouching searches use "architectural photo editing service(s)" (153 impressions, 0 clicks):
    boxes 17 and 18 now carry that phrase (installed and indexing requested 11 Nov).
    404s: five 2023 law-blog URLs from the domain's previous owner (leave them) and
-   /selective/pathirantablo-z6m4r (URL mapping `/selective/pathirantablo-z6m4r -> /selective/pathirantablo 301`).
+   /selective/pathirantablo-z6m4r (301 to /selective/pathirantablo, done 11 Nov). Check again around 18 Nov:
+   sitemap read, retouching clicks for "photo editing" searches.
    Crawled-not-indexed: ?itemId= lightbox URLs (normal) plus /selective/asharisideway and
    /selective/aknoongardenresidence (Request indexing; long term: alt text, every Selective project page still
    has file-name alts like NATRVASH+Ashari-0296.jpg).
