@@ -40,6 +40,19 @@ Last updated: 11 Nov 2026. Code for every step is in this folder and on the copy
    has file-name alts like NATRVASH+Ashari-0296.jpg).
 5. 26 Nov 2026: re-run the Squarespace AI Visibility report (same 11 prompts, ChatGPT and Gemini) and compare.
 
+## Recognition page (/recognition, own menu item) — waiting for screenshots
+
+- Decided: awards + publications, every publication linked to its article, page name Recognition at /recognition,
+  its own menu item. Draft block: blocks/recognition-page-block.html (text list, links found and checked 11 Nov:
+  ArchDaily ×10 + photographer page, designboom, AMP Greenland + Bustler, APALMANAC interview,
+  Parametric Architecture, Amazing Architecture, KIOSKedia).
+- Navid wants it in the style of https://www.emapeter.com/press: a grid of article screenshots (the page as it
+  appears on each publication's site, with the photos), each tile linking to the article. He will take the
+  screenshots. Then: upload them, rebuild the block as an image grid (alt text: publication + project),
+  keep the awards list, add the schema (Person award list + articles about him), and on /about link to the page.
+- Links still missing: IDA Design Awards, Love That Design, ArchNet, 2A Awards, 2A Magazine, Archoma,
+  Contemporary Architecture of Iran, Honar va Memari.
+
 ## Open details
 
 - QR code: confirm its exact address. /navidcontact works; /Navidcontact (capital N) is a 404 and would need
