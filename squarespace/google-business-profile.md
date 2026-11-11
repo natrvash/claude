@@ -6,16 +6,16 @@ Everything to fill in, ready to paste. Profile type: service-area business (no p
 
 - **Business name:** Navid Atrvash Photography
 - **Phone:** +971 50 287 0027
-- **Website:** https://www.natrvash.com/?utm_source=google&utm_medium=organic&utm_campaign=business_profile
-  (the extra part only lets Squarespace Analytics show visits that came from Google Maps; the page is the homepage)
+- **Website:** https://www.natrvash.com (Google counts website clicks itself under Performance)
 - **Hours:** By appointment (or leave hours empty)
 - **Address:** hidden (clear "Show business address to customers")
 - **Service areas:** Dubai · Abu Dhabi · Sharjah · Ajman · Ras Al Khaimah · Fujairah · Umm Al Quwain · United Arab Emirates
 
 ## Categories
 
-- **Primary:** Photographer
-- **Additional:** type "Architectural" and pick "Architectural photographer" if Google offers it; then Commercial photographer · Videographer · Photography service
+- **Primary:** Photography service (as set on the Dubai profile; the services hang on it, so it stays)
+- **Additional:** Photographer; Video production service if Google offers it
+  (Architectural photographer, Commercial photographer and Videographer are not offered)
 
 ## Description (750 characters max — this one is about 640)
 
