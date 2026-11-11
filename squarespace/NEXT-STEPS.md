@@ -28,7 +28,10 @@ Last updated: 11 Nov 2026. Code for every step is in this folder and on the copy
 3. Google Business Profile: Dubai profile done on 11 Nov (name, categories, description, services, no address,
    7 emirates, phone, website, hours, photos). Still to do: ask past clients for reviews (template in
    google-business-profile.md), reply to each review, one post a month. The second profile (Iran) is kept separate.
-4. Google Search Console: connect through Squarespace Settings › SEO and submit https://www.natrvash.com/sitemap.xml.
+4. Google Search Console: already connected (domain property natrvash.com, data since Aug 2026). 11 Nov: sitemap
+   not yet submitted; 29 indexed, 163 not (143 are canonical duplicates, normal; 6 × 404, 10 crawled-not-indexed to
+   review). Top retouching searches use "architectural photo editing service(s)" (153 impressions, 0 clicks):
+   boxes 17 and 18 now carry that phrase; reinstall them, then Request indexing for /retouching.
 5. 26 Nov 2026: re-run the Squarespace AI Visibility report (same 11 prompts, ChatGPT and Gemini) and compare.
 
 ## Open details
