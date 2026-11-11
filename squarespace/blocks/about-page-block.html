@@ -160,6 +160,8 @@
   body:has(.na-about--dark) #page .page-section:has(.na-about--dark) .section-background { background: #040606 !important; }
   body:has(.na-about--dark) #page .page-section:has(.na-about--dark) .fluid-engine { display: block !important; }
   body:has(.na-about--dark) #page .page-section:has(.na-about--dark) .content-wrapper { padding: 0 !important; max-width: none !important; }
+  /* On tall screens the footer sits at the bottom of the window; the gap above it stays black, not white. */
+  html:has(.na-about--dark), body:has(.na-about--dark) { background: #040606 !important; }
   .na-about--dark, .na-about--dark p, .na-about--dark .na-about-intro, .na-about--dark .na-facts,
   .na-about--dark .na-person-name h2, .na-about--dark .na-org h3, .na-about--dark .na-org li span { color: #FFFFFF !important; }
   .na-about--dark .na-about-intro { font-size: 22px !important; font-weight: 300 !important; }
