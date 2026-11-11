@@ -25,7 +25,7 @@ Last updated: 10 Nov 2026. Code for every step is in this folder and on the copy
 2. Retouching page: boxes 17 (value rows: architect's reading, style, judgement, photographer, trusted by; FAQ) and 18 (Service + FAQ schema) are ready to install; also H1, SEO title/description, slider alt text, "Tony Ruslond" → "Tony Roslund". Background (services: blending, sky and dusk, removal, perspective and colour,
    matching each photographer's style; turnaround by project; any file-sharing service; two revision rounds;
    price on request; no mention of test images).
-3. Google Business Profile for Natrvash in Dubai.
+3. Google Business Profile (existing profile, Navid Atrvash Photography): fill it in from google-business-profile.md; box 11 (studio schema) now carries that name and the phone.
 4. Google Search Console: connect through Squarespace Settings › SEO and submit https://www.natrvash.com/sitemap.xml.
 5. 26 Nov 2026: re-run the Squarespace AI Visibility report (same 11 prompts, ChatGPT and Gemini) and compare.
 
