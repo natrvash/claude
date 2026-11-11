@@ -31,7 +31,12 @@ Last updated: 11 Nov 2026. Code for every step is in this folder and on the copy
 4. Google Search Console: already connected (domain property natrvash.com, data since Aug 2026). 11 Nov: sitemap
    not yet submitted; 29 indexed, 163 not (143 are canonical duplicates, normal; 6 × 404, 10 crawled-not-indexed to
    review). Top retouching searches use "architectural photo editing service(s)" (153 impressions, 0 clicks):
-   boxes 17 and 18 now carry that phrase; reinstall them, then Request indexing for /retouching.
+   boxes 17 and 18 now carry that phrase (installed and indexing requested 11 Nov).
+   404s: five 2023 law-blog URLs from the domain's previous owner (leave them) and
+   /selective/pathirantablo-z6m4r (URL mapping `/selective/pathirantablo-z6m4r -> /selective/pathirantablo 301`).
+   Crawled-not-indexed: ?itemId= lightbox URLs (normal) plus /selective/asharisideway and
+   /selective/aknoongardenresidence (Request indexing; long term: alt text, every Selective project page still
+   has file-name alts like NATRVASH+Ashari-0296.jpg).
 5. 26 Nov 2026: re-run the Squarespace AI Visibility report (same 11 prompts, ChatGPT and Gemini) and compare.
 
 ## Open details
