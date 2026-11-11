@@ -22,7 +22,7 @@ Last updated: 10 Nov 2026. Code for every step is in this folder and on the copy
    - Thousands Flower → Thousands of Flowers: rename, slug /thousands-of-flowers, URL mapping
      `/thousands-flower -> /thousands-of-flowers 301`, H1, new opening paragraph, "Vista" → "Vista Plus" (2014),
      box 14 (facts panel), box 15 (schema), SEO, alt text, menu label.
-2. Retouching page: boxes 17 (services, process, FAQ) and 18 (Service + FAQ schema) are ready to install; also H1, SEO title/description, slider alt text, "Tony Ruslond" → "Tony Roslund". Background (services: blending, sky and dusk, removal, perspective and colour,
+2. Retouching page: boxes 17 (value rows: architect's reading, style, judgement, photographer, trusted by; FAQ) and 18 (Service + FAQ schema) are ready to install; also H1, SEO title/description, slider alt text, "Tony Ruslond" → "Tony Roslund". Background (services: blending, sky and dusk, removal, perspective and colour,
    matching each photographer's style; turnaround by project; any file-sharing service; two revision rounds;
    price on request; no mention of test images).
 3. Google Business Profile for Natrvash in Dubai.
