@@ -1,0 +1,280 @@
+<!--
+  ============================================================
+  NAVID ATRVASH - BEFORE / AFTER SLIDER
+  Paste everything below into ONE Squarespace Code Block.
+  Self-contained: nothing else needed, no URLs to replace.
+
+  To ADD a pair:
+    1. copy one whole <div class="na-slide"> block and paste
+       it after the last one, then change the two image URLs
+       (the first <img> is the BEFORE, the one inside
+       na-ba-after is the AFTER);
+    2. copy one <button> inside <div class="na-strip"> and
+       give it the next data-go number;
+    3. add a matching {t:"Title",n:"Note"} entry at the end
+       of the META list in the script.
+  Both frames of a pair must share the same crop and aspect
+  ratio, or the slider will jump between them.
+  ============================================================
+-->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..125,300..700&display=swap">
+
+<style>
+.na-ba-wrap{--na-ink:#FFFFFF;--na-mag:#E43376;--na-grey:#A7A5A6;--na-line:#656263;
+  font-family:Archivo,system-ui,sans-serif;font-weight:350;color:var(--na-ink);
+  -webkit-font-smoothing:antialiased;display:flex;flex-direction:column;gap:20px;
+  max-width:1360px;margin:0 auto}
+.na-ba-wrap *{box-sizing:border-box}
+.na-ba-wrap .na-rule{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;
+  gap:16px;border-top:1px solid var(--na-line);padding-top:18px}
+.na-ba-wrap .na-kicker{font-size:12px;letter-spacing:.34em;font-weight:500;font-stretch:118%}
+.na-ba-wrap .na-meta{font-size:12px;letter-spacing:.2em;color:var(--na-grey);font-stretch:110%}
+.na-ba-wrap .na-ba-head{display:flex;flex-wrap:wrap;align-items:baseline;gap:18px}
+.na-ba-wrap .na-ba-num{font-size:12px;letter-spacing:.2em;font-weight:500;font-stretch:118%;color:var(--na-mag)}
+.na-ba-wrap .na-ba-head h2{margin:0;font-size:clamp(20px,2.2vw,28px);line-height:1.15;font-weight:400;
+  font-stretch:110%;letter-spacing:-.01em;color:var(--na-ink)}
+.na-ba-wrap .na-nav{margin-left:auto;display:flex;align-items:center;gap:8px}
+.na-ba-wrap .na-count{font-size:12px;letter-spacing:.16em;color:var(--na-grey);font-stretch:110%;margin-right:8px}
+.na-ba-wrap .na-nav button{width:42px;height:42px;border:1px solid #656263;background:none;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;color:var(--na-ink);font-size:15px;
+  font-family:inherit;transition:border-color .16s ease,color .16s ease}
+.na-ba-wrap .na-nav button:hover{border-color:var(--na-mag);color:var(--na-mag)}
+.na-ba-wrap .na-nav button:focus-visible{outline:2px solid var(--na-mag);outline-offset:2px}
+.na-ba-wrap .na-view{position:relative;width:100%;overflow:hidden;background:#f2f2f3}
+.na-ba-wrap .na-track{display:flex;width:100%;transition:transform .55s cubic-bezier(.22,.7,.2,1)}
+.na-ba-wrap .na-slide{flex:0 0 100%;min-width:0}
+.na-ba-wrap .na-ba{position:relative;width:100%;aspect-ratio:3/2;overflow:hidden;background:#f2f2f3;
+  cursor:ew-resize;touch-action:none;outline-offset:3px}
+.na-ba-wrap .na-ba:focus-visible{outline:2px solid var(--na-mag)}
+.na-ba-wrap .na-ba img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;
+  user-select:none;-webkit-user-drag:none;margin:0;max-width:none}
+.na-ba-wrap .na-ba-after{position:absolute;inset:0;clip-path:inset(0 50% 0 0)}
+.na-ba-wrap .na-ba-line{position:absolute;top:0;bottom:0;left:50%;width:2px;background:var(--na-mag);
+  transform:translateX(-1px);pointer-events:none}
+.na-ba-wrap .na-ba-grip{position:absolute;top:50%;left:50%;width:48px;height:48px;margin:-24px 0 0 -24px;
+  border:2px solid var(--na-mag);background:rgba(255,255,255,.92);display:flex;align-items:center;
+  justify-content:center;gap:5px;pointer-events:none}
+.na-ba-wrap .na-ba-grip s,.na-ba-wrap .na-ba-grip b{display:block;width:0;height:0;
+  border-top:5px solid transparent;border-bottom:5px solid transparent}
+.na-ba-wrap .na-ba-grip s{border-right:6px solid var(--na-mag)}
+.na-ba-wrap .na-ba-grip b{border-left:6px solid var(--na-mag)}
+.na-ba-wrap .na-tagl,.na-ba-wrap .na-tagr{position:absolute;top:16px;font-size:11px;letter-spacing:.28em;
+  font-weight:500;font-stretch:118%;color:#fff;padding:7px 11px;pointer-events:none}
+.na-ba-wrap .na-tagl{left:16px;background:rgba(2,4,7,.62)}
+.na-ba-wrap .na-tagr{right:16px;background:rgba(228,51,118,.92)}
+.na-ba-wrap .na-strip{display:flex;flex-wrap:wrap;gap:8px}
+.na-ba-wrap .na-strip button{border:1px solid #656263;background:none;padding:0;width:96px;height:64px;
+  cursor:pointer;overflow:hidden;opacity:.5;transition:opacity .18s ease,border-color .18s ease}
+.na-ba-wrap .na-strip button:hover{opacity:1;border-color:var(--na-mag)}
+.na-ba-wrap .na-strip button:focus-visible{outline:2px solid var(--na-mag);outline-offset:2px}
+.na-ba-wrap .na-strip button.is-on{opacity:1;border-color:var(--na-mag)}
+.na-ba-wrap .na-strip img{width:100%;height:100%;object-fit:cover;display:block;margin:0}
+
+@media (max-width:640px){
+  .na-ba-wrap .na-nav{margin-left:0}
+  .na-ba-wrap .na-strip button{width:72px;height:48px}
+}
+</style>
+
+<section class="na-ba-wrap">
+  <div class="na-rule">
+    <span class="na-kicker">BEFORE / AFTER</span>
+    <span class="na-meta">DRAG THE HANDLE TO COMPARE</span>
+  </div>
+
+  <div class="na-ba-head">
+    <span class="na-ba-num" data-num>01</span>
+    <h2 data-title>Terrace at dusk</h2>
+    <span class="na-meta" data-note>Sky, glass, ambient light</span>
+    <div class="na-nav">
+      <span class="na-count" data-count>01 / 08</span>
+      <button type="button" data-prev aria-label="Previous comparison">&larr;</button>
+      <button type="button" data-next aria-label="Next comparison">&rarr;</button>
+    </div>
+  </div>
+
+  <div class="na-view">
+    <div class="na-track">
+
+      <div class="na-slide">
+        <div class="na-ba" tabindex="0" role="slider" aria-label="Before and after comparison" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
+          <img src="https://images.squarespace-cdn.com/content/v1/659f954a111dbd2ab12a0c26/08bc5eae-7771-42f6-96f5-47629192037b/Addres1A.jpg?format=2500w" alt="Before retouching — Terrace at dusk, raw architectural photograph" draggable="false">
+          <div class="na-ba-after"><img src="https://images.squarespace-cdn.com/content/v1/659f954a111dbd2ab12a0c26/548de835-7164-4def-90eb-7dc79320e434/Addres1B.jpg?format=2500w" alt="After high-end architectural retouching by Navid Atrvash — Terrace at dusk: sky, glass, ambient light" draggable="false"></div>
+          <div class="na-ba-line"></div>
+          <div class="na-ba-grip"><s></s><b></b></div>
+          <span class="na-tagl">BEFORE</span><span class="na-tagr">AFTER</span>
+        </div>
+      </div>
+
+      <div class="na-slide">
+        <div class="na-ba" tabindex="0" role="slider" aria-label="Before and after comparison" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
+          <img src="https://images.squarespace-cdn.com/content/v1/659f954a111dbd2ab12a0c26/2da50e97-897b-4922-ae02-151a1230a952/Palm2A.jpg?format=1500w" alt="Before retouching — Kitchen island and waterfront, raw architectural photograph" draggable="false">
+          <div class="na-ba-after"><img src="https://images.squarespace-cdn.com/content/v1/659f954a111dbd2ab12a0c26/da72a07d-9272-43c6-a8f6-b82875cbf406/Palm2B.jpg?format=1500w" alt="After high-end architectural retouching by Navid Atrvash — Kitchen island and waterfront: light shaping, glass" draggable="false"></div>
+          <div class="na-ba-line"></div>
+          <div class="na-ba-grip"><s></s><b></b></div>
+          <span class="na-tagl">BEFORE</span><span class="na-tagr">AFTER</span>
+        </div>
+      </div>
+
+      <div class="na-slide">
+        <div class="na-ba" tabindex="0" role="slider" aria-label="Before and after comparison" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
+          <img src="https://images.squarespace-cdn.com/content/v1/659f954a111dbd2ab12a0c26/3b00f280-a222-4172-a0c7-aaedbea1e308/Palm4B.jpg?format=1500w" alt="Before retouching — Terrace lounge, raw architectural photograph" draggable="false">
+          <div class="na-ba-after"><img src="https://images.squarespace-cdn.com/content/v1/659f954a111dbd2ab12a0c26/a5833452-855c-4c4e-ab51-e9aaad24bef4/Palm4A.jpg?format=1500w" alt="After high-end architectural retouching by Navid Atrvash — Terrace lounge: colour, contrast" draggable="false"></div>
+          <div class="na-ba-line"></div>
+          <div class="na-ba-grip"><s></s><b></b></div>
+          <span class="na-tagl">BEFORE</span><span class="na-tagr">AFTER</span>
+        </div>
+      </div>
+
+      <div class="na-slide">
+        <div class="na-ba" tabindex="0" role="slider" aria-label="Before and after comparison" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
+          <img src="https://images.squarespace-cdn.com/content/v1/659f954a111dbd2ab12a0c26/df3ed7a9-d6b4-4160-8a50-359dfc2ed029/Palm3A.jpg?format=1500w" alt="Before retouching — Corridor and wine wall, raw architectural photograph" draggable="false">
+          <div class="na-ba-after"><img src="https://images.squarespace-cdn.com/content/v1/659f954a111dbd2ab12a0c26/7199faf4-88dd-4d1d-b99e-7a8cb9ee5c65/Palm3B.jpg?format=1500w" alt="After high-end architectural retouching by Navid Atrvash — Corridor and wine wall: exposure blend, stone" draggable="false"></div>
+          <div class="na-ba-line"></div>
+          <div class="na-ba-grip"><s></s><b></b></div>
+          <span class="na-tagl">BEFORE</span><span class="na-tagr">AFTER</span>
+        </div>
+      </div>
+
+      <div class="na-slide">
+        <div class="na-ba" tabindex="0" role="slider" aria-label="Before and after comparison" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
+          <img src="https://images.squarespace-cdn.com/content/v1/659f954a111dbd2ab12a0c26/c8d58302-d6ea-49d7-9054-b7937c7930a6/Palm5A.jpg?format=1500w" alt="Before retouching — Living room, raw architectural photograph" draggable="false">
+          <div class="na-ba-after"><img src="https://images.squarespace-cdn.com/content/v1/659f954a111dbd2ab12a0c26/49b7ec3e-a46b-4b68-bf30-8e9fd46a3843/Palm5B.jpg?format=1500w" alt="After high-end architectural retouching by Navid Atrvash — Living room: tone, reflections" draggable="false"></div>
+          <div class="na-ba-line"></div>
+          <div class="na-ba-grip"><s></s><b></b></div>
+          <span class="na-tagl">BEFORE</span><span class="na-tagr">AFTER</span>
+        </div>
+      </div>
+
+      <div class="na-slide">
+        <div class="na-ba" tabindex="0" role="slider" aria-label="Before and after comparison" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
+          <img src="https://images.squarespace-cdn.com/content/v1/659f954a111dbd2ab12a0c26/1d5f2623-80cc-4c22-bf24-c1ecaea1fd7f/Resi1A.jpg?format=1500w" alt="Before retouching — Residence living room, raw architectural photograph" draggable="false">
+          <div class="na-ba-after"><img src="https://images.squarespace-cdn.com/content/v1/659f954a111dbd2ab12a0c26/d54c9188-262b-4f70-ad09-574b19288d8b/Resi1B.jpg?format=1500w" alt="After high-end architectural retouching by Navid Atrvash — Residence living room: colour, clean-up" draggable="false"></div>
+          <div class="na-ba-line"></div>
+          <div class="na-ba-grip"><s></s><b></b></div>
+          <span class="na-tagl">BEFORE</span><span class="na-tagr">AFTER</span>
+        </div>
+      </div>
+
+      <div class="na-slide">
+        <div class="na-ba" tabindex="0" role="slider" aria-label="Before and after comparison" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
+          <img src="https://images.squarespace-cdn.com/content/v1/659f954a111dbd2ab12a0c26/8d9e0467-6674-488d-b4c9-09762fc792cd/Add2A.jpg?format=1500w" alt="Before retouching — Bedroom, raw architectural photograph" draggable="false">
+          <div class="na-ba-after"><img src="https://images.squarespace-cdn.com/content/v1/659f954a111dbd2ab12a0c26/4570a324-d6d1-4d41-ba03-9f6890c283d8/Add2B.jpg?format=1500w" alt="After high-end architectural retouching by Navid Atrvash — Bedroom: clean-up, tone" draggable="false"></div>
+          <div class="na-ba-line"></div>
+          <div class="na-ba-grip"><s></s><b></b></div>
+          <span class="na-tagl">BEFORE</span><span class="na-tagr">AFTER</span>
+        </div>
+      </div>
+
+      <div class="na-slide">
+        <div class="na-ba" tabindex="0" role="slider" aria-label="Before and after comparison" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
+          <img src="https://images.squarespace-cdn.com/content/v1/659f954a111dbd2ab12a0c26/c47d6a3d-0728-474c-9628-325a086ce9ab/Hotel1A.jpg?format=1500w" alt="Before retouching — Hotel room, raw architectural photograph" draggable="false">
+          <div class="na-ba-after"><img src="https://images.squarespace-cdn.com/content/v1/659f954a111dbd2ab12a0c26/b5f57af1-69b3-4254-8078-39e0450c490b/Hotel1B.jpg?format=1500w" alt="After high-end architectural retouching by Navid Atrvash — Hotel room: window light, warmth" draggable="false"></div>
+          <div class="na-ba-line"></div>
+          <div class="na-ba-grip"><s></s><b></b></div>
+          <span class="na-tagl">BEFORE</span><span class="na-tagr">AFTER</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="na-strip">
+    <button type="button" data-go="0" class="is-on" aria-label="Terrace at dusk"><img src="https://images.squarespace-cdn.com/content/v1/659f954a111dbd2ab12a0c26/548de835-7164-4def-90eb-7dc79320e434/Addres1B.jpg?format=300w" alt=""></button>
+    <button type="button" data-go="1" aria-label="Kitchen island and waterfront"><img src="https://images.squarespace-cdn.com/content/v1/659f954a111dbd2ab12a0c26/da72a07d-9272-43c6-a8f6-b82875cbf406/Palm2B.jpg?format=300w" alt=""></button>
+    <button type="button" data-go="2" aria-label="Terrace lounge"><img src="https://images.squarespace-cdn.com/content/v1/659f954a111dbd2ab12a0c26/a5833452-855c-4c4e-ab51-e9aaad24bef4/Palm4A.jpg?format=300w" alt=""></button>
+    <button type="button" data-go="3" aria-label="Corridor and wine wall"><img src="https://images.squarespace-cdn.com/content/v1/659f954a111dbd2ab12a0c26/7199faf4-88dd-4d1d-b99e-7a8cb9ee5c65/Palm3B.jpg?format=300w" alt=""></button>
+    <button type="button" data-go="4" aria-label="Living room"><img src="https://images.squarespace-cdn.com/content/v1/659f954a111dbd2ab12a0c26/49b7ec3e-a46b-4b68-bf30-8e9fd46a3843/Palm5B.jpg?format=300w" alt=""></button>
+    <button type="button" data-go="5" aria-label="Residence living room"><img src="https://images.squarespace-cdn.com/content/v1/659f954a111dbd2ab12a0c26/d54c9188-262b-4f70-ad09-574b19288d8b/Resi1B.jpg?format=300w" alt=""></button>
+    <button type="button" data-go="6" aria-label="Bedroom"><img src="https://images.squarespace-cdn.com/content/v1/659f954a111dbd2ab12a0c26/4570a324-d6d1-4d41-ba03-9f6890c283d8/Add2B.jpg?format=300w" alt=""></button>
+    <button type="button" data-go="7" aria-label="Hotel room"><img src="https://images.squarespace-cdn.com/content/v1/659f954a111dbd2ab12a0c26/b5f57af1-69b3-4254-8078-39e0450c490b/Hotel1B.jpg?format=300w" alt=""></button>
+  </div>
+</section>
+
+<script>
+(function () {
+  var root = document.querySelector('.na-ba-wrap');
+  if (!root) return;
+  var META = [
+    { t: "Terrace at dusk", n: "Sky, glass, ambient light" },
+    { t: "Kitchen island and waterfront", n: "Light shaping, glass" },
+    { t: "Terrace lounge", n: "Colour, contrast" },
+    { t: "Corridor and wine wall", n: "Exposure blend, stone" },
+    { t: "Living room", n: "Tone, reflections" },
+    { t: "Residence living room", n: "Colour, clean-up" },
+    { t: "Bedroom", n: "Clean-up, tone" },
+    { t: "Hotel room", n: "Window light, warmth" }
+  ];
+  var track = root.querySelector('.na-track');
+  var slides = root.querySelectorAll('.na-slide');
+  var thumbs = root.querySelectorAll('.na-strip button');
+  var elNum = root.querySelector('[data-num]');
+  var elTitle = root.querySelector('[data-title]');
+  var elNote = root.querySelector('[data-note]');
+  var elCount = root.querySelector('[data-count]');
+  var active = 0;
+
+  function pad(n) { return n < 10 ? '0' + n : String(n); }
+
+  function show(i) {
+    active = (i + slides.length) % slides.length;
+    track.style.transform = 'translateX(-' + (active * 100) + '%)';
+    for (var k = 0; k < thumbs.length; k++) {
+      thumbs[k].className = (k === active) ? 'is-on' : '';
+    }
+    elNum.textContent = pad(active + 1);
+    elTitle.textContent = META[active].t;
+    elNote.textContent = META[active].n;
+    elCount.textContent = pad(active + 1) + ' / ' + pad(slides.length);
+  }
+
+  root.querySelector('[data-prev]').addEventListener('click', function () { show(active - 1); });
+  root.querySelector('[data-next]').addEventListener('click', function () { show(active + 1); });
+  for (var t = 0; t < thumbs.length; t++) {
+    thumbs[t].addEventListener('click', function () {
+      show(parseInt(this.getAttribute('data-go'), 10));
+    });
+  }
+
+  var stages = root.querySelectorAll('.na-ba');
+  for (var i = 0; i < stages.length; i++) wire(stages[i]);
+
+  function wire(stage) {
+    var after = stage.querySelector('.na-ba-after');
+    var line = stage.querySelector('.na-ba-line');
+    var grip = stage.querySelector('.na-ba-grip');
+    var dragging = false;
+
+    function set(pct) {
+      pct = Math.max(0, Math.min(100, pct));
+      after.style.clipPath = 'inset(0 ' + (100 - pct).toFixed(2) + '% 0 0)';
+      line.style.left = pct.toFixed(2) + '%';
+      grip.style.left = pct.toFixed(2) + '%';
+      stage.setAttribute('aria-valuenow', Math.round(pct));
+    }
+    function fromEvent(e) {
+      var r = stage.getBoundingClientRect();
+      set(((e.clientX - r.left) / r.width) * 100);
+    }
+    stage.addEventListener('pointerdown', function (e) {
+      dragging = true;
+      fromEvent(e);
+      try { stage.setPointerCapture(e.pointerId); } catch (err) {}
+    });
+    stage.addEventListener('pointermove', function (e) { if (dragging) fromEvent(e); });
+    stage.addEventListener('pointerup', function () { dragging = false; });
+    stage.addEventListener('pointercancel', function () { dragging = false; });
+    stage.addEventListener('keydown', function (e) {
+      var now = parseFloat(stage.getAttribute('aria-valuenow')) || 50;
+      if (e.key === 'ArrowLeft') { e.preventDefault(); set(now - 4); }
+      if (e.key === 'ArrowRight') { e.preventDefault(); set(now + 4); }
+    });
+    set(50);
+  }
+
+  show(0);
+})();
+</script>
