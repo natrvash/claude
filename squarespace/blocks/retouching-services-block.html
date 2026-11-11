@@ -28,7 +28,7 @@
     </div>
     <div class="na-rt-row">
       <dt>Trusted by</dt>
-      <dd>Casey Dunn · Hall+Merrick+McCaugherty · Jim Stephenson · Jason O'Rear · Andy Macpherson · and studios shooting for Perkins&amp;Will and Perkins Eastman</dd>
+      <dd>Casey Dunn · Hall+Merrick+McCaugherty · Jim Stephenson · Jason O'Rear · Andy Macpherson · and studios shooting for Perkins&amp;Will and Perkins Eastman — <a href="#na-collab" class="na-rt-all">see the full list ↓</a></dd>
     </div>
   </dl>
 
@@ -58,6 +58,21 @@
 
   <p class="na-rt-cta">Send a few files and a short brief to <a href="mailto:hello@natrvash.com">hello@natrvash.com</a></p>
 </div>
+<script>
+  // "See the full list" scrolls to the page's own Collaborated Photographers section.
+  (function () {
+    var link = document.querySelector('.na-rt-all');
+    if (!link) return;
+    link.addEventListener('click', function (e) {
+      var target = Array.prototype.find.call(document.querySelectorAll('#page .page-section'), function (sec) {
+        return /Collaborated Photographers/i.test(sec.textContent);
+      });
+      if (!target) return;
+      e.preventDefault();
+      target.scrollIntoView({ behavior: 'smooth' });
+    });
+  })();
+</script>
 <style>
   /* Retouching: white on black, 50% grey lines, magenta accents, as on the rest of the site. */
   .na-rt { width: 100%; max-width: 1100px; margin: 0 auto; padding: 0 0 48px; font-family: 'Source Sans 3', system-ui, sans-serif; color: #FFFFFF; text-align: left; }
