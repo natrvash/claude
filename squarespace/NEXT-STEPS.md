@@ -41,6 +41,10 @@ Last updated: 11 Nov 2026. Code for every step is in this folder and on the copy
 4b. ChatGPT / Copilot visibility (Bing): Bing Webmaster Tools (sign in with Google, import natrvash.com from
    Search Console, sitemap comes with it) and Bing Places for Business (import the Dubai Google Business Profile).
    Optional: Apple Business Connect for Apple Maps and Siri. robots.txt already lets OAI-SearchBot and Bingbot in.
+   12 Nov: Bing Webmaster Tools added (site verified; submit sitemap + 5 key URLs). OpenAI business profile
+   created and submitted (domain verified with TXT record openai-business-profile — keep it); its final
+   verification is still to do (reminder set for 19 Nov). Bing Places still to do.
+   Domain registrant address is still Istanbul (private, no SEO effect): change only the address to Dubai.
 5. 26 Nov 2026: re-run the Squarespace AI Visibility report (same 11 prompts, ChatGPT and Gemini) and compare.
 
 ## Recognition page (/recognition, own menu item) — waiting for screenshots
