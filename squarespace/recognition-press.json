@@ -2,12 +2,52 @@
  "gallery": "https://www.natrvash.com/new-page",
  "items": [
   {
-   "img": "https://images.squarespace-cdn.com/content/v1/659f954a111dbd2ab12a0c26/fb819d75-4e7a-45c3-9baf-04d825489722/Navid+Atrvash+Press08.39%E2%80%AF.png",
-   "date": "2023",
-   "pub": "Archello",
-   "title": "The Memory of Garden Apartment",
+   "img": "https://images.squarespace-cdn.com/content/v1/659f954a111dbd2ab12a0c26/4898d195-0f5a-46e3-9290-e2762b100eb8/Navid+Atrvash+Press29.12%E2%80%AF.png",
+   "date": "2026-11-11",
+   "pub": "World Architecture Community",
+   "title": "Liminal Pavilion",
    "credit": "Ashari Architects",
-   "url": "https://archello.com/project/the-memory-of-garden-apartment"
+   "url": "https://worldarchitecture.org/architecture-projects/ppcmp/liminal-pavilion-project-pages.html"
+  },
+  {
+   "img": "https://images.squarespace-cdn.com/content/v1/659f954a111dbd2ab12a0c26/5f72d536-74d5-44e9-9f33-71f005030491/Navid+Atrvash+Press29.08%E2%80%AF.png",
+   "date": "2026-11-11",
+   "pub": "World Architecture Community",
+   "title": "Seen & Unseen Pavilion",
+   "credit": "Ashari Architects",
+   "url": "https://worldarchitecture.org/architecture-projects/ppcmc/seen-unseen-pavilion-project-pages.html"
+  },
+  {
+   "img": "https://images.squarespace-cdn.com/content/v1/659f954a111dbd2ab12a0c26/f4ef1eae-2c44-484a-89e8-901e9cf8aa11/Navid+Atrvash+Press29.15%E2%80%AF.png",
+   "date": "2026-11-05",
+   "pub": "World Architecture Community",
+   "title": "Noorzad Lighting Showroom",
+   "credit": "Ashari Architects",
+   "url": "https://worldarchitecture.org/architecture-projects/ppcfv/noorzad-lighting-showroom-project-pages.html"
+  },
+  {
+   "img": "https://images.squarespace-cdn.com/content/v1/659f954a111dbd2ab12a0c26/8069dd47-b419-47cf-b4cc-3a9a0b43e865/Navid+Atrvash+Press04.01%E2%80%AF.png",
+   "date": "2026-10-21",
+   "pub": "ArchDaily",
+   "title": "Companion Villa",
+   "credit": "AsNow Design & Construct",
+   "url": "https://www.archdaily.com/1186814/companion-villa-asnow-design-and-construct"
+  },
+  {
+   "img": "https://images.squarespace-cdn.com/content/v1/659f954a111dbd2ab12a0c26/81c3c69f-107b-423e-b9ad-0e04dc0b093d/Navid+Atrvash+Press30.21%E2%80%AF.png",
+   "date": "2026-10",
+   "pub": "Architizer",
+   "title": "Companion Villa",
+   "credit": "AsNow Design & Construct",
+   "url": "https://architizer.com/projects/companion-villa/"
+  },
+  {
+   "img": "https://images.squarespace-cdn.com/content/v1/659f954a111dbd2ab12a0c26/7d4969d8-953e-4a19-946f-c14dbb68538c/Navid+Atrvash+Press05.18%E2%80%AF.png",
+   "date": "2026-09-02",
+   "pub": "designboom",
+   "title": "Keker lighting collection",
+   "credit": "Reza Raeisifar",
+   "url": "https://www.designboom.com/design/discarded-aluminum-blinds-cylindrical-lighting-system-keker-collection-reza-raeisifar/"
   },
   {
    "img": "https://images.squarespace-cdn.com/content/v1/659f954a111dbd2ab12a0c26/456d6e8e-1c6c-4ee6-b7da-ca87d411b860/Navid+Atrvash+Press06.48%E2%80%AF.png",
@@ -18,44 +58,36 @@
    "url": "https://www.lovethatdesign.com/project/address-beach-resort-apartment-dubai/"
   },
   {
-   "img": "https://images.squarespace-cdn.com/content/v1/659f954a111dbd2ab12a0c26/d5fa7d5f-f290-4eec-89cb-c6f35e45e8bf/Navid+Atrvash+Press08.48%E2%80%AF.png",
-   "date": "2021",
-   "pub": "Archello",
-   "title": "Gooshe Music Cafe",
-   "credit": "Ashari Architects",
-   "url": "https://archello.com/project/gooshe-music-cafe-2"
-  },
-  {
-   "img": "https://images.squarespace-cdn.com/content/v1/659f954a111dbd2ab12a0c26/c66bd91e-0bcf-4e79-82ca-c46a955753d8/Navid+Atrvash+Press08.35%E2%80%AF.png",
-   "date": "2024",
-   "pub": "Archello",
-   "title": "Winteraction",
-   "credit": "Ashari Architects",
-   "url": "ASK: Archello Winteraction link"
-  },
-  {
-   "img": "https://images.squarespace-cdn.com/content/v1/659f954a111dbd2ab12a0c26/2ced72a6-3734-4ac3-80cf-8de2a8aa8341/Navid+Atrvash+Press06.43%E2%80%AF.png",
-   "date": "2023",
-   "pub": "Architecture MasterPrize",
-   "title": "Health Route",
-   "credit": "Taa Architecture Studio",
-   "url": "https://architectureprize.com/winners/winner.php?id=7156&mode=hm&compID=12802"
-  },
-  {
-   "img": "https://images.squarespace-cdn.com/content/v1/659f954a111dbd2ab12a0c26/648d7549-fead-49c7-9c71-f1e3599722ce/Navid+Atrvash+Press06.35%E2%80%AF.png",
-   "date": "2020-06-10",
-   "pub": "Amazing Architecture",
-   "title": "Greenland Convention Center",
-   "credit": "Mehrdad Iravanian Architects",
-   "url": "https://amazingarchitecture.com/exhibitions/greenland-convention-center-in-shiraz-iran-by-mehrdad-iravanian-architects"
-  },
-  {
    "img": "https://images.squarespace-cdn.com/content/v1/659f954a111dbd2ab12a0c26/09e97111-a1ba-4ec2-b18f-473a9cbdc0d1/Navid+Atrvash+Press06.15%E2%80%AF.png",
    "date": "2025-12-10",
    "pub": "Amazing Architecture",
    "title": "No. 13 Villa",
    "credit": "AsNow Design & Construct",
    "url": "https://amazingarchitecture.com/villa/no-13-villa-karaj-iran-by-asnow-design-construct"
+  },
+  {
+   "img": "https://images.squarespace-cdn.com/content/v1/659f954a111dbd2ab12a0c26/93c306ae-46ec-4fca-adf4-50d10fe84071/Navid+Atrvash+Press03.37%E2%80%AF.png",
+   "date": "2025-11-27",
+   "pub": "ArchDaily",
+   "title": "No.13 Villa",
+   "credit": "AsNow Design & Construct",
+   "url": "https://www.archdaily.com/1036374/n3-villa-asnow-design-and-construct"
+  },
+  {
+   "img": "https://images.squarespace-cdn.com/content/v1/659f954a111dbd2ab12a0c26/6e7b724d-9674-4ee3-95df-63f31cd4d026/Navid+Atrvash+Press04.25%E2%80%AF.png",
+   "date": "2025-10-23",
+   "pub": "ArchDaily",
+   "title": "Samian Dormitory Office Building",
+   "credit": "Ashari Architects",
+   "url": "https://www.archdaily.com/1035273/samian-dormitory-office-building-ashari-architects"
+  },
+  {
+   "img": "https://images.squarespace-cdn.com/content/v1/659f954a111dbd2ab12a0c26/ae90d35d-7e8e-4e0c-b7f7-81d838588cdf/Navid+Atrvash+Press04.32%E2%80%AF.png",
+   "date": "2025-06-28",
+   "pub": "ArchDaily",
+   "title": "Dwelling the Absent",
+   "credit": "Alborz Mohammadi, Keramati Architect",
+   "url": "https://www.archdaily.com/1031289/dwelling-the-absent-residential-apartment-for-maryam-and-faraj-shiraz-alborz-mohammadi-keramati-architect"
   },
   {
    "img": "https://images.squarespace-cdn.com/content/v1/659f954a111dbd2ab12a0c26/114d0741-3d40-470a-b2e3-50309baf467c/Navid+Atrvash+Press06.18%E2%80%AF.png",
@@ -66,20 +98,76 @@
    "url": "https://amazingarchitecture.com/pavilion/winteraction-by-ashariarchitects"
   },
   {
-   "img": "https://images.squarespace-cdn.com/content/v1/659f954a111dbd2ab12a0c26/f673ac89-f94e-4f48-97b0-69a08122c2e6/Navid+Atrvash+Press06.04%E2%80%AF.png",
-   "date": "2020-09-02",
-   "pub": "Parametric Architecture",
-   "title": "Greenland Complex",
-   "credit": "Mehrdad Iravanian Architects",
-   "url": "https://parametric-architecture.com/greenland-complex-by-mehrdad-iravanian-architects/"
+   "img": "https://images.squarespace-cdn.com/content/v1/659f954a111dbd2ab12a0c26/20808d24-988a-4eef-9137-c32063e1f7e2/Navid+Atrvash+Press29.56%E2%80%AF.png",
+   "date": "2024-12-03",
+   "pub": "Archilovers",
+   "title": "Lavasan Villa No.07",
+   "credit": "Amirhossein Tabrizi",
+   "url": "https://www.archilovers.com/projects/332555/lavasan-villa-no-07.html"
   },
   {
-   "img": "https://images.squarespace-cdn.com/content/v1/659f954a111dbd2ab12a0c26/81f0a123-4062-443c-9098-be80c199d5a8/Navid+Atrvash+Press05.36%E2%80%AF.png",
-   "date": "2020-06-19",
-   "pub": "Architectural Photography Almanac",
-   "title": "Photographer of the Week: Navid Atrvash",
-   "credit": "Interview",
-   "url": "https://apalmanac.com/potw/exploring-contemporary-iranian-architecture-with-navid-atrvash-10747"
+   "img": "https://images.squarespace-cdn.com/content/v1/659f954a111dbd2ab12a0c26/f43dcfa1-c497-43bc-ade8-46db6340185c/Navid+Atrvash+Press30.03%E2%80%AF.png",
+   "date": "2024-12-02",
+   "pub": "Archilovers",
+   "title": "Iran Tablo Factory",
+   "credit": "Amirhossein Tabrizi",
+   "url": "https://www.archilovers.com/projects/332535/iran-tablo-factory-gallery"
+  },
+  {
+   "img": "https://images.squarespace-cdn.com/content/v1/659f954a111dbd2ab12a0c26/dc9ade04-f91a-43e0-b2ea-956962621bea/Navid+Atrvash+Press29.18%E2%80%AF.png",
+   "date": "2024-01-04",
+   "pub": "World Architecture Community",
+   "title": "Sideway Apartment",
+   "credit": "Ashari Architects",
+   "url": "https://worldarchitecture.org/architecture-projects/hnmhn/sideway-apartment-project-pages.html"
+  },
+  {
+   "img": "https://images.squarespace-cdn.com/content/v1/659f954a111dbd2ab12a0c26/c66bd91e-0bcf-4e79-82ca-c46a955753d8/Navid+Atrvash+Press08.35%E2%80%AF.png",
+   "date": "2024",
+   "pub": "Archello",
+   "title": "Winteraction",
+   "credit": "Ashari Architects",
+   "url": "https://archello.com/project/winteraction"
+  },
+  {
+   "img": "https://images.squarespace-cdn.com/content/v1/659f954a111dbd2ab12a0c26/e59be1b7-92de-4ba1-afdd-02d5e7293090/Navid+Atrvash+Press04.38%E2%80%AF.png",
+   "date": "2023-11-24",
+   "pub": "ArchDaily",
+   "title": "Sideway Apartment",
+   "credit": "Ashari Architects",
+   "url": "https://www.archdaily.com/1010208/sideway-apartment-ashari-architects"
+  },
+  {
+   "img": "https://images.squarespace-cdn.com/content/v1/659f954a111dbd2ab12a0c26/f7d0976f-441d-4acb-ad2a-6fb0d28257d9/Navid+Atrvash+Press29.21%E2%80%AF.png",
+   "date": "2023-07-03",
+   "pub": "World Architecture Community",
+   "title": "The Memory of Garden Apartment",
+   "credit": "Ashari Architects",
+   "url": "https://worldarchitecture.org/architecture-projects/hncgn/the-memory-of-garden-apartment-project-pages.html"
+  },
+  {
+   "img": "https://images.squarespace-cdn.com/content/v1/659f954a111dbd2ab12a0c26/14ea1052-2454-4327-b010-a985d0e7c6b1/Navid+Atrvash+Press04.45%E2%80%AF.png",
+   "date": "2023-05-20",
+   "pub": "ArchDaily",
+   "title": "The Memory of Garden",
+   "credit": "Ashari Architects",
+   "url": "https://www.archdaily.com/1000991/the-memory-of-garden-residential-building-ashari-architects"
+  },
+  {
+   "img": "https://images.squarespace-cdn.com/content/v1/659f954a111dbd2ab12a0c26/fb819d75-4e7a-45c3-9baf-04d825489722/Navid+Atrvash+Press08.39%E2%80%AF.png",
+   "date": "2023",
+   "pub": "Archello",
+   "title": "The Memory of Garden Apartment",
+   "credit": "Ashari Architects",
+   "url": "https://archello.com/project/the-memory-of-garden-apartment"
+  },
+  {
+   "img": "https://images.squarespace-cdn.com/content/v1/659f954a111dbd2ab12a0c26/2ced72a6-3734-4ac3-80cf-8de2a8aa8341/Navid+Atrvash+Press06.43%E2%80%AF.png",
+   "date": "2023",
+   "pub": "Architecture MasterPrize",
+   "title": "Health Route",
+   "credit": "Taa Architecture Studio",
+   "url": "https://architectureprize.com/winners/winner.php?id=7156&mode=hm&compID=12802"
   },
   {
    "img": "https://images.squarespace-cdn.com/content/v1/659f954a111dbd2ab12a0c26/d431e0ac-c403-44b0-8a49-fc47b1698571/Navid+Atrvash+Press05.33%E2%80%AF.png",
@@ -98,14 +186,6 @@
    "url": "https://www.idesignawards.com/social/zoom.php?eid=9-41651-22"
   },
   {
-   "img": "https://images.squarespace-cdn.com/content/v1/659f954a111dbd2ab12a0c26/8b51ed91-c026-4997-aa24-abf386092c25/Navid+Atrvash+Press05.00%E2%80%AF.png",
-   "date": "2020-10-30",
-   "pub": "ArchDaily",
-   "title": "Sang-e Siah Boutique Hotel",
-   "credit": "Stak Office",
-   "url": "https://www.archdaily.com/950514/sang-e-siah-boutique-hotel-stak-office"
-  },
-  {
    "img": "https://images.squarespace-cdn.com/content/v1/659f954a111dbd2ab12a0c26/86858d5f-e56a-471e-b148-8c2691f91651/Navid+Atrvash+Press04.52%E2%80%AF.png",
    "date": "2021-10-21",
    "pub": "ArchDaily",
@@ -114,12 +194,28 @@
    "url": "https://www.archdaily.com/970481/mehr-project-pooya-tarh-shahr"
   },
   {
-   "img": "https://images.squarespace-cdn.com/content/v1/659f954a111dbd2ab12a0c26/7d4969d8-953e-4a19-946f-c14dbb68538c/Navid+Atrvash+Press05.18%E2%80%AF.png",
-   "date": "2026-09-02",
-   "pub": "designboom",
-   "title": "Keker lighting collection",
-   "credit": "Reza Raeisifar",
-   "url": "https://www.designboom.com/design/discarded-aluminum-blinds-cylindrical-lighting-system-keker-collection-reza-raeisifar/"
+   "img": "https://images.squarespace-cdn.com/content/v1/659f954a111dbd2ab12a0c26/d5fa7d5f-f290-4eec-89cb-c6f35e45e8bf/Navid+Atrvash+Press08.48%E2%80%AF.png",
+   "date": "2021",
+   "pub": "Archello",
+   "title": "Gooshe Music Cafe",
+   "credit": "Ashari Architects",
+   "url": "https://archello.com/project/gooshe-music-cafe-2"
+  },
+  {
+   "img": "https://images.squarespace-cdn.com/content/v1/659f954a111dbd2ab12a0c26/8b51ed91-c026-4997-aa24-abf386092c25/Navid+Atrvash+Press05.00%E2%80%AF.png",
+   "date": "2020-10-30",
+   "pub": "ArchDaily",
+   "title": "Sang-e Siah Boutique Hotel",
+   "credit": "Stak Office",
+   "url": "https://www.archdaily.com/950514/sang-e-siah-boutique-hotel-stak-office"
+  },
+  {
+   "img": "https://images.squarespace-cdn.com/content/v1/659f954a111dbd2ab12a0c26/f673ac89-f94e-4f48-97b0-69a08122c2e6/Navid+Atrvash+Press06.04%E2%80%AF.png",
+   "date": "2020-09-02",
+   "pub": "Parametric Architecture",
+   "title": "Greenland Complex",
+   "credit": "Mehrdad Iravanian Architects",
+   "url": "https://parametric-architecture.com/greenland-complex-by-mehrdad-iravanian-architects/"
   },
   {
    "img": "https://images.squarespace-cdn.com/content/v1/659f954a111dbd2ab12a0c26/2def1dc9-5f9a-4c59-b2e8-9dddccc383ab/Navid+Atrvash+Press05.10%E2%80%AF.png",
@@ -130,85 +226,23 @@
    "url": "https://www.archdaily.com/945977/greenland-convention-center-nil-exhibition-building-mehrdad-iravanian-architects"
   },
   {
-   "img": "https://images.squarespace-cdn.com/content/v1/659f954a111dbd2ab12a0c26/e59be1b7-92de-4ba1-afdd-02d5e7293090/Navid+Atrvash+Press04.38%E2%80%AF.png",
-   "date": "2023-11-24",
-   "pub": "ArchDaily",
-   "title": "Sideway Apartment",
-   "credit": "Ashari Architects",
-   "url": "https://www.archdaily.com/1010208/sideway-apartment-ashari-architects"
+   "img": "https://images.squarespace-cdn.com/content/v1/659f954a111dbd2ab12a0c26/81f0a123-4062-443c-9098-be80c199d5a8/Navid+Atrvash+Press05.36%E2%80%AF.png",
+   "date": "2020-06-19",
+   "pub": "Architectural Photography Almanac",
+   "title": "Photographer of the Week: Navid Atrvash",
+   "credit": "Interview",
+   "url": "https://apalmanac.com/potw/exploring-contemporary-iranian-architecture-with-navid-atrvash-10747"
   },
   {
-   "img": "https://images.squarespace-cdn.com/content/v1/659f954a111dbd2ab12a0c26/ae90d35d-7e8e-4e0c-b7f7-81d838588cdf/Navid+Atrvash+Press04.32%E2%80%AF.png",
-   "date": "2025-06-28",
-   "pub": "ArchDaily",
-   "title": "Dwelling the Absent",
-   "credit": "Alborz Mohammadi, Keramati Architect",
-   "url": "https://www.archdaily.com/1031289/dwelling-the-absent-residential-apartment-for-maryam-and-faraj-shiraz-alborz-mohammadi-keramati-architect"
-  },
-  {
-   "img": "https://images.squarespace-cdn.com/content/v1/659f954a111dbd2ab12a0c26/93c306ae-46ec-4fca-adf4-50d10fe84071/Navid+Atrvash+Press03.37%E2%80%AF.png",
-   "date": "2025-11-27",
-   "pub": "ArchDaily",
-   "title": "No.13 Villa",
-   "credit": "AsNow Design & Construct",
-   "url": "https://www.archdaily.com/1036374/n3-villa-asnow-design-and-construct"
-  },
-  {
-   "img": "https://images.squarespace-cdn.com/content/v1/659f954a111dbd2ab12a0c26/14ea1052-2454-4327-b010-a985d0e7c6b1/Navid+Atrvash+Press04.45%E2%80%AF.png",
-   "date": "2023-05-20",
-   "pub": "ArchDaily",
-   "title": "The Memory of Garden",
-   "credit": "Ashari Architects",
-   "url": "https://www.archdaily.com/1000991/the-memory-of-garden-residential-building-ashari-architects"
-  },
-  {
-   "img": "https://images.squarespace-cdn.com/content/v1/659f954a111dbd2ab12a0c26/8069dd47-b419-47cf-b4cc-3a9a0b43e865/Navid+Atrvash+Press04.01%E2%80%AF.png",
-   "date": "2026-10-21",
-   "pub": "ArchDaily",
-   "title": "Companion Villa",
-   "credit": "AsNow Design & Construct",
-   "url": "https://www.archdaily.com/1186814/companion-villa-asnow-design-and-construct"
-  },
-  {
-   "img": "https://images.squarespace-cdn.com/content/v1/659f954a111dbd2ab12a0c26/6e7b724d-9674-4ee3-95df-63f31cd4d026/Navid+Atrvash+Press04.25%E2%80%AF.png",
-   "date": "2025-10-23",
-   "pub": "ArchDaily",
-   "title": "Samian Dormitory Office Building",
-   "credit": "Ashari Architects",
-   "url": "https://www.archdaily.com/1035273/samian-dormitory-office-building-ashari-architects"
+   "img": "https://images.squarespace-cdn.com/content/v1/659f954a111dbd2ab12a0c26/648d7549-fead-49c7-9c71-f1e3599722ce/Navid+Atrvash+Press06.35%E2%80%AF.png",
+   "date": "2020-06-10",
+   "pub": "Amazing Architecture",
+   "title": "Greenland Convention Center",
+   "credit": "Mehrdad Iravanian Architects",
+   "url": "https://amazingarchitecture.com/exhibitions/greenland-convention-center-in-shiraz-iran-by-mehrdad-iravanian-architects"
   }
  ],
  "waiting_for_screenshot": [
-  {
-   "date": "2026-11-11",
-   "pub": "World Architecture Community",
-   "title": "Seen & Unseen Pavilion",
-   "url": "https://worldarchitecture.org/architecture-projects/ppcmc/seen-unseen-pavilion-project-pages.html"
-  },
-  {
-   "date": "2026-11-11",
-   "pub": "World Architecture Community",
-   "title": "Liminal Pavilion",
-   "url": "https://worldarchitecture.org/architecture-projects/ppcmp/liminal-pavilion-project-pages.html"
-  },
-  {
-   "date": "2026-11-05",
-   "pub": "World Architecture Community",
-   "title": "Noorzad Lighting Showroom",
-   "url": "https://worldarchitecture.org/architecture-projects/ppcfv/noorzad-lighting-showroom-project-pages.html"
-  },
-  {
-   "date": "2024-01-04",
-   "pub": "World Architecture Community",
-   "title": "Sideway Apartment",
-   "url": "https://worldarchitecture.org/architecture-projects/hnmhn/sideway-apartment-project-pages.html"
-  },
-  {
-   "date": "2023-07-03",
-   "pub": "World Architecture Community",
-   "title": "The Memory of Garden Apartment",
-   "url": "https://worldarchitecture.org/architecture-projects/hncgn/the-memory-of-garden-apartment-project-pages.html"
-  },
   {
    "date": "2026-11-10",
    "pub": "Amazing Architecture",
@@ -224,26 +258,8 @@
   {
    "date": "?",
    "pub": "Archilovers",
-   "title": "Lavasan Villa No.07",
-   "url": "https://www.archilovers.com/projects/332555/lavasan-villa-no-07.html"
-  },
-  {
-   "date": "?",
-   "pub": "Archilovers",
-   "title": "Iran Tablo Factory",
-   "url": "https://www.archilovers.com/projects/332535/iran-tablo-factory-gallery"
-  },
-  {
-   "date": "?",
-   "pub": "Archilovers",
    "title": "Nozhan Residential Apartment",
    "url": "https://www.archilovers.com/projects/334643/nozhan-residential-apartment.html"
-  },
-  {
-   "date": "?",
-   "pub": "Architizer",
-   "title": "Companion Villa",
-   "url": "https://architizer.com/projects/companion-villa/"
   },
   {
    "date": "?",
@@ -251,5 +267,9 @@
    "title": "Nozhan Residential Apartment",
    "url": "https://architizer.com/projects/nozhan-residential-apartment/"
   }
+ ],
+ "left_out": [
+  "World Architecture: Cinema Topography (credits another photographer)",
+  "Second Archello Gooshe Music Cafe screenshot (duplicate)"
  ]
 }
