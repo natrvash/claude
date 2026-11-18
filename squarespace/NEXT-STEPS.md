@@ -47,7 +47,11 @@ Last updated: 11 Nov 2026. Code for every step is in this folder and on the copy
    Domain registrant address is still Istanbul (private, no SEO effect): change only the address to Dubai.
 5. 26 Nov 2026: re-run the Squarespace AI Visibility report (same 11 prompts, ChatGPT and Gemini) and compare.
 
-## Recognition page (/recognition, own menu item) — waiting for screenshots
+## Recognition page (/recognition, own menu item) — code ready (boxes 22 and 23)
+
+- 18 Nov: built from Navid's 30 screenshots (gallery /new-page), newest first by year. Cinema Topography left
+  out; missing screenshots skipped. To install: new page, boxes 22 + 23, SEO title/description, menu item,
+  link from /about, Request indexing; keep /new-page hidden (it holds the images).
 
 - Decided: awards + publications, every publication linked to its article, page name Recognition at /recognition,
   its own menu item. Draft block: blocks/recognition-page-block.html (text list, links found and checked 11 Nov:
