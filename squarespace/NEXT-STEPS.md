@@ -53,6 +53,9 @@ Last updated: 11 Nov 2026. Code for every step is in this folder and on the copy
   its own menu item. Draft block: blocks/recognition-page-block.html (text list, links found and checked 11 Nov:
   ArchDaily ×10 + photographer page, designboom, AMP Greenland + Bustler, APALMANAC interview,
   Parametric Architecture, Amazing Architecture, KIOSKedia).
+- 18 Nov: block rebuilt as a screenshot grid (26 checked articles + 7 blocked to automated visits). Navid takes
+  the screenshots himself, named as in recognition-screenshots.md, uploads them to a gallery on a hidden page
+  and sends its address; then swap IMG/ for the uploaded addresses and install.
 - Navid wants it in the style of https://www.emapeter.com/press: a grid of article screenshots (the page as it
   appears on each publication's site, with the photos), each tile linking to the article. He will take the
   screenshots. Then: upload them, rebuild the block as an image grid (alt text: publication + project),
