@@ -47,6 +47,27 @@ Last updated: 11 Nov 2026. Code for every step is in this folder and on the copy
    Domain registrant address is still Istanbul (private, no SEO effect): change only the address to Dubai.
 5. 26 Nov 2026: re-run the Squarespace AI Visibility report (same 11 prompts, ChatGPT and Gemini) and compare.
 
+## Growth plan for "architectural photographer / architectural photography" in Dubai (agreed 18 Nov)
+
+Biggest effect first. If only two: the Dubai landing page and 10 reviews.
+
+1. Dubai landing page `/architectural-photographer-dubai`: H1 "Architectural Photographer in Dubai",
+   700–900 words (what is shot, for whom, UAE projects, how a shoot works), FAQ (cost in Dubai, delivery time…),
+   Service + FAQ schema, linked from home, About, Recognition and footer. Design first, then code.
+2. Dubai work on the site: a project page per UAE shoot (Address Beach Resort first) with Dubai in title, text and
+   alt text; replace file-name alt text on all Selective project pages.
+3. Google Business Profile: 10–15 reviews from Dubai clients (project + "architectural photography" + Dubai),
+   one post a month, reply to every review.
+4. Links back: ask ArchDaily, designboom, Love That Design and the other 26 non-linking articles for
+   "Photography: Navid Atrvash (natrvash.com)"; ask every architect/developer client to credit with a link;
+   pitch Dubai projects to UAE media (Commercial Interior Design, identity, designMENA); site link on
+   Archello, Architizer, Behance, LinkedIn, Houzz profiles.
+5. Technical: rename "Gallery 2" (/architectural); titles as "Page | Natrvash"; check homepage film speed on
+   mobile (Core Web Vitals) once Search Console has data.
+6. AI entity: same name, description, phone and links on site, Google, Bing, Apple, OpenAI profile, LinkedIn,
+   Instagram; Wikidata entry (awards, publications); 2–3 short articles answering client questions.
+7. Measure monthly: Search Console queries containing "Dubai"; AI Visibility re-run 26 Nov.
+
 ## Recognition page (/recognition, own menu item) — code ready (boxes 22 and 23)
 
 - 18 Nov: built from Navid's 30 screenshots (gallery /new-page), newest first by year. Cinema Topography left
